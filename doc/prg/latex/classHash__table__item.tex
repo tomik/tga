@@ -1,0 +1,79 @@
+\section{Hash\_\-table\_\-item Class Reference}
+\label{classHash__table__item}\index{Hash\_\-table\_\-item@{Hash\_\-table\_\-item}}
+
+
+Represents one item in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}.  
+
+
+
+
+{\ttfamily \#include $<$t\_\-search.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\_\-table\_\-item} ()\label{classHash__table__item_a9170513c71e7c17f74e99062ce9daba7}
+
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+{\bf Hash\_\-table\_\-item} (Hash\_\-key hash\_\-key\_\-, {\bf Stone\_\-color} stone\_\-color\_\-to\_\-move\_\-, {\bf Coordinates} ko\_\-coordinates\_\-, int depth\_\-, {\bf Node\_\-type} node\_\-type\_\-, {\bf Group\_\-status} alfa\_\-, {\bf Group\_\-status} beta\_\-, {\bf Group\_\-status\_\-accuracy} accuracy\_\-=gsa\_\-unknown, {\bf Group\_\-status} new\_\-alfa\_\-=gs\_\-unknown, {\bf Group\_\-status} new\_\-beta\_\-=gs\_\-unknown)\label{classHash__table__item_a1de03e26c2c0264c42166d8ef6350e3e}
+
+\begin{DoxyCompactList}\small\item\em Constructor with intial values of properties. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hash\_\-key {\bf hash\_\-key}\label{classHash__table__item_a1685ac89574187459486e619ea867e94}
+
+\begin{DoxyCompactList}\small\item\em This is ( usually ) 64 bit key representing position ( it also differs same position with different players to move ). \item\end{DoxyCompactList}\item 
+{\bf Coordinates} {\bf ko\_\-coordinates}\label{classHash__table__item_ae32f019b5ade53df52249a2386398e7e}
+
+\begin{DoxyCompactList}\small\item\em on this coordinates it is forbidden to play for player on the turn ( opponent took ko with last move ) \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf new\_\-alfa}\label{classHash__table__item_a0c073341c4f7e1b6a051f57216b40bad}
+
+\begin{DoxyCompactList}\small\item\em This information is retrieved when an identical position to actual is found in transposition tables. \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf new\_\-beta}\label{classHash__table__item_abe216e07147c7cd5cf34d4bb753d79e9}
+
+\begin{DoxyCompactList}\small\item\em This information is retrieved when an identical position to actual is found in transposition tables. \item\end{DoxyCompactList}\item 
+{\bf Stone\_\-color} {\bf stone\_\-color\_\-to\_\-move}\label{classHash__table__item_a3157e6dfcf70b5f3c51dac90da923c35}
+
+\begin{DoxyCompactList}\small\item\em Used for key normalization. \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status\_\-accuracy} {\bf accuracy}\label{classHash__table__item_a13ce9ca073ec762e5542b4b95bc6644b}
+
+\begin{DoxyCompactList}\small\item\em How is stored position accurate. \item\end{DoxyCompactList}\item 
+{\bf Node\_\-type} {\bf node\_\-type}\label{classHash__table__item_a39b4858cc6a0c0fc20d11cf5b5b1d06d}
+
+\begin{DoxyCompactList}\small\item\em type of the node of position \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf alfa}\label{classHash__table__item_a4eb253dbb37919440a2cbbbafb9b1365}
+
+\begin{DoxyCompactList}\small\item\em Input value of alfa. \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf beta}\label{classHash__table__item_a3f3d801ff94f9e56b519b6c5e30418b1}
+
+\begin{DoxyCompactList}\small\item\em Input value of beta. These are neccessary for comparing two positions ( whether status from one might be used in the other). \item\end{DoxyCompactList}\item 
+{\bf Hash\_\-table\_\-item} $\ast$ {\bf next}\label{classHash__table__item_a6969a4a3b6c6f8e8a6194cda33739d84}
+
+\begin{DoxyCompactList}\small\item\em Pointer to next item ( when more items are hashed to one position in the table, they form a dynamic list ). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Hash\_\-table\_\-manager}\label{classHash__table__item_a1f4276ba64791a18f167eeb923c7f2ec}
+
+\item 
+bool {\bf corresponds} ({\bf Hash\_\-table\_\-item} \&A, {\bf Hash\_\-table\_\-item} \&B)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents one item in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. This class contains all neccessary information to represent position in transposition tables ( hash\_\-table ) and also useful information which helps to cutoff search after position is found in transposition tables. 
+
+\subsection{Friends And Related Function Documentation}
+\index{Hash\_\-table\_\-item@{Hash\_\-table\_\-item}!corresponds@{corresponds}}
+\index{corresponds@{corresponds}!Hash_table_item@{Hash\_\-table\_\-item}}
+\subsubsection[{corresponds}]{\setlength{\rightskip}{0pt plus 5cm}bool corresponds (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ A, }
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [friend]}}\label{classHash__table__item_a313ee68df258a304c72b1f3809c62995}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em saved\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which was saved in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item[\mbox{\tt[in]} {\em new\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which corressponds to actual position.\end{DoxyParams}
+Method tests if it is possible to use stored information ( Group\_\-status ) of saved\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} for actual position represented by new\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item}. It's similar to operator==. 

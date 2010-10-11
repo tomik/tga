@@ -1,0 +1,25 @@
+\contentsline {chapter}{\numberline {1}TGA Main Page}{1}
+\contentsline {section}{\numberline {1.1}About}{1}
+\contentsline {section}{\numberline {1.2}Documentation hiearchy}{1}
+\contentsline {chapter}{\numberline {2}TGA Page Documentation}{3}
+\contentsline {section}{\numberline {2.1}Handling Parameters}{3}
+\contentsline {section}{\numberline {2.2}Tree search}{4}
+\contentsline {subsection}{\numberline {2.2.1}General way of tree search}{4}
+\contentsline {subsection}{\numberline {2.2.2}Transposition tables implementation}{8}
+\contentsline {section}{\numberline {2.3}Static eye recognition}{10}
+\contentsline {subsection}{\numberline {2.3.1}Recognizing status of the group}{10}
+\contentsline {subsection}{\numberline {2.3.2}Recognizing status of the potential eye}{10}
+\contentsline {section}{\numberline {2.4}Starting search}{12}
+\contentsline {subsection}{\numberline {2.4.1}After the start}{12}
+\contentsline {subsection}{\numberline {2.4.2}Handling a single problem}{12}
+\contentsline {subsection}{\numberline {2.4.3}Analysing single position}{12}
+\contentsline {section}{\numberline {2.5}Sgf parsing}{14}
+\contentsline {subsection}{\numberline {2.5.1}Sgf format}{14}
+\contentsline {subsection}{\numberline {2.5.2}Parsing automata}{14}
+\contentsline {subsection}{\numberline {2.5.3}Parsing proccess}{15}
+\contentsline {section}{\numberline {2.6}Position representation}{17}
+\contentsline {subsection}{\numberline {2.6.1}How is position represented}{17}
+\contentsline {subsection}{\numberline {2.6.2}Position initialization}{17}
+\contentsline {subsection}{\numberline {2.6.3}Playing a move}{18}
+\contentsline {subsection}{\numberline {2.6.4}Unplaying moves}{20}
+\contentsline {subsection}{\numberline {2.6.5}Static heuristics methods}{21}

@@ -1,0 +1,181 @@
+\section{Sgf parsing}\label{page_5}
+Parsing sgf input is handled in {\tt {\bf sgf\_\-read.cc}{\rm (p.\,\pageref{sgf__read_8cc})}} and {\tt {\bf sgf\_\-read.h}{\rm (p.\,\pageref{sgf__read_8h})}}.\subsection{Sgf format}\label{page_5_page_5__sec_1}
+The sgf inner structure is very logical and easy to parse. Plain text in sgf source might be interpreted as one of followings:\begin{itemize}
+\item Special characters ( as for instance \char`\"{}[\char`\"{}, \char`\"{}]\char`\"{} , \char`\"{};\char`\"{} , ... ) create structure of the sgf source ( e.g. outline variants, show where data and tokens start )\item Tokens are plain text not enclosed in square brackets. Their function is to correctly interpret data that are connected with them.\item Data are plain text enclosed in square brackets and they provide information about the position.\end{itemize}
+
+
+Example 1: 
+
+\footnotesize\begin{verbatim} B[aa] 
+\end{verbatim}
+\normalsize
+
+
+\begin{itemize}
+\item \char`\"{}B\char`\"{} in this example is a token for \char`\"{}Black's move\char`\"{} ( that means that data related to this section are interpreted as a move played by black )\item \char`\"{}[\char`\"{} and \char`\"{}]\char`\"{} are special characters to mark up data section\item \char`\"{}aa\char`\"{} are data related to \char`\"{}B\char`\"{} token and express coordinates on which black played ( here it is [0,0] ).\end{itemize}
+
+
+Example 2: 
+
+\footnotesize\begin{verbatim} (;GM[1]FF[4]CA[UTF-8]AP[CGoban:2]ST[2]RU[Japanese]SZ[11]KM[0.00] 
+ CR[ga]AW[bb][cb][eb][fb][ac][bc][cc][dc]
+ AB[da][db][gb][ec][fc][gc][ad][bd][cd][dd][fe] SQ[aa][ba][ca][da][ea][fa][ab][db]) 
+\end{verbatim}
+\normalsize
+
+
+This is an example of the whole position written in sgf.\subsection{Parsing automata}\label{page_5_page_5__sec_2}
+Class {\tt {\bf Sgf\_\-parser}{\rm (p.\,\pageref{classSgf__parser})}} represents finite automata managing sgf parsing. Set of possible automata's states is represented by {\tt {\bf Parser\_\-state}{\rm (p.\,\pageref{sgf__read_8h_a7})}} enum. State function is simulated by a vector ( {\tt State\_\-function\_\-vector} ) where each item is instance of {\tt {\bf State\_\-function\_\-record}{\rm (p.\,\pageref{classState__function__record})}}. Automata changes state when there comes a special character in sgf input and there exists an adequate record in the state function ( {\tt {\bf Sgf\_\-parser::state\_\-function}{\rm (p.\,\pageref{classSgf__parser_r1})}} ). Moving from one state to another is implemented in a straigt way: if there is a record for actual state of automata and actual character in sgf input ( this is found out with simple operator == for {\tt {\bf State\_\-function\_\-record}{\rm (p.\,\pageref{classState__function__record})}} ) then new state is resolved from actual record in state function.
+
+\label{page_5_page_5__resolving_new_state}
+ 
+
+\footnotesize\begin{verbatim}for ( State_function_vector::iterator it = state_function.begin(); 
+      it != state_function.end(); it++)  // search state function vector
+  //checking existence of the record in the table. Third parameter is unimportant 
+  if ( State_function_record( actual_state, act_char , actual_state ) == (*it) ) { 
+  found_ = true;               // a record was found 
+  new_state_ = (*it).get_new_state(); // retrieve new state 
+  break; 
+  }
+
+  if ( found_ ) {
+    actual_state = new_state_; //set up a new state
+    ...
+\end{verbatim}
+\normalsize
+\subsection{Parsing proccess}\label{page_5_page_5__sec_3}
+The result of sgf parsing is {\tt {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})}} which serves for setting up a position in {\tt {\bf Board\_\-manager}{\rm (p.\,\pageref{classBoard__manager})}} ( that is done by {\tt {\bf Board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager()}{\rm (p.\,\pageref{classBoard__manager_a14})}} function ).
+
+Process of sgf input parsing is conducted by {\tt {\bf Sgf\_\-parser::parse\_\-sgf}{\rm (p.\,\pageref{classSgf__parser_a5})}}. Function goes through input sgf file character by character ( white characters are skipped ) and actual values are worked out by function {\tt {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})}}.
+
+
+
+\footnotesize\begin{verbatim}if ( sgf_parser.resolve(act_char, act_text ) ) 
+  act_text.clear(); // it is significant character [ , ] , ; , ... 
+else              
+  act_text += act_char; // it is not significant character- part of token or data 
+\end{verbatim}
+\normalsize
+
+
+Variable {\tt act\_\-text} represents actually read part of text ( actual token name, actual data, ... ). If actual character is a significant one, {\tt act\_\-text} is worked up in {\tt {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})}} and thus it is cleared and ready for the next use.
+
+Function {\tt {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})}} manages automata transitions and {\tt {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})}} filling. At first it founds adequate transition in {\tt {\bf Sgf\_\-parser::state\_\-function}{\rm (p.\,\pageref{classSgf__parser_r1})}} vector ( see {\bf resolving new state}{\rm (p.\,\pageref{page_5_page_5__resolving_new_state})} ). When there is no such a transition it means that actual character {\tt act\_\-char} has no significant meaning in the sgf structure and function returns {\tt false} ( thus reading sgf input proceeds ). Otherwise ( possible transition was found ) new state of automata is set and actions are taken according to this state.
+
+
+
+\footnotesize\begin{verbatim}if ( found_ ) { // new transition found
+  actual_state = new_state_; // setting up a new state 
+
+  switch ( new_state_ ) {
+    case aw_data  : // new state is awaiting data -> actual token must be updated
+      if ( ! act_text.empty() ) 
+        actual_token = act_text; // updating actual token
+        break;
+    case aw_next_token : // awaiting next token -> it old token must be handled
+      if ( actual_token == token_adjust_b_stone ) {  // putting black stone on the board
+        Coordinates coordinates_ = Coordinates ( act_text ); 
+        // storing coordinates to temporar data structure
+        temp_board_manager.stone_vector.push_back(Stone(sc_black, sm_none, coordinates_));
+      } 
+      if ( actual_token == token_comments ) {
+        temp_board_manager.comments = act_text; // potential comments to the problem
+      }
+      ...  // other possible actions for different values of actual_token 
+\end{verbatim}
+\normalsize
+
+
+Actions when handling {\tt aw\_\-data} state should be clear. In {\tt aw\_\-next\_\-token} state last token ( {\tt {\bf Sgf\_\-parser::actual\_\-token}{\rm (p.\,\pageref{classSgf__parser_r2})}} ) together with it's data ( {\tt act\_\-text} ) is interpreted. Thus {\tt {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})}} is here filled with information about position such as in example code. Comments in the sgf file are extracted ( and saved in {\tt temp\_\-board\_\-manager.comments} ) and they are printed when problem is being solved ( here might be for instance information about difficulty of the problem or problem's special features ). No other states of automata needs such a handling.
+
+Parsing sgf input is handled in {\tt {\bf sgf\_\-read.cc}{\rm (p.\,\pageref{sgf__read_8cc})}} and {\tt {\bf sgf\_\-read.h}{\rm (p.\,\pageref{sgf__read_8h})}}.\subsection{Sgf format}\label{page_5_page_5__sec_1}
+The sgf inner structure is very logical and easy to parse. Plain text in sgf source might be interpreted as one of followings:\begin{itemize}
+\item Special characters ( as for instance \char`\"{}[\char`\"{}, \char`\"{}]\char`\"{} , \char`\"{};\char`\"{} , ... ) create structure of the sgf source ( e.g. outline variants, show where data and tokens start )\item Tokens are plain text not enclosed in square brackets. Their function is to correctly interpret data that are connected with them.\item Data are plain text enclosed in square brackets and they provide information about the position.\end{itemize}
+
+
+Example 1: 
+
+\footnotesize\begin{verbatim} B[aa] 
+\end{verbatim}
+\normalsize
+\begin{itemize}
+\item \char`\"{}B\char`\"{} in this example is a token for \char`\"{}Black's move\char`\"{} ( that means that data related to this section are interpreted as a move played by black )\item \char`\"{}[\char`\"{} and \char`\"{}]\char`\"{} are special characters to mark up data section\item \char`\"{}aa\char`\"{} are data related to \char`\"{}B\char`\"{} token and express coordinates on which black played ( here it is [0,0] ).\end{itemize}
+
+
+Example 2:
+
+
+
+\footnotesize\begin{verbatim} (;GM[1]FF[4]CA[UTF-8]AP[CGoban:2]ST[2]RU[Japanese]SZ[11]KM[0.00]
+  CR[ga]AW[bb][cb][eb][fb][ac][bc][cc][dc]
+  AB[da][db][gb][ec][fc][gc][ad][bd][cd][dd][fe]  
+  SQ[aa][ba][ca][da][ea][fa][ab][db])
+\end{verbatim}
+\normalsize
+
+
+This is an example of the whole position written in sgf.\subsection{Parsing automata}\label{page_5_page_5__sec_2}
+Class {\bf Sgf\_\-parser}{\rm (p.\,\pageref{classSgf__parser})} ( also ) represents finite automata managing sgf parsing. Set of possible automata's states is represented by {\bf Parser\_\-state}{\rm (p.\,\pageref{sgf__read_8h_a7})} enum. State function is simulated by a vector ( State\_\-function\_\-vector ) where each item is instance of {\bf State\_\-function\_\-record}{\rm (p.\,\pageref{classState__function__record})}. Automata changes state when there comes a special character in sgf input and there exists an adequate record in state function ( {\bf Sgf\_\-parser::state\_\-function}{\rm (p.\,\pageref{classSgf__parser_r1})} ). Moving from one state to another is implemented in a straigt way: if there is a record for actual state of automata and actual character in sgf input ( this is found out with simple operator == for {\bf State\_\-function\_\-record}{\rm (p.\,\pageref{classState__function__record})} ) then new state is resolved from actual record in state function.
+
+\label{page_5_page_5__resolving_new_state}
+ 
+
+\footnotesize\begin{verbatim}    for ( State_function_vector::iterator it = state_function.begin() ; it != state_function.end(); it++)  // search state function vector
+      if ( State_function_record( actual_state, act_char , actual_state ) // third parametr is unimportant - anything ! 
+          == (*it) ) {
+          found_ = true;               // a record was found
+          new_state_ = (*it).get_new_state(); // retrieve new state
+          break;
+    }
+  
+    if ( found_ ) {
+     actual_state = new_state_; //set up a new state
+    ...
+\end{verbatim}
+\normalsize
+\subsection{Parsing proccess}\label{page_5_page_5__sec_3}
+The result of sgf parsing is {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})} which serves for setting up a position in {\bf Board\_\-manager}{\rm (p.\,\pageref{classBoard__manager})} ( that is done by {\bf Board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager()}{\rm (p.\,\pageref{classBoard__manager_a14})} function ).
+
+Process of sgf input parsing is conducted by {\bf Sgf\_\-parser::parse\_\-sgf}{\rm (p.\,\pageref{classSgf__parser_a5})}. Function goes through input sgf file character by character ( white characters are skipped ) and actual values are worked out by function {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})}.
+
+
+
+\footnotesize\begin{verbatim}    if ( sgf_parser.resolve(act_char, act_text ) )  { 
+      act_text.clear(); // it is significant character [ , ] , ; , ...  
+    }
+    else              
+      act_text += act_char; // it is a usual character - part of token or data section    
+\end{verbatim}
+\normalsize
+
+
+Variable {\tt act\_\-text} represents actually read part of text ( actual token name, actual data, ... ). When actual character is a significant one, {\tt act\_\-text} is worked up in {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})} and thus it is cleared and ready for next use.
+
+Function {\bf Sgf\_\-parser::resolve}{\rm (p.\,\pageref{classSgf__parser_a4})} manages automata transitions and also {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})} filling. At first it founds adequate transition in {\bf Sgf\_\-parser::state\_\-function}{\rm (p.\,\pageref{classSgf__parser_r1})} vector ( see {\bf resolving new state}{\rm (p.\,\pageref{page_5_page_5__resolving_new_state})} ). When there is no such a transition it means that actual character {\tt act\_\-char} has no significant meaning in the sgf structure and function returns {\tt false} ( thus reading sgf input proceeds ). Otherwise ( possible transition was found ) new state of automata is set and actions are taken according to this state.
+
+
+
+\footnotesize\begin{verbatim}     if ( found_ ) {
+       actual_state = new_state_;// setting up a new state 
+        
+      switch ( new_state_ ) {
+        case aw_data  : // new state is awaiting data -> it means that actual token must be saved
+          if ( ! act_text.empty() ) 
+            actual_token = act_text; // saving actual token
+          break;
+        case aw_next_token : // awaiting next token -> it means that old token and it's data ( act_text ) must be handled
+        
+         if ( actual_token == token_adjust_b_stone ) { 
+            Coordinates coordinates_ = Coordinates ( act_text );
+            temp_board_manager.stone_vector.push_back ( Stone(sc_black, sm_none, coordinates_));
+         }  
+         if ( actual_token == token_comments ) {
+            temp_board_manager.comments = act_text; // potential comments to the problem
+        }
+        ...  // other possible actions for different values of actual_token 
+\end{verbatim}
+\normalsize
+
+
+Actions when handling {\tt aw\_\-data} state should be clear. In {\tt aw\_\-next\_\-token} state last token ( {\bf Sgf\_\-parser::actual\_\-token}{\rm (p.\,\pageref{classSgf__parser_r2})} ) together with it's data ( {\tt act\_\-text} ) is interpreted. Thus {\bf Sgf\_\-parser::temp\_\-board\_\-manager}{\rm (p.\,\pageref{classSgf__parser_r12})} is here filled with information about position such as in example code. Comments in the sgf file are extracted ( and saved in temp\_\-board\_\-manager.comments ) and they are printed when problem is being solved ( here might be for instance information about difficulty of the problem or problem's special features ). No other states of automata needs such handling. 

@@ -1,0 +1,62 @@
+\section{Hash\_\-repset\_\-manager Class Reference}
+\label{classHash__repset__manager}\index{Hash\_\-repset\_\-manager@{Hash\_\-repset\_\-manager}}
+
+
+Repetititons manager.  
+
+
+
+
+{\ttfamily \#include $<$t\_\-search.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf store\_\-item} (Hash\_\-key hash\_\-key\_\-)
+\begin{DoxyCompactList}\small\item\em Stores hash key. \item\end{DoxyCompactList}\item 
+void {\bf remove\_\-item} (Hash\_\-key hash\_\-key\_\-)
+\begin{DoxyCompactList}\small\item\em Removes hash key. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hash\_\-repset {\bf hash\_\-repset}\label{classHash__repset__manager_a6338b741142b92c99a69eefd589897f3}
+
+\begin{DoxyCompactList}\small\item\em Set of Hash\_\-keys. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Repetititons manager. ' This class stores positions along the path to actual node and then controls ( and prevents ) possible position repetitions. 
+
+\subsection{Member Function Documentation}
+\index{Hash\_\-repset\_\-manager@{Hash\_\-repset\_\-manager}!remove\_\-item@{remove\_\-item}}
+\index{remove\_\-item@{remove\_\-item}!Hash_repset_manager@{Hash\_\-repset\_\-manager}}
+\subsubsection[{remove\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}void remove\_\-item (
+\begin{DoxyParamCaption}
+\item[{Hash\_\-key}]{ hash\_\-key\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classHash__repset__manager_a61d5d2cbe2f6fdf53147ea4fb640cf40}
+
+
+Removes hash key. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em hash\_\-key}]Hash key of actual position.\end{DoxyParams}
+This method removes hash key from set of possible repetition positions ( it is expected that the key is normalized ). \index{Hash\_\-repset\_\-manager@{Hash\_\-repset\_\-manager}!store\_\-item@{store\_\-item}}
+\index{store\_\-item@{store\_\-item}!Hash_repset_manager@{Hash\_\-repset\_\-manager}}
+\subsubsection[{store\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}bool store\_\-item (
+\begin{DoxyParamCaption}
+\item[{Hash\_\-key}]{ hash\_\-key\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classHash__repset__manager_ae10afb7d94d1c697c33a3577bfda9ee2}
+
+
+Stores hash key. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em hash\_\-key}]Hash key of actual position. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns whether key was saved.
+\end{DoxyReturn}
+This method inserts input hash key ( representing actual position ) into set of positions ( it is presumed, that key is normalized according to color of actual player. When the key is not saved, function returns false ( that means a repetition ) otherwise returns true. 

@@ -1,0 +1,402 @@
+\begin{theindex}
+
+  \item {/home/tomik/Projects/TGA/src/board.cc}, 51
+  \item {/home/tomik/Projects/TGA/src/board.h}, 53
+  \item {/home/tomik/Projects/TGA/src/eyes.cc}, 57
+  \item {/home/tomik/Projects/TGA/src/eyes.h}, 58
+  \item {/home/tomik/Projects/TGA/src/main.cc}, 60
+  \item {/home/tomik/Projects/TGA/src/main.h}, 62
+  \item {/home/tomik/Projects/TGA/src/p\_\-manager.cc}, 63
+  \item {/home/tomik/Projects/TGA/src/p\_\-manager.h}, 64
+  \item {/home/tomik/Projects/TGA/src/sgf\_\-read.cc}, 65
+  \item {/home/tomik/Projects/TGA/src/sgf\_\-read.h}, 66
+  \item {/home/tomik/Projects/TGA/src/t\_\-search.cc}, 68
+  \item {/home/tomik/Projects/TGA/src/t\_\-search.h}, 69
+
+  \indexspace
+
+  \item {add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur}
+    \subitem {T\_\-searcher}, 45
+  \item {analyze\_\-single\_\-position}
+    \subitem {main.cc}, 60
+  \item {aw\_\-beginning}
+    \subitem {sgf\_\-read.h}, 66
+  \item {aw\_\-data}
+    \subitem {sgf\_\-read.h}, 66
+  \item {aw\_\-next\_\-token}
+    \subitem {sgf\_\-read.h}, 66
+  \item {aw\_\-pattern\_\-data}
+    \subitem {sgf\_\-read.h}, 67
+  \item {aw\_\-token}
+    \subitem {sgf\_\-read.h}, 66
+
+  \indexspace
+
+  \item {Block}, 3
+  \item {board.cc}
+    \subitem {get\_\-random\_\-Hash\_\-key}, 51
+    \subitem {operator$<$}, 51, 52
+  \item {board.h}
+    \subitem {get\_\-random\_\-Hash\_\-key}, 55
+    \subitem {operator$<$}, 55, 56
+    \subitem {Playing\_\-priority}, 55
+    \subitem {Point\_\-status}, 55
+    \subitem {pp\_\-high}, 55
+    \subitem {pp\_\-ko\_\-last}, 55
+    \subitem {pp\_\-low}, 55
+    \subitem {pp\_\-none}, 55
+    \subitem {pp\_\-normal}, 55
+    \subitem {pp\_\-pass}, 55
+    \subitem {ps\_\-at}, 55
+    \subitem {ps\_\-de}, 55
+    \subitem {ps\_\-empty}, 55
+    \subitem {ps\_\-pot\_\-eye}, 55
+    \subitem {ps\_\-uns\_\-at}, 55
+    \subitem {Sgf\_\-mark}, 55
+    \subitem {sm\_\-at\_\-playable}, 55
+    \subitem {sm\_\-none}, 55
+    \subitem {sm\_\-playable}, 55
+    \subitem {sm\_\-safe}, 55
+    \subitem {Stone\_\-color}, 55
+  \item {Board\_\-manager}, 5
+    \subitem {capture\_\-block}, 7
+    \subitem {check\_\-atari}, 8
+    \subitem {check\_\-capture}, 8
+    \subitem {check\_\-connection}, 8
+    \subitem {check\_\-coordinates\_\-adjacency}, 8
+    \subitem {check\_\-save\_\-connection}, 9
+    \subitem {check\_\-self\_\-atari}, 9
+    \subitem {check\_\-take\_\-liberty}, 9
+    \subitem {check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker}, 10
+    \subitem {check\_\-takes\_\-ko}, 10
+    \subitem {check\_\-unsafe\_\-neighbour}, 10
+    \subitem {create\_\-new\_\-block}, 10
+    \subitem {fill\_\-point\_\-board}, 11
+    \subitem {init}, 11
+    \subitem {init\_\-from\_\-temp\_\-board\_\-manager}, 11
+    \subitem {merge\_\-blocks}, 11
+    \subitem {play\_\-a\_\-stone}, 11
+    \subitem {remove\_\-block}, 12
+    \subitem {unplay\_\-last\_\-stone}, 12
+
+  \indexspace
+
+  \item {capture\_\-block}
+    \subitem {Board\_\-manager}, 7
+  \item {check\_\-atari}
+    \subitem {Board\_\-manager}, 8
+  \item {check\_\-capture}
+    \subitem {Board\_\-manager}, 8
+  \item {check\_\-connection}
+    \subitem {Board\_\-manager}, 8
+  \item {check\_\-coordinates\_\-adjacency}
+    \subitem {Board\_\-manager}, 8
+  \item {check\_\-save\_\-connection}
+    \subitem {Board\_\-manager}, 9
+  \item {check\_\-self\_\-atari}
+    \subitem {Board\_\-manager}, 9
+  \item {check\_\-take\_\-liberty}
+    \subitem {Board\_\-manager}, 9
+  \item {check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker}
+    \subitem {Board\_\-manager}, 10
+  \item {check\_\-takes\_\-ko}
+    \subitem {Board\_\-manager}, 10
+  \item {check\_\-unsafe\_\-neighbour}
+    \subitem {Board\_\-manager}, 10
+  \item {Coordinates}, 13
+    \subitem {Coordinates}, 13
+  \item {coordinates\_\-to\_\-string}
+    \subitem {Sgf\_\-printer}, 40
+  \item {corresponds}
+    \subitem {Hash\_\-table\_\-item}, 23
+    \subitem {t\_\-search.cc}, 68
+    \subitem {t\_\-search.h}, 70
+  \item {create\_\-new\_\-block}
+    \subitem {Board\_\-manager}, 10
+  \item {Cross\_\-point}, 14
+
+  \indexspace
+
+  \item {Dyn\_\-heur\_\-item}, 15
+
+  \indexspace
+
+  \item {es\_\-false\_\-eye}
+    \subitem {eyes.h}, 58
+  \item {es\_\-full\_\-eye}
+    \subitem {eyes.h}, 58
+  \item {es\_\-produces\_\-no\_\-eye}
+    \subitem {eyes.h}, 59
+  \item {es\_\-unknown}
+    \subitem {eyes.h}, 59
+  \item {Eye\_\-manager}, 16
+    \subitem {get\_\-eye\_\-status}, 16
+    \subitem {get\_\-group\_\-status}, 16
+  \item {Eye\_\-status}
+    \subitem {eyes.h}, 58
+  \item {eyes.cc}
+    \subitem {operator$<$}, 57
+  \item {eyes.h}
+    \subitem {es\_\-false\_\-eye}, 58
+    \subitem {es\_\-full\_\-eye}, 58
+    \subitem {es\_\-produces\_\-no\_\-eye}, 59
+    \subitem {es\_\-unknown}, 59
+    \subitem {Eye\_\-status}, 58
+    \subitem {Group\_\-status}, 59
+    \subitem {gs\_\-alive}, 59
+    \subitem {gs\_\-dead}, 59
+    \subitem {gs\_\-ko}, 59
+    \subitem {gs\_\-unknown}, 59
+    \subitem {operator$<$}, 59
+
+  \indexspace
+
+  \item {fill\_\-point\_\-board}
+    \subitem {Board\_\-manager}, 11
+
+  \indexspace
+
+  \item {get\_\-eye\_\-status}
+    \subitem {Eye\_\-manager}, 16
+  \item {get\_\-group\_\-status}
+    \subitem {Eye\_\-manager}, 16
+  \item {get\_\-item\_\-status}
+    \subitem {Hash\_\-table\_\-manager}, 25
+  \item {get\_\-normalized\_\-hash\_\-key}
+    \subitem {Hash\_\-table\_\-manager}, 25
+  \item {get\_\-out\_\-fn\_\-base}
+    \subitem {main.cc}, 61
+  \item {get\_\-random\_\-Hash\_\-key}
+    \subitem {board.cc}, 51
+    \subitem {board.h}, 55
+  \item {Group\_\-status}
+    \subitem {eyes.h}, 59
+  \item {Group\_\-status\_\-accuracy}
+    \subitem {t\_\-search.h}, 70
+  \item {gs\_\-alive}
+    \subitem {eyes.h}, 59
+  \item {gs\_\-dead}
+    \subitem {eyes.h}, 59
+  \item {gs\_\-ko}
+    \subitem {eyes.h}, 59
+  \item {gs\_\-unknown}
+    \subitem {eyes.h}, 59
+  \item {gsa\_\-alfa\_\-beta\_\-uncertain}
+    \subitem {t\_\-search.h}, 70
+  \item {gsa\_\-certain}
+    \subitem {t\_\-search.h}, 70
+  \item {gsa\_\-depth\_\-uncertain}
+    \subitem {t\_\-search.h}, 70
+
+  \indexspace
+
+  \item {handle\_\-single\_\-problem}
+    \subitem {main.cc}, 61
+  \item {Hash\_\-board\_\-manager}, 18
+    \subitem {init\_\-hash\_\-board}, 18
+    \subitem {xor\_\-with\_\-position\_\-hash}, 18
+  \item {Hash\_\-repset\_\-manager}, 20
+    \subitem {remove\_\-item}, 20
+    \subitem {store\_\-item}, 20
+  \item {hash\_\-table\_\-activate}
+    \subitem {Hash\_\-table\_\-manager}, 26
+  \item {Hash\_\-table\_\-item}, 22
+    \subitem {corresponds}, 23
+  \item {Hash\_\-table\_\-manager}, 24
+    \subitem {get\_\-item\_\-status}, 25
+    \subitem {get\_\-normalized\_\-hash\_\-key}, 25
+    \subitem {hash\_\-table\_\-activate}, 26
+    \subitem {print\_\-info}, 26
+    \subitem {store\_\-item}, 26
+
+  \indexspace
+
+  \item {init}
+    \subitem {Board\_\-manager}, 11
+  \item {init\_\-from\_\-temp\_\-board\_\-manager}
+    \subitem {Board\_\-manager}, 11
+  \item {init\_\-hash\_\-board}
+    \subitem {Hash\_\-board\_\-manager}, 18
+
+  \indexspace
+
+  \item {Ko\_\-manager}, 27
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cc}, 61
+  \item {main.cc}
+    \subitem {analyze\_\-single\_\-position}, 60
+    \subitem {get\_\-out\_\-fn\_\-base}, 61
+    \subitem {handle\_\-single\_\-problem}, 61
+    \subitem {main}, 61
+  \item {merge\_\-blocks}
+    \subitem {Board\_\-manager}, 11
+
+  \indexspace
+
+  \item {Neighbors}, 28
+  \item {Node\_\-type}
+    \subitem {t\_\-search.h}, 70
+
+  \indexspace
+
+  \item {operator$<$}
+    \subitem {board.cc}, 51, 52
+    \subitem {board.h}, 55, 56
+    \subitem {eyes.cc}, 57
+    \subitem {eyes.h}, 59
+  \item {operator==}
+    \subitem {State\_\-function\_\-record}, 42
+
+  \indexspace
+
+  \item {p\_\-manager.h}
+    \subitem {Param\_\-type}, 64
+    \subitem {pt\_\-int}, 64
+    \subitem {pt\_\-string}, 64
+  \item {Param\_\-record}, 29
+  \item {Param\_\-type}
+    \subitem {p\_\-manager.h}, 64
+  \item {Params\_\-manager}, 30
+    \subitem {Params\_\-manager}, 32
+    \subitem {set\_\-variable}, 32
+  \item {parse\_\-sgf}
+    \subitem {Sgf\_\-parser}, 37
+  \item {Parser\_\-state}
+    \subitem {sgf\_\-read.h}, 66
+  \item {play\_\-a\_\-stone}
+    \subitem {Board\_\-manager}, 11
+  \item {Playable\_\-data}, 33
+  \item {Playing\_\-priority}
+    \subitem {board.h}, 55
+  \item {Point\_\-status}
+    \subitem {board.h}, 55
+  \item {pp\_\-high}
+    \subitem {board.h}, 55
+  \item {pp\_\-ko\_\-last}
+    \subitem {board.h}, 55
+  \item {pp\_\-low}
+    \subitem {board.h}, 55
+  \item {pp\_\-none}
+    \subitem {board.h}, 55
+  \item {pp\_\-normal}
+    \subitem {board.h}, 55
+  \item {pp\_\-pass}
+    \subitem {board.h}, 55
+  \item {print\_\-comment}
+    \subitem {Sgf\_\-printer}, 40
+  \item {print\_\-info}
+    \subitem {Hash\_\-table\_\-manager}, 26
+  \item {print\_\-initial\_\-position}
+    \subitem {Sgf\_\-printer}, 40
+  \item {print\_\-sgf\_\-header}
+    \subitem {Sgf\_\-printer}, 40
+  \item {print\_\-to\_\-file}
+    \subitem {Sgf\_\-printer}, 40
+  \item {ps\_\-at}
+    \subitem {board.h}, 55
+  \item {ps\_\-de}
+    \subitem {board.h}, 55
+  \item {ps\_\-empty}
+    \subitem {board.h}, 55
+  \item {ps\_\-pot\_\-eye}
+    \subitem {board.h}, 55
+  \item {ps\_\-uns\_\-at}
+    \subitem {board.h}, 55
+  \item {pt\_\-int}
+    \subitem {p\_\-manager.h}, 64
+  \item {pt\_\-string}
+    \subitem {p\_\-manager.h}, 64
+
+  \indexspace
+
+  \item {Ref\_\-board}, 34
+    \subitem {Ref\_\-board}, 34
+  \item {remove\_\-block}
+    \subitem {Board\_\-manager}, 12
+  \item {remove\_\-item}
+    \subitem {Hash\_\-repset\_\-manager}, 20
+  \item {resolve}
+    \subitem {Sgf\_\-parser}, 37
+
+  \indexspace
+
+  \item {search}
+    \subitem {T\_\-searcher}, 45
+  \item {Search\_\-result}, 35
+  \item {search\_\-son}
+    \subitem {T\_\-searcher}, 45
+  \item {set\_\-output}
+    \subitem {Sgf\_\-printer}, 40
+  \item {set\_\-variable}
+    \subitem {Params\_\-manager}, 32
+  \item {Sgf\_\-mark}
+    \subitem {board.h}, 55
+  \item {Sgf\_\-parser}, 36
+    \subitem {parse\_\-sgf}, 37
+    \subitem {resolve}, 37
+    \subitem {Sgf\_\-parser}, 37
+  \item {Sgf\_\-printer}, 39
+    \subitem {coordinates\_\-to\_\-string}, 40
+    \subitem {print\_\-comment}, 40
+    \subitem {print\_\-initial\_\-position}, 40
+    \subitem {print\_\-sgf\_\-header}, 40
+    \subitem {print\_\-to\_\-file}, 40
+    \subitem {set\_\-output}, 40
+  \item {sgf\_\-read.h}
+    \subitem {aw\_\-beginning}, 66
+    \subitem {aw\_\-data}, 66
+    \subitem {aw\_\-next\_\-token}, 66
+    \subitem {aw\_\-pattern\_\-data}, 67
+    \subitem {aw\_\-token}, 66
+    \subitem {Parser\_\-state}, 66
+  \item {sm\_\-at\_\-playable}
+    \subitem {board.h}, 55
+  \item {sm\_\-none}
+    \subitem {board.h}, 55
+  \item {sm\_\-playable}
+    \subitem {board.h}, 55
+  \item {sm\_\-safe}
+    \subitem {board.h}, 55
+  \item {State\_\-function\_\-record}, 42
+    \subitem {operator==}, 42
+  \item {Stone}, 43
+  \item {Stone\_\-color}
+    \subitem {board.h}, 55
+  \item {store\_\-item}
+    \subitem {Hash\_\-repset\_\-manager}, 20
+    \subitem {Hash\_\-table\_\-manager}, 26
+
+  \indexspace
+
+  \item {t\_\-search.cc}
+    \subitem {corresponds}, 68
+  \item {t\_\-search.h}
+    \subitem {corresponds}, 70
+    \subitem {Group\_\-status\_\-accuracy}, 70
+    \subitem {gsa\_\-alfa\_\-beta\_\-uncertain}, 70
+    \subitem {gsa\_\-certain}, 70
+    \subitem {gsa\_\-depth\_\-uncertain}, 70
+    \subitem {Node\_\-type}, 70
+  \item {T\_\-searcher}, 44
+    \subitem {add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur}, 45
+    \subitem {search}, 45
+    \subitem {search\_\-son}, 45
+  \item {Temp\_\-board\_\-manager}, 47
+
+  \indexspace
+
+  \item {unplay\_\-last\_\-stone}
+    \subitem {Board\_\-manager}, 12
+  \item {Unplay\_\-manager}, 48
+    \subitem {Unplay\_\-manager}, 49
+  \item {Unplay\_\-node}, 50
+
+  \indexspace
+
+  \item {xor\_\-with\_\-position\_\-hash}
+    \subitem {Hash\_\-board\_\-manager}, 18
+
+\end{theindex}

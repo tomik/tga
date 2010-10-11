@@ -1,0 +1,62 @@
+\section{Starting search}\label{page_2}
+All program actions start in {\tt main()} function defined in {\tt main.cc}. \subsection{After the start}\label{page_2_page_2__sec_1}
+At first, program arguments are parsed and variables corresponding to parameters are set to their proper values ( by calling {\tt Params\_\-manager::set\_\-variable()} ). After this, program chooses one of two possible continuations :\begin{itemize}
+\item Single position search mode. This is the most commonly used mode. The algorithm simply calls {\tt handle\_\-single\_\-problem()} function, which takes care of proper actions in a single problem tree search.\item Multiple positions search mode. The program opens a file with problem names and then goes through them and on each one of them calls function {\tt handle\_\-single\_\-problem()}. The difference with single position mode is also in the output: e.g. the information about group status, time of search are differently formated.\end{itemize}
+\subsection{Handling a single problem}\label{page_2_page_2__sec_2}
+This task is done by function {\tt handle\_\-single\_\-problem()} and consists of:\begin{itemize}
+\item the initialization of possible persistent transposition tables ( when nor {\tt -ntt} neither {\tt -nst} options are given ) 
+
+\footnotesize\begin{verbatim}if ( params_manager.get_transposition_tables() && params_manager.get_save_tt()) { 
+  t_searcher.hash_table_manager.hash_table_activate(); // hash table is initialized
+  board_manager.hash_board_manager.init_hash_board();   
+}
+\end{verbatim}
+\normalsize
+\item covering neccessary prints\item analysing the single position for the attacker moving first and then for the defender moving first ( if their moves aren't blocked by given argument ). Example of \char`\"{}defender moving first\char`\"{} section: 
+
+\footnotesize\begin{verbatim}if ( params_manager.get_defender_moves_first() ) { // defender moving first 
+  ...  // output prints
+  status_de = analyze_single_position (  filename , sc_white);
+
+  print_group_status ( sc_white , status_de );
+}
+\end{verbatim}
+\normalsize
+\end{itemize}
+\subsection{Analysing single position}\label{page_2_page_2__sec_3}
+By the term analysing single position is meant to search a problem with a specified color to move first ( attacker or defender ). This task is performed by function {\tt analyze\_\-single\_\-position()} and consists of three main steps :\begin{itemize}
+\item initialization of data structures: 
+
+\footnotesize\begin{verbatim}sgf_parser.init();
+board_manager.init();
+... // potential init of transposition tables if these are switched on
+\end{verbatim}
+\normalsize
+\item parsing sgf source of the input position 
+
+\footnotesize\begin{verbatim}sgf_parser.parse_sgf( pos_name.c_str()); // parsing sgf input 
+ //board initialization from temporar data structure follows
+board_manager.init_from_temp_board_manager( 
+  sgf_parser.get_temp_board_manager()); 
+\end{verbatim}
+\normalsize
+\item performing search itself ( for a certain player playing first - see parameters of function {\tt analyze\_\-single\_\-position()}) Here must be distinguished whether the option {\tt -id} ( iterative deepening depth first search ) is switched on. If it is, search is performed in the cycle with iteratively increasing maximal depth of the search, until certain status ( the accuracy of the status is {\tt gsa\_\-certain} ) is not obtained. 
+
+\footnotesize\begin{verbatim}if ( params_manager.get_iddfs() ) { // iddfs activated
+  while (( result.group_status_accuracy != gsa_certain)){ // iterative search
+    ...
+    switch ( color_to_move ) {
+      case sc_white: 
+        sgf_printer.set_output (save_filename);
+        result = t_searcher.search(nt_max, 0 , gs_dead, gs_alive, false,false);
+        break;
+      .. //symetrically for sc_black
+    }
+    t_searcher.increase_max_depth(); // increase maximal depth of the next search
+}
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+If no iddfs is demanded only a single search is performed and afterwards the information on the number of searched nodes together with search time is printed. 

@@ -1,0 +1,437 @@
+\section{Board\_\-manager Class Reference}
+\label{classBoard__manager}\index{Board\_\-manager@{Board\_\-manager}}
+
+
+Class conduncting playing and unplaying moves.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Initialization function. \item\end{DoxyCompactList}\item 
+{\bf Block} $\ast$ {\bf create\_\-new\_\-block} ({\bf Stone\_\-color})
+\begin{DoxyCompactList}\small\item\em Creates new empty block. \item\end{DoxyCompactList}\item 
+void {\bf capture\_\-block} ({\bf Block} $\ast$)
+\begin{DoxyCompactList}\small\item\em Captures block of stones. \item\end{DoxyCompactList}\item 
+void {\bf remove\_\-block} ({\bf Block} $\ast$)
+\begin{DoxyCompactList}\small\item\em Removes block of stones. \item\end{DoxyCompactList}\item 
+bool {\bf play\_\-a\_\-stone} ({\bf Stone\_\-color}, {\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Plays a stone and updates data structures. \item\end{DoxyCompactList}\item 
+void {\bf merge\_\-blocks} ({\bf Block} $\ast$, {\bf Block} $\ast$)
+\begin{DoxyCompactList}\small\item\em Merges two block into one. \item\end{DoxyCompactList}\item 
+void {\bf info} ()\label{classBoard__manager_ac1b66fe77173de9e5e8542b2823d6071}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-blocks\_\-info} ()\label{classBoard__manager_ad70fe357bbdfe8d99fc2e2460cbab347}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+stringstream \& {\bf print\_\-playable\_\-map} (bool print\_\-for\_\-sgf\_\-printer)\label{classBoard__manager_ab6d774f0b72756b4d863e1afcda83c8e}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+stringstream \& {\bf print\_\-pot\_\-eyes\_\-map} (bool print\_\-for\_\-sgf\_\-printer)\label{classBoard__manager_a426576bb2d3bd16c8deeebb322e9110f}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-to\_\-sgf} (ostream \&)\label{classBoard__manager_acd20565d51bda093d421a2dec1fa2114}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-stones} ()\label{classBoard__manager_aaf5979fe857907c5f5a6a03bb36257eb}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-actual\_\-unplay\_\-info} ()\label{classBoard__manager_a67bc4e119905eb8587f2fe0e2899749d}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-complete\_\-unplay\_\-info} ()\label{classBoard__manager_a2c0ce1ab3eedea61ac3d6c24f9496586}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf init\_\-from\_\-temp\_\-board\_\-manager} ({\bf Temp\_\-board\_\-manager})
+\begin{DoxyCompactList}\small\item\em Initialization from temp\_\-board\_\-manager. \item\end{DoxyCompactList}\item 
+void {\bf fill\_\-point\_\-board} ()
+\begin{DoxyCompactList}\small\item\em Point\_\-board initialization. \item\end{DoxyCompactList}\item 
+void {\bf unplay\_\-last\_\-stone} ()
+\begin{DoxyCompactList}\small\item\em Returns board manager to the conditions before last stone was played]. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-self\_\-atari} ({\bf Stone\_\-color} stone\_\-color\_\-, {\bf Coordinates} coordinates\_\-, int $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks whether larger defender's group is not in atari. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-coordinates\_\-adjacency} ({\bf Coordinates}, {\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Checks whether given coordinates are adjacent. \item\end{DoxyCompactList}\item 
+pair$<$ {\bf Coordinates}, bool $>$ {\bf check\_\-takes\_\-ko} ({\bf Stone\_\-color}, {\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Checks whether the moves takes ko. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-capture} ({\bf Stone\_\-color}, {\bf Coordinates}, bool $\ast$, int $\ast$=NULL)
+\begin{DoxyCompactList}\small\item\em Checks whether a move captures something. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-atari} ({\bf Stone\_\-color}, {\bf Coordinates})
+\item 
+bool {\bf check\_\-take\_\-liberty} ({\bf Stone\_\-color}, {\bf Coordinates}, int, {\bf Block} $\ast$$\ast$=NULL)
+\begin{DoxyCompactList}\small\item\em Important function checking whether a played move takes away liberty ( of defender or unsafe attacker ). \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker} ({\bf Stone\_\-color}, {\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Checks whether a move removes safe attacker liberty. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-connection} ({\bf Stone\_\-color} stone\_\-color\_\-, {\bf Coordinates} coordinates\_\-, bool)
+\begin{DoxyCompactList}\small\item\em Checks connection of two blocks of same color. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-save\_\-connection} ({\bf Stone\_\-color}, {\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Checks connection of unsafe attacker block to safe attacker. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-eyes\_\-connection} (Coordinates\_\-set \&)\label{classBoard__manager_a566d7fff2e8bb60f6d52183848033b7b}
+
+\begin{DoxyCompactList}\small\item\em Checks connection of eyes from the set. \item\end{DoxyCompactList}\item 
+bool {\bf check\_\-unsafe\_\-neighbour} ({\bf Block} $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks whether block has some unsafe neighbour of opposite color. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Pot\_\-eyes\_\-map {\bf pot\_\-eyes\_\-map}\label{classBoard__manager_a718b13dab644b28a5e5f3e944c56fd63}
+
+\begin{DoxyCompactList}\small\item\em In the beginning potential eyes are stored here and then are updated in Eyes\_\-manager. \item\end{DoxyCompactList}\item 
+bool {\bf problematic\_\-capture}\label{classBoard__manager_a58fab572b80097a7e7e9def88a903a16}
+
+\begin{DoxyCompactList}\small\item\em Helping variable to manage under the stones problems. \item\end{DoxyCompactList}\item 
+{\bf Hash\_\-board\_\-manager} {\bf hash\_\-board\_\-manager}\label{classBoard__manager_a8d974673f41ada316ebe7b7fb473ddd0}
+
+\begin{DoxyCompactList}\small\item\em Instance of hash board manager taking care of board of hash keys. \item\end{DoxyCompactList}\item 
+{\bf Ko\_\-manager} {\bf ko\_\-manager}\label{classBoard__manager_aad2c5438fce46d9105c56400dba85969}
+
+\begin{DoxyCompactList}\small\item\em Instance of \doxyref{Ko\_\-manager}{p.}{classKo__manager}. \item\end{DoxyCompactList}\item 
+Point\_\-board {\bf point\_\-board}\label{classBoard__manager_af83ab0f504e080debf985226cdbf65d7}
+
+\begin{DoxyCompactList}\small\item\em Alternative board representation used in \doxyref{Eye\_\-manager}{p.}{classEye__manager}. \item\end{DoxyCompactList}\item 
+{\bf Unplay\_\-node} $\ast$ {\bf unplay\_\-node\_\-handle}\label{classBoard__manager_ac75c12dffac6cf28222e822626733e64}
+
+\begin{DoxyCompactList}\small\item\em Beginning of dynamic list of moves to be unplayed. \item\end{DoxyCompactList}\item 
+Coordinates\_\-set {\bf under\_\-the\_\-stones\_\-set}\label{classBoard__manager_a6cee78622dc649f9ae5bcb6b955fbdbc}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Coordinates}{p.}{classCoordinates} under captured stones defender's stones ( potential under the stones coordinates ). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf next\_\-block\_\-id}\label{classBoard__manager_a92fe68e1f8c233cac0353a4a5d98341b}
+
+\begin{DoxyCompactList}\small\item\em New block will have this id. \item\end{DoxyCompactList}\item 
+Cross\_\-point\_\-board {\bf board}\label{classBoard__manager_a6e51291d06eed357a8a14718c62caf8a}
+
+\begin{DoxyCompactList}\small\item\em Board which pointers to block of stones. \item\end{DoxyCompactList}\item 
+Playable\_\-map {\bf playable\_\-map}\label{classBoard__manager_a136ec190c4aa69160c317f2b73c8855b}
+
+\begin{DoxyCompactList}\small\item\em Here are stored crosspoints that are playable ( == empty ) with their playing priorities. \item\end{DoxyCompactList}\item 
+stringstream {\bf log\_\-stream}\label{classBoard__manager_ac556d4a8384bd23499a26d5072d685e4}
+
+\begin{DoxyCompactList}\small\item\em logging purposes \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class conduncting playing and unplaying moves. This class maintains position presentation, contains data structures neccessary for correct moves (un)playing and provides functions performing different tasks upon position. It also contains several classes defined previously in this header file ( e.g. \doxyref{Ko\_\-manager}{p.}{classKo__manager}, Unplay\_\-node\_\-handle , ... ) 
+
+\subsection{Member Function Documentation}
+\index{Board\_\-manager@{Board\_\-manager}!capture\_\-block@{capture\_\-block}}
+\index{capture\_\-block@{capture\_\-block}!Board_manager@{Board\_\-manager}}
+\subsubsection[{capture\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void capture\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf Block} $\ast$}]{ block\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a05d5af5b31cbdfd80e2ae6e958b41e0d}
+
+
+Captures block of stones. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em block\_\-}]Pointer to a block that is captured.\end{DoxyParams}
+This function handles all the stuff around capturing the block. It updates actual position hash key ( by xoring out captured stones ), add liberties to adjacent blocks , updates \doxyref{Board\_\-manager::playable\_\-map}{p.}{classBoard__manager_a136ec190c4aa69160c317f2b73c8855b} and \doxyref{Board\_\-manager::pot\_\-eyes\_\-map}{p.}{classBoard__manager_a718b13dab644b28a5e5f3e944c56fd63} and safely removes the block ( by calling \doxyref{Board\_\-manager::remove\_\-block()}{p.}{classBoard__manager_a78d1d86ca5e3319aaeefafc927aa92da}). \index{Board\_\-manager@{Board\_\-manager}!check\_\-atari@{check\_\-atari}}
+\index{check\_\-atari@{check\_\-atari}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-atari}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-atari (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a11b02e41ed150cbc24c0e1acdb45838b}
+Checks whether a move is an atari
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of played stone \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of played stone \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when a move ataris some opponent block.
+\end{DoxyReturn}
+Heuristic function checking whether played stone ataris some block is implemented by universal function \doxyref{Board\_\-manager::check\_\-take\_\-liberty()}{p.}{classBoard__manager_ac0b266a3cd73aab912e38744d5b07054}. \index{Board\_\-manager@{Board\_\-manager}!check\_\-capture@{check\_\-capture}}
+\index{check\_\-capture@{check\_\-capture}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-capture}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-capture (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{bool $\ast$}]{ connects\_\-, }
+\item[{int $\ast$}]{ stones\_\-num\_\-pt = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a64f52317528081bbcdaa0bef0d250677}
+
+
+Checks whether a move captures something. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of played stone \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of played stone \item[\mbox{\tt[out]} {\em connects\_\-}]Tells whether capturing leads to connecting unsafe stones \item[\mbox{\tt[out]} {\em stones\_\-num}]Number of stones which were captured ( or NULL if not wanted ) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when a move captures some opponent block.
+\end{DoxyReturn}
+Heuristic function checking whether played stone captures some block is implemented by universal function \doxyref{Board\_\-manager::check\_\-take\_\-liberty()}{p.}{classBoard__manager_ac0b266a3cd73aab912e38744d5b07054}. \index{Board\_\-manager@{Board\_\-manager}!check\_\-connection@{check\_\-connection}}
+\index{check\_\-connection@{check\_\-connection}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{bool}]{ large\_\-blocks\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a9d1d0141ed5aa697e6c3061b6b6bd433}
+
+
+Checks connection of two blocks of same color. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of stone which creates potential connection. \item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of stones I need to check. \item[\mbox{\tt[in]} {\em large\_\-blocks\_\-}]Checks whether larger blocks are connecting this is for under the stones purposes. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if played stone is connecting two ( larger ) blocks .
+\end{DoxyReturn}
+This function supports simple heuristic: connecting move is a good one. \index{Board\_\-manager@{Board\_\-manager}!check\_\-coordinates\_\-adjacency@{check\_\-coordinates\_\-adjacency}}
+\index{check\_\-coordinates\_\-adjacency@{check\_\-coordinates\_\-adjacency}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-coordinates\_\-adjacency}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-coordinates\_\-adjacency (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ coordinates\_\-1, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-2}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a5a0cd842a2ec7d5d5e6e0feb5c17e5a3}
+
+
+Checks whether given coordinates are adjacent. 
+
+Method to check whether two coordinates are adjacent.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-1}]First coordinates. \item[\mbox{\tt[in]} {\em coordinates\_\-2}]Second coordnates. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when given coordinates are adjacent.
+\end{DoxyReturn}
+This function is useful for heuristic in statical eye analyzis ( two empty adjacent points don't create an eye ). \index{Board\_\-manager@{Board\_\-manager}!check\_\-save\_\-connection@{check\_\-save\_\-connection}}
+\index{check\_\-save\_\-connection@{check\_\-save\_\-connection}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-save\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-save\_\-connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a6d13aae758bb1f1ff2c26b4c502e30b3}
+
+
+Checks connection of unsafe attacker block to safe attacker. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of stone which creates potential connection. \item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of stones I need to check. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if played stone is connecting two blocks ( one of them is safe ).
+\end{DoxyReturn}
+This function supports simple heuristic: move connecting unsafe stones to safe is a very good one. \index{Board\_\-manager@{Board\_\-manager}!check\_\-self\_\-atari@{check\_\-self\_\-atari}}
+\index{check\_\-self\_\-atari@{check\_\-self\_\-atari}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-self\_\-atari}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-self\_\-atari (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{int $\ast$}]{ stones\_\-in\_\-atari\_\-num\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_ad8a5424c77541bbe62f7d4e9d9036fef}
+
+
+Checks whether larger defender's group is not in atari. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of stone representing the block I need to check ( if it is in atari or not ). \item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of stones I need to check. \item[\mbox{\tt[out]} {\em stones\_\-in\_\-atari\_\-num\_\-}]Returns how many stones are in self atari return Returns true if played stone is a self atari.\end{DoxyParams}
+Checks whether stones at given position are in atari. This function is used as a heuristic function. \index{Board\_\-manager@{Board\_\-manager}!check\_\-take\_\-liberty@{check\_\-take\_\-liberty}}
+\index{check\_\-take\_\-liberty@{check\_\-take\_\-liberty}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-take\_\-liberty}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-take\_\-liberty (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{int}]{ liberty\_\-num\_\-, }
+\item[{{\bf Block} $\ast$$\ast$}]{ out\_\-block\_\-pt = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_ac0b266a3cd73aab912e38744d5b07054}
+
+
+Important function checking whether a played move takes away liberty ( of defender or unsafe attacker ). 
+
+Multifunctional method to check whether stone removes liberty from stones of oposite color, captures or ataris.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of played stone \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of played stone \item[\mbox{\tt[in]} {\em libertys\_\-count\_\-}]Number of libertys of opposite block ( 1 == check capture , 2 == check atari , 0 == check take away liberty ) \item[\mbox{\tt[out]} {\em out\_\-block\_\-pt}]If function returns true then this is pointer to block whose liberty might be taken. \item[\mbox{\tt[out]} {\em stones\_\-num}]Number of stones to which liberty was taken \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when a move takes away liberty of some unsafe attacker's block.
+\end{DoxyReturn}
+This function supports several simple heuristic : a move taking away unsafe attacker's liberty is a good one ( liberty\_\-num\_\- set to 0 ) ,capture is a good one ( liberty\_\-num\_\- set to 1 ) , atari is a good one ( liberty\_\-num\_\- set to 2 ) \index{Board\_\-manager@{Board\_\-manager}!check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker@{check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker}}
+\index{check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker@{check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-take\_\-liberty\_\-of\_\-safe\_\-attacker (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a5cc9b19e2e93321ba3a65f602b2b50e3}
+
+
+Checks whether a move removes safe attacker liberty. 
+
+Method checking whether stone removes liberty from attacker's safe stones.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of played stone \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of played stone \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true when a move takes away liberty of safe attacker's block.
+\end{DoxyReturn}
+This function supports simple heuristic : a move taking away safe attacker's liberty is a bad one. \index{Board\_\-manager@{Board\_\-manager}!check\_\-takes\_\-ko@{check\_\-takes\_\-ko}}
+\index{check\_\-takes\_\-ko@{check\_\-takes\_\-ko}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-takes\_\-ko}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf Coordinates}, bool $>$ check\_\-takes\_\-ko (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a47ab20d91e3741a59b3adc9249d4fe0b}
+
+
+Checks whether the moves takes ko. 
+
+void Board\_\-manager::check\_\-under\_\-the\_\-stones\_\-moves() \{ \doxyref{Block}{p.}{classBlock} $\ast$ act\_\-block\_\-; for ( int i = 0 ; i $<$ B\_\-HEIGHT; i++ ) for ( int j = 0 ; j $<$ B\_\-WIDTH; j++ ) \{ act\_\-block\_\- = board[i][j].get\_\-present\_\-block\_\-pt(); if ( (( act\_\-block\_\- != NULL ) \&\& ( ! act\_\-block\_\--\/$>$safe ) \&\& ( act\_\-block\_\--\/$>$stone\_\-color == sc\_\-black ) \&\& ( act\_\-block\_\--\/$>$liberty\_\-count $<$= 2 )) $|$$|$ (act\_\-block\_\- != NULL ) \&\& (act\_\-block\_\--\/$>$stone\_\-color == sc\_\-white ) \&\& ( act\_\-block\_\--\/$>$liberty\_\-count $<$= 1 )) for ( Coordinates\_\-set::iterator it = act\_\-block\_\--\/$>$liberty\_\-set.begin() ; it != act\_\-block\_\--\/$>$liberty\_\-set.end(); it++ ) playable\_\-map.insert ( make\_\-pair ( ($\ast$it) , \doxyref{Playable\_\-data}{p.}{classPlayable__data} ( pp\_\-normal ))) ;
+
+\}
+
+\}; 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of potential ko taking move. \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of potential ko taking move. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return's a pair $<$ Something ( usually \doxyref{Coordinates}{p.}{classCoordinates} ( -\/1 , -\/1 ) ) , false$>$ if move doesn't take ko , and $<$Retake coordinates , true $>$ if move does take ko
+\end{DoxyReturn}
+Important function to recognize whether a move takes ko. It is used in \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} for ordering ko\_\-taking moves to the end of searched moves. \index{Board\_\-manager@{Board\_\-manager}!check\_\-unsafe\_\-neighbour@{check\_\-unsafe\_\-neighbour}}
+\index{check\_\-unsafe\_\-neighbour@{check\_\-unsafe\_\-neighbour}!Board_manager@{Board\_\-manager}}
+\subsubsection[{check\_\-unsafe\_\-neighbour}]{\setlength{\rightskip}{0pt plus 5cm}bool check\_\-unsafe\_\-neighbour (
+\begin{DoxyParamCaption}
+\item[{{\bf Block} $\ast$}]{ act\_\-block\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a6aca173f745e3ad09c09438e35dae2d0}
+
+
+Checks whether block has some unsafe neighbour of opposite color. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em act\_\-block\_\-}]Pointer to block whose neighbours will be checked  Returns true when actual block has an unsafe neighbour of opposite color.\end{DoxyParams}
+Supporting function for other heuristic functions. \index{Board\_\-manager@{Board\_\-manager}!create\_\-new\_\-block@{create\_\-new\_\-block}}
+\index{create\_\-new\_\-block@{create\_\-new\_\-block}!Board_manager@{Board\_\-manager}}
+\subsubsection[{create\_\-new\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Block} $\ast$ create\_\-new\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a85222c2956676128ec67b389f0837d80}
+
+
+Creates new empty block. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em in\mbox{[}}]stone\_\-color\_\- Color of stones for a new block. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns pointer to newly created block.
+\end{DoxyReturn}
+Function that creates an instance of class \doxyref{Block}{p.}{classBlock} ( with no stones and liberties ) \index{Board\_\-manager@{Board\_\-manager}!fill\_\-point\_\-board@{fill\_\-point\_\-board}}
+\index{fill\_\-point\_\-board@{fill\_\-point\_\-board}!Board_manager@{Board\_\-manager}}
+\subsubsection[{fill\_\-point\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void fill\_\-point\_\-board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_afa7286f1465d3993c0370f296651a9b5}
+
+
+Point\_\-board initialization. 
+
+Initializing function, that is called in \doxyref{Board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager()}{p.}{classBoard__manager_ae562aad79b4a42d0d04bbaf68e8bfe2b}. It fills point board according to initial board position. \index{Board\_\-manager@{Board\_\-manager}!init@{init}}
+\index{init@{init}!Board_manager@{Board\_\-manager}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a02fd73d861ef2e4aabb38c0c9ff82947}
+
+
+Initialization function. 
+
+This is an initialization function. It is neccessary to run it before every search in new position. It is run from Analyze\_\-single\_\-position() in \doxyref{main.cc}{p.}{main_8cc}. It clears ( and inits ) all neccessary data structures. \index{Board\_\-manager@{Board\_\-manager}!init\_\-from\_\-temp\_\-board\_\-manager@{init\_\-from\_\-temp\_\-board\_\-manager}}
+\index{init\_\-from\_\-temp\_\-board\_\-manager@{init\_\-from\_\-temp\_\-board\_\-manager}!Board_manager@{Board\_\-manager}}
+\subsubsection[{init\_\-from\_\-temp\_\-board\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-from\_\-temp\_\-board\_\-manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Temp\_\-board\_\-manager}}]{ temp\_\-board\_\-manager}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_ae562aad79b4a42d0d04bbaf68e8bfe2b}
+
+
+Initialization from temp\_\-board\_\-manager. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em temp\_\-board\_\-manager}]This class contains all information for board initialization in simplified structures. This procedure is used to transform data stored in \doxyref{Temp\_\-board\_\-manager}{p.}{classTemp__board__manager} format ( they were gained in sgf parsing in function \doxyref{Sgf\_\-parser::parse\_\-sgf}{p.}{classSgf__parser_a7ec775e4233b4fba890ce8dff5cb1334} ) into \doxyref{Board\_\-manager}{p.}{classBoard__manager} representation. \end{DoxyParams}
+\index{Board\_\-manager@{Board\_\-manager}!merge\_\-blocks@{merge\_\-blocks}}
+\index{merge\_\-blocks@{merge\_\-blocks}!Board_manager@{Board\_\-manager}}
+\subsubsection[{merge\_\-blocks}]{\setlength{\rightskip}{0pt plus 5cm}void merge\_\-blocks (
+\begin{DoxyParamCaption}
+\item[{{\bf Block} $\ast$}]{ block1\_\-pt\_\-, }
+\item[{{\bf Block} $\ast$}]{ block2\_\-pt\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_af67356498d0bb928dd5ab112a3576bce}
+
+
+Merges two block into one. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em block1\_\-pt\_\-}]Pointer to a first block to merge. \item[\mbox{\tt[in]} {\em block2\_\-pt\_\-}]Pointer to a second block to merge.\end{DoxyParams}
+Very important function taking care of merging two blocks of stones ( of same color ) given as a pointers. Their stones and liberties are merged and one of them ( the smaller one ) is destroyed. \index{Board\_\-manager@{Board\_\-manager}!play\_\-a\_\-stone@{play\_\-a\_\-stone}}
+\index{play\_\-a\_\-stone@{play\_\-a\_\-stone}!Board_manager@{Board\_\-manager}}
+\subsubsection[{play\_\-a\_\-stone}]{\setlength{\rightskip}{0pt plus 5cm}bool play\_\-a\_\-stone (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a3bbe8849e935afd0083a4a81e2ecc579}
+
+
+Plays a stone and updates data structures. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]Color of stone being played. \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} on which stone is played. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if stone was successfully played ( it was a legal move ) otherwise returns true.
+\end{DoxyReturn}
+This is probably the most important function of position presentattion, It simulates playing a stone on the board and actualizes all related data structures. When a move is not played board\_\-manager and also all related data structures are in same state as they were before calling the function. \index{Board\_\-manager@{Board\_\-manager}!remove\_\-block@{remove\_\-block}}
+\index{remove\_\-block@{remove\_\-block}!Board_manager@{Board\_\-manager}}
+\subsubsection[{remove\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}void remove\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf Block} $\ast$}]{ block\_\-}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_a78d1d86ca5e3319aaeefafc927aa92da}
+
+
+Removes block of stones. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em block\_\-}]Pointer to a block to be removed.\end{DoxyParams}
+Function removing the block of stones itself. It empties all stones and liberties and then destroys the block. \index{Board\_\-manager@{Board\_\-manager}!unplay\_\-last\_\-stone@{unplay\_\-last\_\-stone}}
+\index{unplay\_\-last\_\-stone@{unplay\_\-last\_\-stone}!Board_manager@{Board\_\-manager}}
+\subsubsection[{unplay\_\-last\_\-stone}]{\setlength{\rightskip}{0pt plus 5cm}void unplay\_\-last\_\-stone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBoard__manager_aa26d68b607db163a50a10e7ee01583a3}
+
+
+Returns board manager to the conditions before last stone was played]. 
+
+Very importatn function handling unplaying moves. It unplays last move ( the last one in a dynamic list of unplayed moves ) by actualizing \doxyref{Board\_\-manager}{p.}{classBoard__manager} data structures to saved values. 

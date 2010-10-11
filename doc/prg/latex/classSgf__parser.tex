@@ -1,0 +1,118 @@
+\section{Sgf\_\-parser Class Reference}
+\label{classSgf__parser}\index{Sgf\_\-parser@{Sgf\_\-parser}}
+
+
+This class conducts sgf input interpretation.  
+
+
+
+
+{\ttfamily \#include $<$sgf\_\-read.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Sgf\_\-parser} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ()\label{classSgf__parser_a02fd73d861ef2e4aabb38c0c9ff82947}
+
+\begin{DoxyCompactList}\small\item\em Initialization function. \item\end{DoxyCompactList}\item 
+bool {\bf resolve} (char, string)
+\begin{DoxyCompactList}\small\item\em Resolving single characters of sgf input. \item\end{DoxyCompactList}\item 
+bool {\bf parse\_\-sgf} (string)
+\begin{DoxyCompactList}\small\item\em Function coordinating process of sgf parsing. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Parser\_\-state} {\bf actual\_\-state}\label{classSgf__parser_a158fe7d83cb546a942c8d7447283ae53}
+
+\begin{DoxyCompactList}\small\item\em state of parsing automata \item\end{DoxyCompactList}\item 
+State\_\-function\_\-vector {\bf state\_\-function}\label{classSgf__parser_a1e15c93b65fdf5166ceb67c42f3d70c8}
+
+\begin{DoxyCompactList}\small\item\em three information ... [old\_\-state,character,new\_\-state] \item\end{DoxyCompactList}\item 
+string {\bf actual\_\-token}\label{classSgf__parser_a2aa7f2463c52dc71a065cd2ee0d95ecf}
+
+\begin{DoxyCompactList}\small\item\em last accepted token \item\end{DoxyCompactList}\item 
+string {\bf token\_\-play\_\-w\_\-stone}\label{classSgf__parser_a88614edf145e1b958132c21a213e537f}
+
+\begin{DoxyCompactList}\small\item\em token representing played white stone \item\end{DoxyCompactList}\item 
+string {\bf token\_\-play\_\-b\_\-stone}\label{classSgf__parser_ac4c44f570547f95e56cccc572b361543}
+
+\begin{DoxyCompactList}\small\item\em token representing played black stone \item\end{DoxyCompactList}\item 
+string {\bf token\_\-adjust\_\-w\_\-stone}\label{classSgf__parser_af6d0d92b36adb2ff6376ee7118af260d}
+
+\begin{DoxyCompactList}\small\item\em token representing ,,set" white stone \item\end{DoxyCompactList}\item 
+string {\bf token\_\-adjust\_\-b\_\-stone}\label{classSgf__parser_a118edf7353e43de2781234900f45aa48}
+
+\begin{DoxyCompactList}\small\item\em token representing ,,set" black stone \item\end{DoxyCompactList}\item 
+string {\bf token\_\-comments}\label{classSgf__parser_a391b9b708cd9952efd170e09f919f845}
+
+\begin{DoxyCompactList}\small\item\em separates part of position and ,,useful" data \item\end{DoxyCompactList}\item 
+string {\bf token\_\-mark\_\-safe}\label{classSgf__parser_a4cfab1730c5a69dda0222a5d573db6d7}
+
+\begin{DoxyCompactList}\small\item\em marks are used to specify patterns -\/ triangle is used to mark safe stones \item\end{DoxyCompactList}\item 
+string {\bf token\_\-mark\_\-playable}\label{classSgf__parser_a23d0504dfd459b4219c44f1b2ac72e5c}
+
+\begin{DoxyCompactList}\small\item\em second type of mark -\/ square is used to mark playable coordinates \item\end{DoxyCompactList}\item 
+string {\bf token\_\-mark\_\-at\_\-playable}\label{classSgf__parser_ae644ed0160b892b26aadedbf157ec0b3}
+
+\begin{DoxyCompactList}\small\item\em third type of mark -\/ is used to mark coordinates that are playable only by attacker \item\end{DoxyCompactList}\item 
+string {\bf token\_\-size}\label{classSgf__parser_aed08c87bfd7221c68429b3d40d4a6327}
+
+\begin{DoxyCompactList}\small\item\em token for verifying size of the board \item\end{DoxyCompactList}\item 
+{\bf Temp\_\-board\_\-manager} {\bf temp\_\-board\_\-manager}\label{classSgf__parser_a63a45cccbff03bc754915b60d2b6c708}
+
+\begin{DoxyCompactList}\small\item\em Temporal board manager for storing results of transfer sgf -\/$>$ board representation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class conducts sgf input interpretation. This class contains functions to read sgf input and convert it into board representation. It is actually a simple finite automata. State function is simulated with State\_\-function\_\-vector 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sgf\_\-parser@{Sgf\_\-parser}!Sgf\_\-parser@{Sgf\_\-parser}}
+\index{Sgf\_\-parser@{Sgf\_\-parser}!Sgf_parser@{Sgf\_\-parser}}
+\subsubsection[{Sgf\_\-parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sgf\_\-parser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSgf__parser_a8f36721243b4a8c45fce8368d147dec1}
+
+
+Constructor. 
+
+In constructor, the state function and tokens are defined. 
+
+\subsection{Member Function Documentation}
+\index{Sgf\_\-parser@{Sgf\_\-parser}!parse\_\-sgf@{parse\_\-sgf}}
+\index{parse\_\-sgf@{parse\_\-sgf}!Sgf_parser@{Sgf\_\-parser}}
+\subsubsection[{parse\_\-sgf}]{\setlength{\rightskip}{0pt plus 5cm}bool parse\_\-sgf (
+\begin{DoxyParamCaption}
+\item[{string}]{ filename\_\-}
+\end{DoxyParamCaption}
+)}\label{classSgf__parser_a7ec775e4233b4fba890ce8dff5cb1334}
+
+
+Function coordinating process of sgf parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em filename\_\-}]Name of input sgf file. return Returns whether sgf was sucessfully parsed.\end{DoxyParams}
+This function coordinates transfer of sgf file into pos\_\-db\_\-record using \doxyref{Sgf\_\-parser::resolve()}{p.}{classSgf__parser_a1f034978fad6dc4ed158229ae3e2553e} function. If returns false, parsing was unsuccessfull and no search is performed. \index{Sgf\_\-parser@{Sgf\_\-parser}!resolve@{resolve}}
+\index{resolve@{resolve}!Sgf_parser@{Sgf\_\-parser}}
+\subsubsection[{resolve}]{\setlength{\rightskip}{0pt plus 5cm}bool resolve (
+\begin{DoxyParamCaption}
+\item[{char}]{ act\_\-char, }
+\item[{string}]{ act\_\-text}
+\end{DoxyParamCaption}
+)}\label{classSgf__parser_a1f034978fad6dc4ed158229ae3e2553e}
+
+
+Resolving single characters of sgf input. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int\mbox{]}}]act\_\-char Represents actually read character from sgf intput. \item[{\em int\mbox{]}}]act\_\-text Contains string from last saved value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This function returns information whether was the character accepted as ,,important" one ( it transfers automata from actual state to some new one )
+\end{DoxyReturn}
+This functino tries to find a transition from actual state to a new one \char`\"{}along the edge\char`\"{} represented by act\_\-char character. Then performs actions connected with previous state ( like placing a stone , ... ) and switches automata to new state. 

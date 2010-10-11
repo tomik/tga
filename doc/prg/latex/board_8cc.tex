@@ -1,0 +1,53 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/board.cc File Reference}
+\label{board_8cc}\index{/home/tomik/src/c++/tga-\/1.0/src/board.cc@{/home/tomik/src/c++/tga-\/1.0/src/board.cc}}
+
+
+Contains implementation of methods related to position presentation ( page\_\-6 ).  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Hash\_\-key {\bf get\_\-random\_\-Hash\_\-key} ()
+\begin{DoxyCompactList}\small\item\em Function returning random number of Hash\_\-key type. \item\end{DoxyCompactList}\item 
+bool {\bf operator$<$} (const {\bf Playable\_\-data} \&A, const {\bf Playable\_\-data} \&B)
+\item 
+bool {\bf operator$<$} ({\bf Coordinates} A, {\bf Coordinates} B)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains implementation of methods related to position presentation ( page\_\-6 ). In this file important methods performing playing and unplaying move are implemented, together with interface neccessary for hashing positions. Approach to position presentation is block oriented. 
+
+\subsection{Function Documentation}
+\index{board.cc@{board.cc}!get\_\-random\_\-Hash\_\-key@{get\_\-random\_\-Hash\_\-key}}
+\index{get\_\-random\_\-Hash\_\-key@{get\_\-random\_\-Hash\_\-key}!board.cc@{board.cc}}
+\subsubsection[{get\_\-random\_\-Hash\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}Hash\_\-key get\_\-random\_\-Hash\_\-key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{board_8cc_a750dc5163b7e976862aa760347ecd55d}
+
+
+Function returning random number of Hash\_\-key type. 
+
+\begin{DoxyReturn}{Returns}
+Returns random hash key. This function is used for filling \doxyref{Hash\_\-board\_\-manager::hash\_\-board}{p.}{classHash__board__manager_aba4258e0a5d06c5332463beb59ee0a3a} with random hash keys ( as defined in Zobrist hashing) 
+\end{DoxyReturn}
+\index{board.cc@{board.cc}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!board.cc@{board.cc}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ A, }
+\item[{{\bf Coordinates}}]{ B}
+\end{DoxyParamCaption}
+)}\label{board_8cc_a68c878202683c4130d895211e917493d}
+Comparing operator. This operator is needed since I am storing coordinates in set -\/ requires comparing operator \index{board.cc@{board.cc}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!board.cc@{board.cc}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Playable\_\-data} \&}]{ A, }
+\item[{const {\bf Playable\_\-data} \&}]{ B}
+\end{DoxyParamCaption}
+)}\label{board_8cc_aac6ed9bcf3ff6ee9526fa8959f8f620c}
+Contains two arrays for representing neigbours of point on the board. 

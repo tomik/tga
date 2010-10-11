@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.4.5)
+The top-level auxiliary file: tga_usr_doc.aux
+The style file: plainyr.bst
+Database file #1: mybib.bib
+You've used 3 entries,
+            2146 wiz_defined-function locations,
+            516 strings with 4291 characters,
+and the built_in function-call counts, 539 in all, are:
+= -- 49
+> -- 14
+< -- 0
++ -- 6
+- -- 3
+* -- 17
+:= -- 93
+add.period$ -- 7
+call.type$ -- 3
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 20
+empty$ -- 58
+format.name$ -- 3
+if$ -- 115
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 0
+newline$ -- 16
+num.names$ -- 5
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 7
+quote$ -- 0
+skip$ -- 20
+stack$ -- 0
+substring$ -- 15
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 5
+width$ -- 4
+write$ -- 26

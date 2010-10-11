@@ -1,0 +1,200 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/board.h File Reference}
+\label{board_8h}\index{/home/tomik/src/c++/tga-\/1.0/src/board.h@{/home/tomik/src/c++/tga-\/1.0/src/board.h}}
+
+
+Header file for \doxyref{board.cc}{p.}{board_8cc}.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Coordinates}
+\begin{DoxyCompactList}\small\item\em Class representing a single coordinates. \item\end{DoxyCompactList}\item 
+class {\bf Playable\_\-data}
+\begin{DoxyCompactList}\small\item\em Useful information added to playable coordinates. \item\end{DoxyCompactList}\item 
+class {\bf Neighbors}
+\begin{DoxyCompactList}\small\item\em Contains neighbouring coordinates. \item\end{DoxyCompactList}\item 
+class {\bf Ref\_\-board}
+\begin{DoxyCompactList}\small\item\em Reference board for getting adjacent coordinates. \item\end{DoxyCompactList}\item 
+class {\bf Stone}
+\begin{DoxyCompactList}\small\item\em Class used for transformation from sgf to board representation. \item\end{DoxyCompactList}\item 
+class {\bf Temp\_\-board\_\-manager}
+\begin{DoxyCompactList}\small\item\em Temporar board manager. \item\end{DoxyCompactList}\item 
+class {\bf Block}
+\begin{DoxyCompactList}\small\item\em \doxyref{Block}{p.}{classBlock} of stones. \item\end{DoxyCompactList}\item 
+struct {\bf Cross\_\-point}
+\begin{DoxyCompactList}\small\item\em Representation of 1 intersection on the board. \item\end{DoxyCompactList}\item 
+class {\bf Ko\_\-manager}
+\begin{DoxyCompactList}\small\item\em Class handling ko. \item\end{DoxyCompactList}\item 
+class {\bf Hash\_\-board\_\-manager}
+\begin{DoxyCompactList}\small\item\em Class handling hash keys. \item\end{DoxyCompactList}\item 
+struct {\bf Unplay\_\-manager}
+\begin{DoxyCompactList}\small\item\em Unplaying moves. \item\end{DoxyCompactList}\item 
+struct {\bf Unplay\_\-node}
+\begin{DoxyCompactList}\small\item\em Dynamic structure for unplaying moves. \item\end{DoxyCompactList}\item 
+class {\bf Board\_\-manager}
+\begin{DoxyCompactList}\small\item\em Class conduncting playing and unplaying moves. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Stone\_\-color} 
+\begin{DoxyCompactList}\small\item\em \doxyref{Stone}{p.}{classStone} color. \item\end{DoxyCompactList}\item 
+enum {\bf Sgf\_\-mark} \{ {\bf sm\_\-safe}, 
+{\bf sm\_\-playable}, 
+{\bf sm\_\-at\_\-playable}, 
+{\bf sm\_\-none}
+ \}
+\item 
+enum {\bf Point\_\-status} \{ \par
+{\bf ps\_\-at}, 
+{\bf ps\_\-uns\_\-at}, 
+{\bf ps\_\-de}, 
+{\bf ps\_\-pot\_\-eye}, 
+\par
+{\bf ps\_\-empty}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum of possible values in Board\_\-manager::Point\_\-board. \item\end{DoxyCompactList}\item 
+enum {\bf Playing\_\-priority} \{ \par
+{\bf pp\_\-high}, 
+{\bf pp\_\-normal}, 
+{\bf pp\_\-low}, 
+{\bf pp\_\-pass}, 
+\par
+{\bf pp\_\-ko\_\-last}, 
+{\bf pp\_\-none}
+ \}
+\begin{DoxyCompactList}\small\item\em Priority of a move. \item\end{DoxyCompactList}\item 
+enum {\bf Direction} 
+\begin{DoxyCompactList}\small\item\em Basic directions. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf operator$<$} (const {\bf Playable\_\-data} \&A, const {\bf Playable\_\-data} \&B)
+\item 
+bool {\bf operator$<$} ({\bf Coordinates} A, {\bf Coordinates} B)
+\item 
+Hash\_\-key {\bf get\_\-random\_\-Hash\_\-key} ()
+\begin{DoxyCompactList}\small\item\em Function returning random number of Hash\_\-key type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ref\_\-board} {\bf ref\_\-board}\label{board_8h_a2e6dbf1da3f245c046c2875219526720}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{Ref\_\-board}{p.}{classRef__board}. \item\end{DoxyCompactList}\item 
+{\bf Board\_\-manager} {\bf board\_\-manager}\label{board_8h_aa274a6a2f8c14db522e518932f29bbef}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{Board\_\-manager}{p.}{classBoard__manager}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for \doxyref{board.cc}{p.}{board_8cc}. In this header file classes and data structures neccessary for proper moves playing and unplaying are declared. 
+
+\subsection{Enumeration Type Documentation}
+\index{board.h@{board.h}!Playing\_\-priority@{Playing\_\-priority}}
+\index{Playing\_\-priority@{Playing\_\-priority}!board.h@{board.h}}
+\subsubsection[{Playing\_\-priority}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Playing\_\-priority}}\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6}
+
+
+Priority of a move. 
+
+Structure representing coordinates of one intersection. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{pp\_\-high@{pp\_\-high}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-high@{pp\_\-high}}\item[{\em 
+pp\_\-high\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6ae69ce1a665d1da13134b8ea9c5622b92}
+}]High priority. \index{pp\_\-normal@{pp\_\-normal}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-normal@{pp\_\-normal}}\item[{\em 
+pp\_\-normal\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6ac271a24a759d0a9a9a9a9813a8fa7b8c}
+}]No special priority. \index{pp\_\-low@{pp\_\-low}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-low@{pp\_\-low}}\item[{\em 
+pp\_\-low\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6af182a6dc23d075cff18f657236e61868}
+}]Low priority. \index{pp\_\-pass@{pp\_\-pass}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-pass@{pp\_\-pass}}\item[{\em 
+pp\_\-pass\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6aafcae91bfc56333da479e32d44fe6ae5}
+}]Very low, passes are played very last but before ko. \index{pp\_\-ko\_\-last@{pp\_\-ko\_\-last}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-ko\_\-last@{pp\_\-ko\_\-last}}\item[{\em 
+pp\_\-ko\_\-last\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6a0cd34e6a514187d452c0214aa489997e}
+}]Ultra low, ko taking moves are played last. \index{pp\_\-none@{pp\_\-none}!board.h@{board.h}}\index{board.h@{board.h}!pp\_\-none@{pp\_\-none}}\item[{\em 
+pp\_\-none\label{board_8h_aa0ac77fa1c490b80edff0630d7a66af6a64883e376c38da2c76adbe69a46c7135}
+}]Not played at all. \end{description}
+\end{Desc}
+
+\index{board.h@{board.h}!Point\_\-status@{Point\_\-status}}
+\index{Point\_\-status@{Point\_\-status}!board.h@{board.h}}
+\subsubsection[{Point\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Point\_\-status}}\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955}
+
+
+Enum of possible values in Board\_\-manager::Point\_\-board. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ps\_\-at@{ps\_\-at}!board.h@{board.h}}\index{board.h@{board.h}!ps\_\-at@{ps\_\-at}}\item[{\em 
+ps\_\-at\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955a29fac4e93a7f86729b47e18493c4dfeb}
+}]Attacker' stone ( safe ). \index{ps\_\-uns\_\-at@{ps\_\-uns\_\-at}!board.h@{board.h}}\index{board.h@{board.h}!ps\_\-uns\_\-at@{ps\_\-uns\_\-at}}\item[{\em 
+ps\_\-uns\_\-at\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955ab39b28a61a8d0eb40037e377d6cc2e7f}
+}]Unsafe attacker's stone. \index{ps\_\-de@{ps\_\-de}!board.h@{board.h}}\index{board.h@{board.h}!ps\_\-de@{ps\_\-de}}\item[{\em 
+ps\_\-de\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955afd60868fa0807fb821b4f1939998d7df}
+}]Defender's stone. \index{ps\_\-pot\_\-eye@{ps\_\-pot\_\-eye}!board.h@{board.h}}\index{board.h@{board.h}!ps\_\-pot\_\-eye@{ps\_\-pot\_\-eye}}\item[{\em 
+ps\_\-pot\_\-eye\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955ad9d089f447bc6e7a0867987c36888cc6}
+}]Potential eye. \index{ps\_\-empty@{ps\_\-empty}!board.h@{board.h}}\index{board.h@{board.h}!ps\_\-empty@{ps\_\-empty}}\item[{\em 
+ps\_\-empty\label{board_8h_adecb70d158e8a68eb17b2e34b1ef3955af2c4ca698985234ed48b08aa27891dbc}
+}]Empty point. \end{description}
+\end{Desc}
+
+\index{board.h@{board.h}!Sgf\_\-mark@{Sgf\_\-mark}}
+\index{Sgf\_\-mark@{Sgf\_\-mark}!board.h@{board.h}}
+\subsubsection[{Sgf\_\-mark}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Sgf\_\-mark}}\label{board_8h_af8d9dd78696140fb2dfa9712bd215dfd}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{sm\_\-safe@{sm\_\-safe}!board.h@{board.h}}\index{board.h@{board.h}!sm\_\-safe@{sm\_\-safe}}\item[{\em 
+sm\_\-safe\label{board_8h_af8d9dd78696140fb2dfa9712bd215dfda287956b05c54cd9ed639ccf1b4a0e379}
+}]On coordinate there is a safe stone. \index{sm\_\-playable@{sm\_\-playable}!board.h@{board.h}}\index{board.h@{board.h}!sm\_\-playable@{sm\_\-playable}}\item[{\em 
+sm\_\-playable\label{board_8h_af8d9dd78696140fb2dfa9712bd215dfdafbd1814581957af09caadcfcfd40a6cb}
+}]It is possible to play at a coordinate. \index{sm\_\-at\_\-playable@{sm\_\-at\_\-playable}!board.h@{board.h}}\index{board.h@{board.h}!sm\_\-at\_\-playable@{sm\_\-at\_\-playable}}\item[{\em 
+sm\_\-at\_\-playable\label{board_8h_af8d9dd78696140fb2dfa9712bd215dfda1cc674a7f998e8fa3a51a906ea06ba6e}
+}]Playable only for attacker, not defender ( coordinates on the edge ). \index{sm\_\-none@{sm\_\-none}!board.h@{board.h}}\index{board.h@{board.h}!sm\_\-none@{sm\_\-none}}\item[{\em 
+sm\_\-none\label{board_8h_af8d9dd78696140fb2dfa9712bd215dfdad9a9fa654ffb8d4389e6f81c1123f00f}
+}]No sgf mark. \end{description}
+\end{Desc}
+
+\index{board.h@{board.h}!Stone\_\-color@{Stone\_\-color}}
+\index{Stone\_\-color@{Stone\_\-color}!board.h@{board.h}}
+\subsubsection[{Stone\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Stone\_\-color}}\label{board_8h_ab3c9b836a0a56f776d5395ceea564a11}
+
+
+\doxyref{Stone}{p.}{classStone} color. 
+
+\doxyref{Stone}{p.}{classStone} color is used for simple distinguishing attackers and defenders stones. 
+
+\subsection{Function Documentation}
+\index{board.h@{board.h}!get\_\-random\_\-Hash\_\-key@{get\_\-random\_\-Hash\_\-key}}
+\index{get\_\-random\_\-Hash\_\-key@{get\_\-random\_\-Hash\_\-key}!board.h@{board.h}}
+\subsubsection[{get\_\-random\_\-Hash\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}Hash\_\-key get\_\-random\_\-Hash\_\-key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{board_8h_a750dc5163b7e976862aa760347ecd55d}
+
+
+Function returning random number of Hash\_\-key type. 
+
+This type must be 64 bit
+
+\begin{DoxyReturn}{Returns}
+Returns random hash key. This function is used for filling \doxyref{Hash\_\-board\_\-manager::hash\_\-board}{p.}{classHash__board__manager_aba4258e0a5d06c5332463beb59ee0a3a} with random hash keys ( as defined in Zobrist hashing) 
+\end{DoxyReturn}
+\index{board.h@{board.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!board.h@{board.h}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Playable\_\-data} \&}]{ A, }
+\item[{const {\bf Playable\_\-data} \&}]{ B}
+\end{DoxyParamCaption}
+)}\label{board_8h_aac6ed9bcf3ff6ee9526fa8959f8f620c}
+Contains two arrays for representing neigbours of point on the board. \index{board.h@{board.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!board.h@{board.h}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ A, }
+\item[{{\bf Coordinates}}]{ B}
+\end{DoxyParamCaption}
+)}\label{board_8h_a68c878202683c4130d895211e917493d}
+Comparing operator. This operator is needed since I am storing coordinates in set -\/ requires comparing operator 

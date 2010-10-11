@@ -1,0 +1,36 @@
+\section{Playable\_\-data Class Reference}
+\label{classPlayable__data}\index{Playable\_\-data@{Playable\_\-data}}
+
+
+Useful information added to playable coordinates.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf sync\_\-playing\_\-priorities} ({\bf Stone\_\-color} stone\_\-color\_\-to\_\-move\_\-)\label{classPlayable__data_a762d0fcb08344ead6b2fa374eef527c9}
+
+\begin{DoxyCompactList}\small\item\em Synchronizes temporar playing priorities to playing priorities. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Playing\_\-priority} {\bf main\_\-pp\_\-at}\label{classPlayable__data_a7fb2c1197aa8499c4dfa5e980a31369c}
+
+\begin{DoxyCompactList}\small\item\em main priority ( for attacker ), decide whether ko move will be played last, whether some move won't be played ... it is rather ,,organizational", while heuristic priorities try to speed up search \item\end{DoxyCompactList}\item 
+{\bf Playing\_\-priority} {\bf main\_\-pp\_\-de}\label{classPlayable__data_a65aa1e7919014cf839a6bed1f657b290}
+
+\begin{DoxyCompactList}\small\item\em same as \doxyref{main\_\-pp\_\-at}{p.}{classPlayable__data_a7fb2c1197aa8499c4dfa5e980a31369c} for defender \item\end{DoxyCompactList}\item 
+{\bf Playing\_\-priority} {\bf act\_\-main\_\-pp}\label{classPlayable__data_ab5da2fe5c4f0a1df408ecef6c04a3333}
+
+\begin{DoxyCompactList}\small\item\em actual playing priority ( only one for both colors ) when transforming from at/de playing priorities i decide according to stone color of player to move in T\_\-search::search() \item\end{DoxyCompactList}\item 
+int {\bf act\_\-heuristic\_\-pp}\label{classPlayable__data_adbb7035b0b111d26f04156c0e4a99f3e}
+
+\begin{DoxyCompactList}\small\item\em Heuristic priorities are less important ( when sorting moves according to priorities they are second criterium), but they increase search speed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Useful information added to playable coordinates. \doxyref{Playable\_\-data}{p.}{classPlayable__data} class provides additional information about a possible point to play -\/ especially playing priorities which are used to sort moves in order to get maximum alfa-\/beta pruning efficiency. Distinguishing playing priorities for attacker and defender provides algorithm with possibility to effectivily sort proposed moves according to their priorities ( for whom is to move ) 

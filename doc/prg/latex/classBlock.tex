@@ -1,0 +1,66 @@
+\section{Block Class Reference}
+\label{classBlock}\index{Block@{Block}}
+
+
+\doxyref{Block}{p.}{classBlock} of stones.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\_\-stone} ({\bf Coordinates} coordinates\_\-)\label{classBlock_a1c187764ae4085873f05be6332548d0b}
+
+\begin{DoxyCompactList}\small\item\em Adding stone to a block. \item\end{DoxyCompactList}\item 
+void {\bf add\_\-liberty} ({\bf Coordinates} coordinates\_\-)\label{classBlock_af0c648e2d6c169e627f100e1f818664c}
+
+\begin{DoxyCompactList}\small\item\em Adding liberty to a block. \item\end{DoxyCompactList}\item 
+void {\bf remove\_\-liberty} ({\bf Coordinates} coordinates\_\-)\label{classBlock_ab407c0a019a73b742574e24ebc7a9fa5}
+
+\begin{DoxyCompactList}\small\item\em Removing liberty of a block. \item\end{DoxyCompactList}\item 
+bool {\bf is\_\-liberty} ({\bf Coordinates} coordinates\_\-)\label{classBlock_adbd393274a8009b70dd2ca77b965174e}
+
+\begin{DoxyCompactList}\small\item\em Check if given coordinate is a liberty. \item\end{DoxyCompactList}\item 
+bool {\bf is\_\-captured} ()\label{classBlock_a136475552faac189673f4ead2cb74100}
+
+\begin{DoxyCompactList}\small\item\em Check if block is captured. \item\end{DoxyCompactList}\item 
+void {\bf info} ()\label{classBlock_ac1b66fe77173de9e5e8542b2823d6071}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf id}\label{classBlock_a7441ef0865bcb3db9b8064dd7375c1ea}
+
+\begin{DoxyCompactList}\small\item\em identification number of block \item\end{DoxyCompactList}\item 
+{\bf Stone\_\-color} {\bf stone\_\-color}\label{classBlock_a48ca4a6040ca594266b7f805a0e1ce3f}
+
+\begin{DoxyCompactList}\small\item\em color of the block \item\end{DoxyCompactList}\item 
+int {\bf liberty\_\-count}\label{classBlock_a2e7613207dc67e04714857b52902fceb}
+
+\begin{DoxyCompactList}\small\item\em number of liberties \item\end{DoxyCompactList}\item 
+int {\bf stone\_\-count}\label{classBlock_a5fc0a0bbecbc8c98db52e71c24ee33d1}
+
+\begin{DoxyCompactList}\small\item\em number of stones creating block \item\end{DoxyCompactList}\item 
+bool {\bf safe}\label{classBlock_acddcf06934e0bb1c8a2a4fc72dc45e51}
+
+\begin{DoxyCompactList}\small\item\em true =$>$ block is safe, false =$>$ might be captured ( usually for attacker's stones ) \item\end{DoxyCompactList}\item 
+Coordinates\_\-set {\bf liberty\_\-set}\label{classBlock_a22dcfefc65cb0c2fe706b2e8a4006696}
+
+\begin{DoxyCompactList}\small\item\em set of liberties is for quick search \item\end{DoxyCompactList}\item 
+Coordinates\_\-vector {\bf stone\_\-vector}\label{classBlock_ae69ad3e7d48a7dbc10b76f72d1c06bdd}
+
+\begin{DoxyCompactList}\small\item\em search among stones is not neccessary -\/$>$ vector \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Board\_\-manager}\label{classBlock_a9bb99230809a55ed083cd93a76a6141e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Block}{p.}{classBlock} of stones. This is one of basic classes. Every instance represent a single block of firmly connected stones ( of one color ). 

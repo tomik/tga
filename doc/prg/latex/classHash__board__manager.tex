@@ -1,0 +1,71 @@
+\section{Hash\_\-board\_\-manager Class Reference}
+\label{classHash__board__manager}\index{Hash\_\-board\_\-manager@{Hash\_\-board\_\-manager}}
+
+
+Class handling hash keys.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Hash\_\-key {\bf get\_\-value} ({\bf Coordinates} coordinates\_\-, {\bf Stone\_\-color} stone\_\-color\_\-)\label{classHash__board__manager_a73872733cc9b3490915867b412159139}
+
+\begin{DoxyCompactList}\small\item\em Returns desired value from board of hash keys. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-position\_\-hash} ()\label{classHash__board__manager_a56801f67f282dd1d513a39b1ae1b2346}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-hash\_\-board} ()\label{classHash__board__manager_acdb964f8c431fe68e2173a92b8d8091b}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-info} ()\label{classHash__board__manager_a1243268c621c2049a41956ccfc934fd5}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+void {\bf init\_\-hash\_\-board} ()
+\begin{DoxyCompactList}\small\item\em Initialization of board. \item\end{DoxyCompactList}\item 
+void {\bf xor\_\-with\_\-position\_\-hash} ({\bf Coordinates}, {\bf Stone\_\-color})
+\begin{DoxyCompactList}\small\item\em Creating new position hash from the old one. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hash\_\-key {\bf hash\_\-board} [B\_\-HEIGHT][B\_\-WIDTH][COLORS\_\-NUM]\label{classHash__board__manager_aba4258e0a5d06c5332463beb59ee0a3a}
+
+\begin{DoxyCompactList}\small\item\em Board for random keys, 2 is for stones color ... attacker and defender. \item\end{DoxyCompactList}\item 
+int {\bf Hash\_\-key\_\-length}\label{classHash__board__manager_abe32620e54571bd28a5c03372860d8aa}
+
+\begin{DoxyCompactList}\small\item\em Length of Hash key. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class handling hash keys. This class manages creating hash keys for positions on the board ( according to Zobrist hashing method ), class Hash\_\-table manager manages hashing itself. 
+
+\subsection{Member Function Documentation}
+\index{Hash\_\-board\_\-manager@{Hash\_\-board\_\-manager}!init\_\-hash\_\-board@{init\_\-hash\_\-board}}
+\index{init\_\-hash\_\-board@{init\_\-hash\_\-board}!Hash_board_manager@{Hash\_\-board\_\-manager}}
+\subsubsection[{init\_\-hash\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-hash\_\-board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHash__board__manager_aa0e3cfa4c75296e65d652d79cad49904}
+
+
+Initialization of board. 
+
+Here \doxyref{hash\_\-board}{p.}{classHash__board__manager_aba4258e0a5d06c5332463beb59ee0a3a} is filled with random hash keys. \index{Hash\_\-board\_\-manager@{Hash\_\-board\_\-manager}!xor\_\-with\_\-position\_\-hash@{xor\_\-with\_\-position\_\-hash}}
+\index{xor\_\-with\_\-position\_\-hash@{xor\_\-with\_\-position\_\-hash}!Hash_board_manager@{Hash\_\-board\_\-manager}}
+\subsubsection[{xor\_\-with\_\-position\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void xor\_\-with\_\-position\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-}
+\end{DoxyParamCaption}
+)}\label{classHash__board__manager_af3d824f36ccdfa65b097935e94eed0a4}
+
+
+Creating new position hash from the old one. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of a played stone. \item[\mbox{\tt[in]} {\em stone\_\-color\_\-}]\doxyref{Stone}{p.}{classStone} color ( white or black ) of the played stone. Zobrist hashing ... adding / removing a stone is equal to xoring with position hash this function is called at two places ... function \doxyref{Board\_\-manager::play\_\-a\_\-stone}{p.}{classBoard__manager_a3bbe8849e935afd0083a4a81e2ecc579} for single played stone and at function \doxyref{Board\_\-manager::capture\_\-block}{p.}{classBoard__manager_a05d5af5b31cbdfd80e2ae6e958b41e0d} for each captured stone \end{DoxyParams}

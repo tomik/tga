@@ -1,0 +1,434 @@
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2006.3.28)  22 MAY 2006 22:21
+entering extended mode
+**refman.tex
+(./refman.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, catalan, croatian, czech, danish, dutch, finnish, greek, iceland
+ic, irish, italian, latin, magyar, norsk, norsk, portuges, romanian, russian, s
+lovak, slovene, spanish, swedish, turkish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk10.clo
+File: bk10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/misc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 1999/03/03 v1.2f A4 based page layout
+))
+(/usr/share/texmf/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\headwidth=\dimen103
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf/tex/latex/tools/multicol.sty
+Package: multicol 2000/07/10 v1.5z multicolumn formatting (FMi)
+\c@tracingmulticols=\count88
+\mult@box=\box26
+\multicol@leftmargin=\dimen106
+\c@unbalance=\count89
+\c@collectmore=\count90
+\doublecol@number=\count91
+\multicoltolerance=\count92
+\multicolpretolerance=\count93
+\full@width=\dimen107
+\page@free=\dimen108
+\premulticols=\dimen109
+\postmulticols=\dimen110
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count94
+\c@finalcolumnbadness=\count95
+\last@try=\dimen111
+\multicolovershoot=\dimen112
+\multicolundershoot=\dimen113
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+(/usr/share/texmf/tex/latex/misc/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count96
+\float@exts=\toks15
+\float@box=\box52
+\@float@everytoks=\toks16
+\@floatcapt=\box53
+)
+(/usr/share/texmf/tex/latex/base/textcomp.sty
+Package: textcomp 2001/06/05 v1.94 Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(/usr/share/texmf/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) (./doxygen.sty
+Package: doxygen 
+
+(/usr/share/texmf/tex/latex/tools/calc.sty
+Package: calc 1998/07/07 v4.1b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen114
+\calc@Bdimen=\dimen115
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 59.
+LaTeX Info: Redefining \addtolength on input line 60.
+\calc@denominator=\count99
+)
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
+\col@sep=\dimen116
+\extrarowheight=\dimen117
+\NC@list=\toks17
+\extratabsurround=\skip47
+\backup@length=\skip48
+)
+\tmplength=\skip49
+)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+))
+\@indexfile=\write3
+\openout3 = `refman.idx'.
+
+
+Writing index file refman.idx
+(./refman.aux (./page_3.aux) (./page_4.aux) (./page_2.aux) (./page_5.aux)
+(./page_6.aux))
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
+ (/usr/share/texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 14.
+ [1
+
+
+] [2
+
+]
+(./refman.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `refman.toc'.
+
+ [1
+
+] [2
+
+]
+Chapter 1.
+(./index.tex
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 10.
+ (/usr/share/texmf/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) [1
+
+] [2
+
+]
+Chapter 2.
+(./page_1.tex) [3]
+\openout2 = `page_3.aux'.
+
+ (./page_3.tex [4
+
+] [5]
+
+LaTeX Warning: Reference `page_3_node_comparing' on page 6 undefined on input l
+ine 118.
+
+[6] [7]
+Overfull \hbox (26.06522pt too wide) in paragraph at lines 178--178
+ []  \T1/cmtt/m/n/8 Hash_table_item ( board_manager.hash_board_manager.get_posi
+tion_hash(), stone_color_to_move_,[] 
+ []
+
+[8]
+Overfull \hbox (127.28513pt too wide) in paragraph at lines 217--217
+ []\T1/cmtt/m/n/8 if ( saved_.accuracy == gsa_certain ) { //certain status prov
+ides more general condition to apply transposition table cutoff 
+ []
+
+
+Overfull \hbox (123.03616pt too wide) in paragraph at lines 217--217
+ []  \T1/cmtt/m/n/8 if ( ! ( ( ( saved_.node_type == nt_max ) && ( ( new_.beta 
+<= saved_.beta ) || ( saved_.new_alfa < saved_.beta )  ) )  ||[] 
+ []
+
+
+Overfull \hbox (101.79135pt too wide) in paragraph at lines 217--217
+ []       \T1/cmtt/m/n/8 ( ( saved_.node_type == nt_min ) && ( ( saved_.alfa <=
+ new_.alfa ) || ( saved_.alfa < saved_.new_beta ) ) ) ) )[] 
+ []
+
+) [9]
+\openout2 = `page_4.aux'.
+
+ (./page_4.tex
+Overfull \hbox (12.56314pt too wide) in paragraph at lines 9--9
+ []  \T1/cmtt/m/n/8 if ( board_manager.check_eyes_connection ( full_eyes_set ) 
+) // At least two eyes are connected[] 
+ []
+
+) [10
+
+
+] [11]
+\openout2 = `page_2.aux'.
+
+ (./page_2.tex [12
+
+
+]) [13]
+\openout2 = `page_5.aux'.
+
+ (./page_5.tex [14
+
+
+]
+Overfull \hbox (72.54236pt too wide) in paragraph at lines 86--86
+[]    \T1/cmtt/m/n/8 case aw_next_token : // awaiting next token -> it means th
+at old token and it's data ( act_text ) must be handled[] 
+ []
+
+) [15] [16]
+\openout2 = `page_6.aux'.
+
+ (./page_6.tex
+Overfull \hbox (136.2768pt too wide) in paragraph at lines 13--13
+[]    \T1/cmtt/m/n/8 for ( Stone_vector::iterator it = temp_board_manager.stone
+_vector.begin() ; it != temp_board_manager.stone_vector.end() ; it++ ) 
+ []
+
+
+Overfull \hbox (132.02783pt too wide) in paragraph at lines 13--13
+[]      \T1/cmtt/m/n/8 if ( ( (*it).get_stone_color() == sc_black ) || ( (*it).
+get_stone_color() == sc_white ) )  // it is a stone => i ,, play it "[] 
+ []
+
+[17
+
+
+]
+Underfull \hbox (badness 5316) in paragraph at lines 25--25
+[]\T1/cmr/m/n/10 updating other data struc-tures ( e.g. Board_-manager::point_-
+board, Board_-
+ []
+
+
+Overfull \hbox (4.55896pt too wide) in paragraph at lines 38--38
+[]      \T1/cmtt/m/n/8 act_node->next = unplay_node_handle; // adding a node to
+ the beginning of existing dynamic list[] 
+ []
+
+
+Overfull \hbox (64.04443pt too wide) in paragraph at lines 38--38
+[]      \T1/cmtt/m/n/8 unplay_node_handle->unplay_manager.stone_to_unplay = coo
+rdinates_; // filling node with unplaying information[] 
+ []
+
+
+Overfull \hbox (8.80792pt too wide) in paragraph at lines 48--48
+[]       \T1/cmtt/m/n/8 Block * act_block_ = board_manager.create_new_block ( s
+tone_color_ ); // creates an empty block 
+ []
+
+
+Overfull \hbox (204.2602pt too wide) in paragraph at lines 48--48
+[]       \T1/cmtt/m/n/8 board[coordinates_.get_co_row()][coordinates_.get_co_co
+lumn()].set_present_block_pt( act_block_); // sets a pointer from a board to th
+e block[] 
+ []
+
+
+Overfull \hbox (38.55066pt too wide) in paragraph at lines 48--48
+[]       \T1/cmtt/m/n/8 hash_board_manager.xor_with_position_hash ( coordinates
+_, stone_color_); // updating position hash key[] 
+ []
+
+[18]
+Overfull \hbox (161.77057pt too wide) in paragraph at lines 69--69
+[]        \T1/cmtt/m/n/8 adjacent_block_ =  board[adjacent_coordinates_[i].get_
+co_row()][adjacent_coordinates_[i].get_co_column()].get_present_block_pt() ;[] 
+
+ []
+
+
+Overfull \hbox (187.26434pt too wide) in paragraph at lines 69--69
+[]          \T1/cmtt/m/n/8 merge_blocks(  act_block_  , adjacent_block_ ); // m
+erging adjacent and actual ( the one containing played stone ) into a single bl
+ock[] 
+ []
+
+
+Overfull \hbox (13.05688pt too wide) in paragraph at lines 69--69
+[]          \T1/cmtt/m/n/8 if ( adjacent_block_->is_captured() ) { // if last l
+iberty was removed block will be captured[] 
+ []
+
+
+Overfull \hbox (85.28925pt too wide) in paragraph at lines 86--86
+[]      \T1/cmtt/m/n/8 for ( Coordinates_vector::iterator it = block_->stone_ve
+ctor.begin() ; it < block_->stone_vector.end() ; it++ )  { 
+ []
+
+
+Overfull \hbox (136.2768pt too wide) in paragraph at lines 86--86
+[]        \T1/cmtt/m/n/8 if ( ( ! possible_under_the_stones ) || ( ! params_man
+ager.get_no_under_the_stones() ) ) {  // data structures actualization[] 
+ []
+
+
+Overfull \hbox (25.80377pt too wide) in paragraph at lines 86--86
+[]        \T1/cmtt/m/n/8 hash_board_manager.xor_with_position_hash ( (*it), blo
+ck_->stone_color); // hash key actualization[] 
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 90--91
+[]\T1/cmr/m/n/10 Finally in the pro-cess of play-ing a stone Board_-manager::po
+int_-board and Board_-
+ []
+
+[19]
+Overfull \hbox (157.5216pt too wide) in paragraph at lines 130--130
+[]      \T1/cmtt/m/n/8 for ( Coordinates_vector::iterator it = act_block_ ->sto
+ne_vector.begin() ; it < act_block_ ->stone_vector.end() ; it++ ) { //cycle[] 
+ []
+
+
+Overfull \hbox (166.01953pt too wide) in paragraph at lines 130--130
+[]        \T1/cmtt/m/n/8 board[(*it).get_co_row()][(*it).get_co_column()].set_p
+resent_block_pt( act_block_ ); // setting a pointer from Board_manager::board[]
+ 
+ []
+
+
+Overfull \hbox (174.51746pt too wide) in paragraph at lines 130--130
+[]        \T1/cmtt/m/n/8 if  ( act_block_->stone_color == sc_white )  // updati
+ng Board_manager::point_board according to actual stone ( color , safe/unsafe )
+[] 
+ []
+
+[20]
+Overfull \hbox (76.79132pt too wide) in paragraph at lines 150--150
+[]      \T1/cmtt/m/n/8 adjacent_coordinates_ = get_adjacent_coordinates ( coord
+inates_ , Direction ( i ) ); // neighbouring coordinates[] 
+ []
+
+
+Overfull \hbox (208.50916pt too wide) in paragraph at lines 150--150
+[]      \T1/cmtt/m/n/8 adjacent_block_ = board[adjacent_coordinates_.get_co_row
+()][adjacent_coordinates_.get_co_column()].get_present_block_pt(); //neighbouri
+ng block[] 
+ []
+
+
+Overfull \hbox (55.54651pt too wide) in paragraph at lines 150--150
+[]      \T1/cmtt/m/n/8 if ( adjacent_block_ != NULL && adjacent_block_-> stone_
+color != stone_color_ && ! adjacent_block_->safe &&[] 
+ []
+
+) [21] (./refman.ind) (./refman.aux (./page_3.aux) (./page_4.aux) (./page_2.aux
+) (./page_5.aux) (./page_6.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1654 strings out of 95370
+ 20888 string characters out of 1188185
+ 68652 words of memory out of 1000001
+ 4662 multiletter control sequences out of 10000+50000
+ 14629 words of font info for 30 fonts, out of 500000 for 1000
+ 198 hyphenation exceptions out of 1000
+ 29i,10n,43p,1798b,465s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on refman.dvi (25 pages, 71808 bytes).

@@ -1,0 +1,138 @@
+\section{Sgf\_\-printer Class Reference}
+\label{classSgf__printer}\index{Sgf\_\-printer@{Sgf\_\-printer}}
+
+
+Class managing creating output sgf file.  
+
+
+
+
+{\ttfamily \#include $<$t\_\-search.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\_\-output} (string file\_\-name)
+\begin{DoxyCompactList}\small\item\em Assigns output file to the \doxyref{Sgf\_\-printer::sgf\_\-out}{p.}{classSgf__printer_a72cb54181e6f395a818d796f00099cba}. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-initial\_\-position} (Point\_\-board \&point\_\-board)
+\begin{DoxyCompactList}\small\item\em Prints initial position to the sgf output. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-sgf\_\-header} ({\bf Stone\_\-color})
+\begin{DoxyCompactList}\small\item\em Prints sgf header. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-to\_\-file} (string str)
+\begin{DoxyCompactList}\small\item\em Prints string to file. \item\end{DoxyCompactList}\item 
+string {\bf coordinates\_\-to\_\-string} ({\bf Coordinates})
+\begin{DoxyCompactList}\small\item\em Transforms coordinates to string. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-comment} (bool)
+\begin{DoxyCompactList}\small\item\em Prints comment with all neccessities. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+stringstream {\bf buff}\label{classSgf__printer_a3b13074b2b944b42fc9784e6358c5612}
+
+\begin{DoxyCompactList}\small\item\em This buffer is used for iostream operations and afterwards is flushed to \doxyref{Sgf\_\-printer::sgf\_\-out}{p.}{classSgf__printer_a72cb54181e6f395a818d796f00099cba}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ofstream {\bf sgf\_\-out}\label{classSgf__printer_a72cb54181e6f395a818d796f00099cba}
+
+\begin{DoxyCompactList}\small\item\em This is ofstream variable represents sgf output file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf T\_\-searcher}\label{classSgf__printer_a9872ea3f3e093a2b480d935b52e7f5d6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing creating output sgf file. This class stores information about sgf output ( filename , fstream , ... ) and provides functions to for operating the output sgf file. 
+
+\subsection{Member Function Documentation}
+\index{Sgf\_\-printer@{Sgf\_\-printer}!coordinates\_\-to\_\-string@{coordinates\_\-to\_\-string}}
+\index{coordinates\_\-to\_\-string@{coordinates\_\-to\_\-string}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{coordinates\_\-to\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}string coordinates\_\-to\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classSgf__printer_a134934764bd5f1a18225f35a6e17f4a1}
+
+
+Transforms coordinates to string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]Input coordinates. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+[out] Returns string value for sgf output of given coordinates.
+\end{DoxyReturn}
+Input coordinates are transformed to string which might be directly printed into the sgf output. Pass move is handled properly. \index{Sgf\_\-printer@{Sgf\_\-printer}!print\_\-comment@{print\_\-comment}}
+\index{print\_\-comment@{print\_\-comment}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{print\_\-comment}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-comment (
+\begin{DoxyParamCaption}
+\item[{bool}]{ blockable}
+\end{DoxyParamCaption}
+)}\label{classSgf__printer_a66b2a7176e52a4ab95199644fc422f09}
+
+
+Prints comment with all neccessities. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em blockable}]Blockable switcher.\end{DoxyParams}
+Prints content of \doxyref{Sgf\_\-printer::buff}{p.}{classSgf__printer_a3b13074b2b944b42fc9784e6358c5612} into the sgf output in a form of comment ( adds comment tags ). If blockable switcher is set to true and {\ttfamily -\/to} option is not given, than \doxyref{Sgf\_\-printer::buff}{p.}{classSgf__printer_a3b13074b2b944b42fc9784e6358c5612} is cleared and no output is generated : this is to distinguish important output ( might not be blocked ) from the extended . \index{Sgf\_\-printer@{Sgf\_\-printer}!print\_\-initial\_\-position@{print\_\-initial\_\-position}}
+\index{print\_\-initial\_\-position@{print\_\-initial\_\-position}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{print\_\-initial\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-initial\_\-position (
+\begin{DoxyParamCaption}
+\item[{Point\_\-board \&}]{ point\_\-board}
+\end{DoxyParamCaption}
+)}\label{classSgf__printer_a708dfaabdd15bad1932ab6d0d49867ce}
+
+
+Prints initial position to the sgf output. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em point\_\-board}]Reference to board\_\-manager's point\_\-board.\end{DoxyParams}
+Prints initial position given as a point\_\-board. \index{Sgf\_\-printer@{Sgf\_\-printer}!print\_\-sgf\_\-header@{print\_\-sgf\_\-header}}
+\index{print\_\-sgf\_\-header@{print\_\-sgf\_\-header}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{print\_\-sgf\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-sgf\_\-header (
+\begin{DoxyParamCaption}
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-to\_\-move\_\-}
+\end{DoxyParamCaption}
+)}\label{classSgf__printer_af5a3a75b91cef3d1516eac2430e4fd61}
+
+
+Prints sgf header. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em stone\_\-color\_\-to\_\-move\_\-}]Represents a player who is to make a first move.\end{DoxyParams}
+Mehthod prints neccessary sgf header to the sgf output. \index{Sgf\_\-printer@{Sgf\_\-printer}!print\_\-to\_\-file@{print\_\-to\_\-file}}
+\index{print\_\-to\_\-file@{print\_\-to\_\-file}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{print\_\-to\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-to\_\-file (
+\begin{DoxyParamCaption}
+\item[{string}]{ str}
+\end{DoxyParamCaption}
+)}\label{classSgf__printer_acd8e20f3a51a95fc10cf46c168f52ac3}
+
+
+Prints string to file. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em str}]Input string to be printed. Prints given string directly to the output file. \end{DoxyParams}
+\index{Sgf\_\-printer@{Sgf\_\-printer}!set\_\-output@{set\_\-output}}
+\index{set\_\-output@{set\_\-output}!Sgf_printer@{Sgf\_\-printer}}
+\subsubsection[{set\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-output (
+\begin{DoxyParamCaption}
+\item[{string}]{ file\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classSgf__printer_aefffd8eece8486c4d47e04c20ed0bc6b}
+
+
+Assigns output file to the \doxyref{Sgf\_\-printer::sgf\_\-out}{p.}{classSgf__printer_a72cb54181e6f395a818d796f00099cba}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em file\_\-name}]Filename of the output file.\end{DoxyParams}
+This method assings \doxyref{Sgf\_\-printer::sgf\_\-out}{p.}{classSgf__printer_a72cb54181e6f395a818d796f00099cba} file to print the output to. If there is not a file of given file\_\-name, then it is created. 

@@ -1,0 +1,90 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.h File Reference}
+\label{t__search_8h}\index{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.h@{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.h}}
+
+
+Header file for \doxyref{t\_\-search.cc}{p.}{t__search_8cc}.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Sgf\_\-printer}
+\begin{DoxyCompactList}\small\item\em Class managing creating output sgf file. \item\end{DoxyCompactList}\item 
+class {\bf Hash\_\-table\_\-item}
+\begin{DoxyCompactList}\small\item\em Represents one item in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item\end{DoxyCompactList}\item 
+class {\bf Hash\_\-table\_\-manager}
+\begin{DoxyCompactList}\small\item\em Manages transposition tables. \item\end{DoxyCompactList}\item 
+class {\bf Hash\_\-repset\_\-manager}
+\begin{DoxyCompactList}\small\item\em Repetititons manager. \item\end{DoxyCompactList}\item 
+struct {\bf Search\_\-result}
+\begin{DoxyCompactList}\small\item\em Structure returned by tree search. \item\end{DoxyCompactList}\item 
+struct {\bf Dyn\_\-heur\_\-item}
+\begin{DoxyCompactList}\small\item\em Dynamic heuristic item. \item\end{DoxyCompactList}\item 
+class {\bf T\_\-searcher}
+\begin{DoxyCompactList}\small\item\em Class managing tree search. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Node\_\-type} 
+\item 
+enum {\bf Group\_\-status\_\-accuracy} \{ {\bf gsa\_\-certain}, 
+{\bf gsa\_\-depth\_\-uncertain}, 
+{\bf gsa\_\-alfa\_\-beta\_\-uncertain}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf corresponds} ({\bf Hash\_\-table\_\-item} \&, {\bf Hash\_\-table\_\-item} \&)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf T\_\-searcher} {\bf t\_\-searcher}\label{t__search_8h_a13fb5f59c68c4fcc80f38b37f97e828e}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{T\_\-searcher}{p.}{classT__searcher}. \item\end{DoxyCompactList}\item 
+{\bf Sgf\_\-printer} {\bf sgf\_\-printer}\label{t__search_8h_a7a6dcec8738dd9d5f46eb45946c306e8}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{Sgf\_\-printer}{p.}{classSgf__printer}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for \doxyref{t\_\-search.cc}{p.}{t__search_8cc}. In this header file classes and data structures neccessary for proper tree searching are declared. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
+
+\subsection{Enumeration Type Documentation}
+\index{t\_\-search.h@{t\_\-search.h}!Group\_\-status\_\-accuracy@{Group\_\-status\_\-accuracy}}
+\index{Group\_\-status\_\-accuracy@{Group\_\-status\_\-accuracy}!t_search.h@{t\_\-search.h}}
+\subsubsection[{Group\_\-status\_\-accuracy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Group\_\-status\_\-accuracy}}\label{t__search_8h_a27587c7994737953ba5be23f6b21cc05}
+Possible values accuracy of group status. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{gsa\_\-certain@{gsa\_\-certain}!t\_\-search.h@{t\_\-search.h}}\index{t\_\-search.h@{t\_\-search.h}!gsa\_\-certain@{gsa\_\-certain}}\item[{\em 
+gsa\_\-certain\label{t__search_8h_a27587c7994737953ba5be23f6b21cc05aa601088a87d032193008fb3abed37b06}
+}]Certain status ( represents correct evaluation of the group). \index{gsa\_\-depth\_\-uncertain@{gsa\_\-depth\_\-uncertain}!t\_\-search.h@{t\_\-search.h}}\index{t\_\-search.h@{t\_\-search.h}!gsa\_\-depth\_\-uncertain@{gsa\_\-depth\_\-uncertain}}\item[{\em 
+gsa\_\-depth\_\-uncertain\label{t__search_8h_a27587c7994737953ba5be23f6b21cc05ae8d5f2328d0cf9d95f3bb9a3357968f6}
+}]Uncertain due to depth cutoff ( possible global information loss). \index{gsa\_\-alfa\_\-beta\_\-uncertain@{gsa\_\-alfa\_\-beta\_\-uncertain}!t\_\-search.h@{t\_\-search.h}}\index{t\_\-search.h@{t\_\-search.h}!gsa\_\-alfa\_\-beta\_\-uncertain@{gsa\_\-alfa\_\-beta\_\-uncertain}}\item[{\em 
+gsa\_\-alfa\_\-beta\_\-uncertain\label{t__search_8h_a27587c7994737953ba5be23f6b21cc05abc4413079b645fb6fab2b0691e43773c}
+}]Uncertain due to alfa beta cutoff ( without global information loss). \end{description}
+\end{Desc}
+
+\index{t\_\-search.h@{t\_\-search.h}!Node\_\-type@{Node\_\-type}}
+\index{Node\_\-type@{Node\_\-type}!t_search.h@{t\_\-search.h}}
+\subsubsection[{Node\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Node\_\-type}}\label{t__search_8h_a4bafb4a83e1da39fd7547ca43cff608d}
+this enum tells me whether am i in maximizing or minimizing node 
+
+\subsection{Function Documentation}
+\index{t\_\-search.h@{t\_\-search.h}!corresponds@{corresponds}}
+\index{corresponds@{corresponds}!t_search.h@{t\_\-search.h}}
+\subsubsection[{corresponds}]{\setlength{\rightskip}{0pt plus 5cm}bool corresponds (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ saved\_\-, }
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ new\_\-}
+\end{DoxyParamCaption}
+)}\label{t__search_8h_a7997f0a499b44ec90ae84c280779fe9d}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em saved\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which was saved in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item[\mbox{\tt[in]} {\em new\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which corressponds to actual position.\end{DoxyParams}
+Method tests if it is possible to use stored information ( Group\_\-status ) of saved\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} for actual position represented by new\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item}. It's similar to operator==. 

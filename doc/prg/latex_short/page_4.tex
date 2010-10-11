@@ -1,0 +1,30 @@
+\section{Static eye recognition}\label{page_4}
+Static eye recognition is dealt in quite a simple way in TGA. It is implemented in {\tt eyes.h} and {\tt eyes.cc} and the most important class handling static analysis is {\tt Eye\_\-manager}. \subsection{Recognizing status of the group}\label{page_4_page_4__sec_1}
+Generally, the method of static analysis is performed in ( almost ) every node ( calling {\tt Eye\_\-manager::get\_\-group\_\-status()} method ) and can be described as follows:\begin{itemize}
+\item For every potential eye it's {\tt Eye\_\-status} is found. Meaning of possible {\tt Eye\_\-status} values is clear, maybe except for {\tt es\_\-produces\_\-no\_\-eye}. This status expresses that given coordinate is not a potential eye ( usually adjacent point to attacker's unsafe stones - defender must play here to capture the attacker and therefore it is not a potential eye), but it is not clear false eye ( it might become a potential eye in the future when unsafe attacker plays here and then gets captured ). Therefore it deserves an own {\tt Eye\_\-status} and particular treatment ( it is not excluded from the potential eyes set, but in actual static analysis it is not counted as a potential eye ). Points that obtain status {\tt es\_\-false\_\-eye} are expelled from the list of potential eyes.\item If there are two or more full eyes their connectivity is checked and ( if they are connected ) group is stated alive 
+
+\footnotesize\begin{verbatim}if ( full_eyes_num >= 2 ) 
+  if ( board_manager.check_eyes_connection ( full_eyes_set))
+    return gs_alive; // At least two full eyes are connected
+\end{verbatim}
+\normalsize
+\item If there are less than two potential eye producing points, group is stated dead. 
+
+\footnotesize\begin{verbatim}if ( pot_eye_map_pt_->size() - produces_no_eye_num < 2)  
+  return gs_dead;
+\end{verbatim}
+\normalsize
+\item If none of the previous happens, simple heuristic is tried: if group has only two potential eyes ( not counting points that gained status {\tt es\_\-produces\_\-no\_\-eye}) and these are adjacent, then group is dead ( there cannot arise two eyes ). 
+
+\footnotesize\begin{verbatim}if (( pot_eye_map_pt_->size() - produces_no_eye_num) == 2)
+  if ( board_manager.check_coordinates_adjacency( coordinates_1, coordinates_2)) 
+    return gs_dead; //two potential eyes and they are adjacent => group is dead
+\end{verbatim}
+\normalsize
+\item Otherwise ( what happens in most cases ) group is stated unknown.\end{itemize}
+\subsection{Recognizing status of the potential eye}\label{page_4_page_4__sec_2}
+This is not very algorithmically difficult operation but quite a lot of cases must be handled. Here very important role is played by {\tt point\_\-board\_\-} which is used to find out whether a particular coordinates is empty ( {\tt ps\_\-empty} ) or is occupied by defender's stone ( {\tt ps\_\-de} ) or attacker's stone ( safe attacker {\tt ps\_\-at} x unsafe attacker {\tt ps\_\-uns\_\-at} ). Checking what eye status potential eye has consist of three steps:\begin{itemize}
+\item checking whether the eye point itself is empty or ocuppied by unsafe attacker\item checking adjacent coordinates\item checking diagonal coordinates\end{itemize}
+
+
+First two items are very easy and the only problem is how to perform checking of the diagonal coordinates. Since there is a possibility of so called \char`\"{}diagonal related eyes\char`\"{} ( two eyes which are diagonal points to each other ). Here is neccessary piece of recursion: when an eye seems to be potential diagonal eye ( all adjacent neighbours are defender's stones and there is an empty diagonal point which occupied by safe attacker destroys the eye and occupied by defender ( or becoming \char`\"{}diagonal related eye\char`\"{} ) creates full eye ) the recursive calling of {\tt Eye\_\-manager::get\_\-eye\_\-status()} with {\tt check\_\-diagonal\_\-eye} parameter set to true is performed. When this recursive calling ( parametr {\tt check\_\-diagonal\_\-eye} prevents cycling and also states full eye on actual eye point when there is a potential diagonal eye ( the one recursive calling was perfrormed from )) returns {\tt gs\_\-full\_\-eye} than both diagonal related eyes are full\_\-eyes. 

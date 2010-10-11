@@ -1,0 +1,70 @@
+\section{Unplay\_\-manager Struct Reference}
+\label{structUnplay__manager}\index{Unplay\_\-manager@{Unplay\_\-manager}}
+
+
+Unplaying moves.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf info} ()\label{structUnplay__manager_ac1b66fe77173de9e5e8542b2823d6071}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\item 
+{\bf Unplay\_\-manager} ()
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Block} $\ast$ {\bf neigbour\_\-blocks} [FOUR]\label{structUnplay__manager_a3f745e2c4d4c20876a35e392a78f6d0b}
+
+\begin{DoxyCompactList}\small\item\em pointers to neigbour blocks before the stone was played \item\end{DoxyCompactList}\item 
+bool {\bf captured\_\-neigbour\_\-blocks} [FOUR]\label{structUnplay__manager_a3797487e5d9a95c06e0049fb07ff51ef}
+
+\begin{DoxyCompactList}\small\item\em pointers to neigbour blocks before the stone was played \item\end{DoxyCompactList}\item 
+{\bf Coordinates} {\bf stone\_\-to\_\-unplay}\label{structUnplay__manager_abd517a6f1d636b6d22f6a2bd00357656}
+
+\begin{DoxyCompactList}\small\item\em coordinates of stone to unplay itself \item\end{DoxyCompactList}\item 
+int {\bf number\_\-stones\_\-de}\label{structUnplay__manager_ad66ebfdc004d2ecd83159f17d1a4c195}
+
+\begin{DoxyCompactList}\small\item\em it is neccessary to store number of defender's stones \item\end{DoxyCompactList}\item 
+Hash\_\-key {\bf position\_\-hash}\label{structUnplay__manager_ade648dc21193fba275fb7046f4610eac}
+
+\begin{DoxyCompactList}\small\item\em actual position hash key \item\end{DoxyCompactList}\item 
+{\bf Ko\_\-manager} {\bf ko\_\-manager}\label{structUnplay__manager_aad2c5438fce46d9105c56400dba85969}
+
+\begin{DoxyCompactList}\small\item\em copy of \doxyref{Board\_\-manager::ko\_\-manager}{p.}{classBoard__manager_aad2c5438fce46d9105c56400dba85969} \item\end{DoxyCompactList}\item 
+Pot\_\-eyes\_\-map {\bf pot\_\-eyes\_\-map}\label{structUnplay__manager_a718b13dab644b28a5e5f3e944c56fd63}
+
+\begin{DoxyCompactList}\small\item\em copy of \doxyref{Board\_\-manager::pot\_\-eyes\_\-map}{p.}{classBoard__manager_a718b13dab644b28a5e5f3e944c56fd63} \item\end{DoxyCompactList}\item 
+Playable\_\-map {\bf playable\_\-map}\label{structUnplay__manager_a136ec190c4aa69160c317f2b73c8855b}
+
+\begin{DoxyCompactList}\small\item\em copy of \doxyref{Board\_\-manager::playable\_\-map}{p.}{classBoard__manager_a136ec190c4aa69160c317f2b73c8855b} \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Board\_\-manager}\label{structUnplay__manager_a9bb99230809a55ed083cd93a76a6141e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unplaying moves. This class contains some data structures neccessary for correct stones unplaying ( some local data structures e.g. \doxyref{ko\_\-manager}{p.}{structUnplay__manager_aad2c5438fce46d9105c56400dba85969},\doxyref{pot\_\-eyes\_\-map}{p.}{structUnplay__manager_a718b13dab644b28a5e5f3e944c56fd63}, ... serve only for copying identical data structures from \doxyref{Board\_\-manager}{p.}{classBoard__manager} ). Unplaying itself is done by \doxyref{Board\_\-manager::unplay\_\-last\_\-stone}{p.}{classBoard__manager_aa26d68b607db163a50a10e7ee01583a3}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Unplay\_\-manager@{Unplay\_\-manager}!Unplay\_\-manager@{Unplay\_\-manager}}
+\index{Unplay\_\-manager@{Unplay\_\-manager}!Unplay_manager@{Unplay\_\-manager}}
+\subsubsection[{Unplay\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Unplay\_\-manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{structUnplay__manager_a30108dfcf14c5c6645e9242dbc0d65b4}
+
+
+constructor 
+
+Here array of neigbour blocks is initialized into NULL's. 

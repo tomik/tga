@@ -1,0 +1,229 @@
+\section{Tree search}\label{page_3}
+Tree search is the most interesting section of the whole program. It is mainly implemented in {\tt t\_\-search.cc} and {\tt t\_\-search.h}, search itself is managed by class {\tt T\_\-searcher} ( especially functions {\tt T\_\-searcher::search} and {\tt T\_\-searcher::search\_\-son} which creates an indirect recursion relationship ). Other classes defined in {\tt t\_\-search.h} have supporting tasks :\begin{itemize}
+\item {\tt Sgf\_\-printer} takes care of creating sgf output of the problem.\item {\tt Hash\_\-table\_\-item} represents item stored in transposition tables or for repetition recognition purposes.\item {\tt Hash\_\-table\_\-manager} conducts transposition tables.\item {\tt Hash\_\-repset\_\-manager} guards possible repetitions.\end{itemize}
+\subsection{Tree search implementation description}\label{page_3_page_3__sec_1}
+Tree search is ( as mentioned above ) done in two functions ( {\tt T\_\-searcher::search} and {\tt T\_\-searcher::search\_\-son} ). Let's see how is the tree search implemented ( I will describe most important things happening in a single node ). After some neccessary initializations it is checked ( only if option {\tt -ntt} is not switched on ) whether actual position doesn't match some position stored in transposition tables. In case that iddfs is active it is important to include transposition table cutoff ( for {\tt gs\_\-unknown} status ) even when status stored in the tables is {\tt gsa\_\-depth\_\-uncertain} ( if cutoff would not be performed same search as in the saved position would be done and {\tt gs\_\-unknown} status would be gained again ).
+
+
+
+\footnotesize\begin{verbatim}Group_status act_status_ = hash_table_manager.get_item_status( 
+  Hash_table_item( board_manager.hash_board_manager.get_position_hash(),
+    stone_color_to_move_, board_manager.ko_manager.get_retake_coordinates(),
+    alfa, beta)); // retrieveng status from transposition tables 
+        
+ ... // adjusting alpha and beta according to saved values                                                                  
+  
+ // iddfs, this node was already searched ( and gsa_depth_uncertain status was obtained ) 
+if ( same_depth_limit && act_accuracy_ == gsa_depth_uncertain 
+     && params_manager.get_iddfs())
+  return Search_result( gs_unknown,gsa_depth_uncertain, act_tree_size_); 
+
+// act_status_ is set from t_tables if stored alpha == stored beta  
+if ( act_status_ != gs_unknown) { 
+  sgf_printer.buff << "Transposition table cutoff for status: " << act_status_ << endl;
+  ...
+  return act_status_; // control is returned to father
+ }
+\end{verbatim}
+\normalsize
+
+
+If this test is negative ( position hash key was not found in {\tt Hash\_\-table\_\-manager::hash\_\-table} ), static life and death analyses together with simple capture recognition cutoff ( too little defender's stones cannot create a living group ) is performed: 
+
+\footnotesize\begin{verbatim}if (( stone_color_to_move_ == sc_black && 
+      board_manager.number_stones_de < TOO_LITTLE_TO_LIVE) || // TOO_LITTLE_TO_LIVE is 4
+    ( stone_color_to_move_ == sc_white && 
+      board_manager.number_stones_de < TOO_LITTLE_TO_LIVE -1)) 
+  act_status_ = gs_dead ; //too little stones to live  
+else 
+  act_status_ = eye_manager.is_alive( board_manager.get_point_board(),
+    board_manager.get_pot_eyes_map_pt()); // static life and death analysis
+\end{verbatim}
+\normalsize
+
+
+If this analyses doesn't succeed in recognizing the group neither alive ( {\tt  act\_\-status\_\- == gs\_\-alive } ) nor dead ( {\tt  act\_\-status\_\- == gs\_\-dead } ), then status of actual node will be decided from statuses of his sons. At first different static heuristics are applied. Each heuristic might change moves priority by specified margin. The lesser the priority the more important move becomes ( and thus more probable is that it will be tried first ). Effects of different heuristics might be cumulated ( some move might be recognized as very good by more heuristics ). Moves are sorted ( according to their priority decided by heuristics ) in order to make pruning techniques ( especially alpha beta ) more effective. Self atari pruning technique is applied as well ( larger defender's blocks are not allowed to self atari ). Application of some heuristics is shown below:
+
+
+
+\footnotesize\begin{verbatim}//checking whether a played move is a self atari
+if (( board_manager.check_self_atari( stone_color_to_move_, last_item.first, 
+                                      &stone_in_atari_num))) {
+  if ( stone_color_to_move_ == sc_black && stone_in_atari_num <= 2 ) 
+    last_item.second.increase_act_heuristic_pp( 5); // this selfatari is mediocry demoted
+  else 
+    last_item.second.increase_act_heuristic_pp( 10); // this move is very much demoted 
+  if ( stone_in_atari_num >= 3 && stone_color_to_move_ == sc_white ) {
+    last_item.second.set_act_main_pp ( pp_none ); // this prevents move to be played 
+    continue; // no search when atari on more than 2 defender's stones 
+
+//capture heuristic
+if (( node_type_ == nt_max ) && 
+    ( board_manager.check_capture( stone_color_to_move_, last_item.first))) 
+  last_item.second.increase_act_heuristic_pp( -5); // this move is promoted
+  ... // Other heuristics. The lesser the evaluation of the move the more it is promoted
+\end{verbatim}
+\normalsize
+
+
+Pass moves are included in the list of moves as well. Generally moves are ordered in the following way ( this is a primar ordering, secondary ordering is represented by heuristic results ):\begin{itemize}
+\item At first \char`\"{}ordinary\char`\"{} moves\char`\"{} ( not pass, not ko taking moves ) sorted by heuristic evaluation.\item A pass move.\item At last ko taking moves ( there is a possibility of starting the ko for life of the group ).\end{itemize}
+
+
+After the moves are sorted (according to their priority), they are stored in {\tt Playable\_\-vector}. Then the program goes through this vector of possible moves and tries to play them out. The line of algorithm slightly differs according to the type of the node ( {\tt nt\_\-min} , {\tt nt\_\-max} ). Howewer the principle is the same ( I will give code examples for defender's node since that one is a bit more complicated ):\begin{itemize}
+\item At first some checks related to playing a pass are performed. Pass is always involved in the list of the moves to be played, however whether it is really played is decided right before playing it). Pass is played ( this is expressed by variable {\tt play\_\-pass\_\-allowed} ) only in following cases :\begin{itemize}
+\item Ko taking move ( potentially making group status ko ) is present. Then pass is neccessary to decide whether the ko taking move is relevant to life and death of the group ( pass simulates situation when opponent ignores a ko threat and tries to yield from the ko ).\item In defender's node, none of the searched sons didn't reach status {\tt gs\_\-alive} and there are maximally 4 legal moves ( then pass is looking for possibility of seki ). 
+
+\footnotesize\begin{verbatim}if ( stone_color_to_move_ == sc_white ) { 
+  //next condition is neccessary for seki status 
+  if ( act_status_ != gs_alive  && legal_moves_num <= 4 )
+    play_pass_allowed = true; } // pass is allowed
+\end{verbatim}
+\normalsize
+\end{itemize}
+\end{itemize}
+
+
+\begin{itemize}
+\item In attacker's node, at least one son have reached {\tt ko} status and none of sons have reached {\tt dead} status. Then ( if there are maximally 4 legal moves - pruning technique ) pass move is tried in order to reveal potential {\tt dead} group status because of \char`\"{}bent four in the corner\char`\"{}.\end{itemize}
+
+
+\begin{itemize}
+\item Afterwards, the actual move is played ( {\tt Board\_\-manager::play\_\-a\_\-stone} ). When it is illegal ( {\tt Board\_\-manager::play\_\-a\_\-stone} returns {\tt false} ) next move is tried. 
+
+\footnotesize\begin{verbatim}if ( ! board_manager.play_a_stone ( sc_white ,(*it).first)) 
+  continue; 
+else
+  legal_moves_num++;
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+\begin{itemize}
+\item Son of the actual node is searched recursively by calling {\tt T\_\-searcher::search\_\-son} function ( however recursion is indirect since method {\tt T\_\-searcher::search} is called from {\tt T\_\-searcher::search\_\-son} ). In {\tt T\_\-searcher::search\_\-son} there is also handled part of the sgf output for the son ( e.g. outputting move's coordinates, potential output pruning ). Moreover repetitions are tested and possible repetition cutoff is done. Reason for this indirect recursion is that actions related with searching the son is in defender's and attacker's pretty identical ( the only practical difference is the color of the played stone printed to the sgf output). 
+
+\footnotesize\begin{verbatim}son_result = search_son( (*it).first, nt_min, level, alfa, beta, play_ko_for_life);
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+\begin{itemize}
+\item Possible special handling for ko/double ko is performed. This is a very interesting ( and also was quite difficult to programm ) section of the algorithm. As mentioned above, when there is a ko taking move it is being searched as the last one ( because this raises probability of cutoff before searching the ko taking move). After searching this move, it's status might be transformed ( see below ) to {\tt gs\_\-ko} ( transformation takes place when variable {\tt play\_\-ko\_\-for\_\-life} is {\tt true}). When value of {\tt play\_\-ko\_\-for\_\-life} is {\tt false} ( in the moment when son where ko was taken should be searched ) then the ko is not relevant to the result and thus outcoming status of the son is not transformed ( to the {\tt gs\_\-ko} status ). Varibale {\tt play\_\-ko\_\-for\_\-life} is set ( actually this is done before the son is searched ) as follows ( in defender's node): 
+
+\footnotesize\begin{verbatim}if ( play_ko 
+  && after_pass_group_status != gs_unknown  //unconditionaly alive
+  && after_pass_group_status <= gs_ko    //after pass black can get at least ko
+  && ( act_status_ !=  gs_alive ) ) //defender cannot live without ko 
+    play_ko_for_life = true;
+\end{verbatim}
+\normalsize
+ Here even when {\tt act\_\-status\_\-} is {\tt gs\_\-ko} it is still possible to get unconditional live through double ko ( therefore taking the ko is tried ). In attacker's node, conditions ( last three in the \char`\"{}if\char`\"{} statement ) for stating {\tt play\_\-ko\_\-for\_\-life} are almost symetrical with the exception that {\tt gs\_\-ko} value of {\tt act\_\-status\_\-} causes cutoff ( if attacker can get the ko there is no reason to try taking the ko because he cannot get a better result ).\end{itemize}
+
+
+\begin{itemize}
+\item After searching the ko taking move, son's status ( {\tt son\_\-result.group\_\-status} ) is transformed as follows ( before passing it to section of comparing against {\tt actual\_\-status\_\-:} see {\bf comparing}{\rm (p.\,\pageref{page_3_node_comparing})}): When {\tt play\_\-ko\_\-for\_\-life} is {\tt true} ( all preliminary conditions for {\tt gs\_\-ko} status are fulfilled ) then value {\tt gs\_\-alive} ( {\tt gs\_\-dead} in attacker's node ) of son's status is transformed to {\tt gs\_\-ko}. This operation says: when defender can live after taking the ko ( attacker in son's node is not allowed to recapture the ko, but in his turn pass move \char`\"{}simulating\char`\"{} possible defender's ignoration of ko threat is naturally involved ) then he is alive in ko. And symetrically for the attacker taking the ko. Moreover in defender's node double ko test is performed : 
+
+\footnotesize\begin{verbatim}// double ko handling, ko was taken this turn - possible double ko check 
+if (( ! params_manager.get_no_ko_handling() ) && 
+    (play_ko_for_life && son_result.group_status == gs_ko )) { 
+  if ( possible_double_ko ) { // two independent ko's which white can start -> life
+    sgf_printer.buff <<  "Alive in double ko" ; sgf_printer.print_comment(true);
+    son_result.group_status = gs_alive;
+  }
+  else 
+    possible_double_ko = true;
+    if ( last_move_ko ) { 
+      // last move started ko for life and defender found another ko => double ko
+      son_result.group_status = gs_alive;
+      sgf_printer.buff <<  "Alive in double ko" ; sgf_printer.print_comment(true);
+    }
+}
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+\label{page_3_node_comparing}
+\begin{itemize}
+\item Gathered status of the son is compared to {\tt actual\_\-status\_\-} ( the best fitting status so far ) and possible alpha beta cutoff is performed. In this part it is neccessary to take into account accuracy of the actual group status as well ( expresed by {\tt act\_\-accuracy\_\-} of {\tt Group\_\-status\_\-accuracy} type ). Value {\tt gsa\_\-certain} accuracy expresses that status represents best play of both players. On the other hand value {\tt gsa\_\-alfa\_\-beta\_\-uncertain} means that since alpha beta cutoff was performed retrieved group status might be incorrect, however in relation to the previous searches and previously set {\tt alpha} and {\tt beta} it is satisfying. It is clear that {\tt gsa\_\-certain} accuracy is prefered to {\tt gsa\_\-alpha\_\-beta\_\-uncertain}. Thus, algorithm tries to propagate upwards the tree group statuses with {\tt gsa\_\-certain} accuracy. Therefore, if in one node there are two sons with same group status ( usually this is {\tt gs\_\-ko} ) and with different accuracies ( {\tt gsa\_\-certain} and {\tt gsa\_\-alfa\_\-beta\_\-uncertain} ) than the one with {\tt gsa\_\-certain} surpasses the second one. As a side note: it is clear that group statuses with uncertain accuracy ( {\tt gsa\_\-alfa\_\-beta\_\-uncertain}, {\tt gsa\_\-depth\_\-uncertain} ) are not included in the pruned sgf output ( {\tt -ps} is switched on ), because they might provide confusing information ( human doesn't take into account alpha beta values when browsing search results). This natural part of minimax algorithm with alpha beta pruning is in defender's node ( attacker's node is symmetrical ) programmed as follows: 
+
+\footnotesize\begin{verbatim}if ( son_result_.group_status != gs_unknown && 
+     act_status_ <= son_result_.group_status || act_status_ == gs_unknown)) {
+  if ( act_status_ == son_result_.group_status ) {
+    if ( act_accuracy_ != gsa_certain )  //better accuracy ( certain )
+      act_accuracy_ = son_result_.group_status_accuracy; 
+  }
+  else  // act_status_ < son_result_.group_status, accuracy of better solution
+    act_accuracy_ = son_result_.group_status_accuracy; 
+
+  act_status_ = son_result_.group_status; 
+  if ( ab_pruning && alfa < act_status_)  // alpha update 
+    alfa = act_status_;
+  }
+
+  // alpha beta cutoff
+  if ( ab_pruning && ( act_status_ >= beta ) ) { //pruning
+    ...
+    board_manager.unplay_last_stone(); //unplays son's move 
+    ... // storing actual position to transposition table  
+    return act_status_;
+  }
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+\begin{itemize}
+\item Actual move is unplayed and another one is tried. This is done by simply calling function {\tt Board\_\-manager::unplay\_\-last\_\-stone()} and continuing to cycle through the possible moves.\item Returning status of the actual node. Two things must not be forgotten before returning a status ( result of the node ) of the group in the actual node:\begin{itemize}
+\item Keeping consistency of the position. This is done by calling function {\tt Board\_\-manager::unplay\_\-last\_\-stone()} in cases when status of the node is returned before all son's are resolved ( due to some pruning, usually alpha beta ).\item Storing actual position to transposition tables ( only when option {\tt -ntt} is switched on ) with appropriately set input and output alpha beta values together with accuracy of actual result and other information. This is done by following source code: 
+
+\footnotesize\begin{verbatim}hash_table_manager.store_item ( 
+  Hash_table_item ( board_manager.hash_board_manager.get_position_hash(),
+                    stone_color_to_move_,
+                    board_manager.ko_manager.get_retake_coordinates(),
+                    in_alfa, in_beta, act_accuracy_, act_status, act_status_)); 
+\end{verbatim}
+\normalsize
+\end{itemize}
+\end{itemize}
+\subsection{Transposition tables implementation}\label{page_3_page__1_section_2}
+Very close to the tree search is the implementation of transposition tables. It is done in {\tt t\_\-search.cc} and {\tt t\_\-search.h}. Transposition tables are handled by class {\tt Hash\_\-table\_\-manager} which contains a table representing saved positions and provides functions to perform operations upon the table. Transposition table itself ( {\tt Hash\_\-table\_\-manager::hash\_\-table} ) is implemented as an array of pointers to the {\tt Hash\_\-table\_\-item} ( representing one saved position ). Since today's computers don't struggle with memory shortage as it was usual in the past I decided for fixed-size table with over two million entries ( therefore an empty table takes around 8MB RAM on 32 bit architecture ). During the search process table grows as there are new positions being stored in. Size ( number of items ) of the hash table doesn't change in the process of solving Go problem. When a table becomes rather full ( number of stored position equals 1/2 of the sum of pointers from {\tt Hash\_\-board\_\-manager::hash\_\-table} ) then saving mode is toggled on and new positions are stored on the place of old ones. Hashing function is ordinary modulo on the higher bits of position's hash key ( representing the position ). Reason for this is that random generators ( hash key's are made up of random numbers : see {\bf Position representation}{\rm (p.\,\pageref{page_6})} ) are \char`\"{}more random\char`\"{} in the higher bits. For collision solving typical method of separate chaining is used : each item in the table is a head of a chain containing items with same modulo ( result of hashing function ) of hash key. New items are stored to the end of the chain. When searching for a particular item whole chain ( in the worst case ) must be searched. The key operations upon the table are:
+
+\begin{itemize}
+\item Inserting new item into the table ( {\tt Hash\_\-table\_\-manager::store\_\-item} ) At first, position's hash key must be normalized by the color of the player to move. This is done according to Zobrist method in function {\tt Hash\_\-table\_\-manager::get\_\-normalized\_\-hash\_\-key()}. Then hashing function is applied on the normalized hash key : 
+
+\footnotesize\begin{verbatim}unsigned long pos = ( item.hash_key >> shift_num ) % hash_table_size;
+\end{verbatim}
+\normalsize
+ If saving mod is toggled on ( there are too many positions in the hash table ) then actual position is stored to the first place in the appropriate chain ( replacing some previous position ). Usually ( not in saving mod ) algorithm goes through chain and tries to update some already stored item ( actual item is a \char`\"{}new version\char`\"{} of a position stored previously ) with function {\tt hash\_\-board\_\-manager::actualize\_\-item()}. When no actualization is done new position is simply stored to the end of the chain. 
+
+\footnotesize\begin{verbatim}for ( act_row = 1 ; act_item->next != NULL ; act_row++ ) {
+  if (  actualize_item (  act_item , item ) ) 
+    return;    // successfull actualization
+    act_item = act_item->next; // next item in the chain
+  }
+  act_item->next = new Hash_table_item ( item); // saving actual position to the end
+\end{verbatim}
+\normalsize
+\end{itemize}
+
+
+\begin{itemize}
+\item Retrieving information from the table ( {\tt Hash\_\-table\_\-manager::get\_\-item\_\-status} ) As in the previous method position's hash key is normalized and position in the table ( {\tt pos} ) is retrieved. Then cycle goes through chain of the stored items until it reaches the end or it founds corresponding item ( this is decided by applying function {\tt corresponds()} to both actual and stored item ). Function {\tt coorresponds()} compares whole ( not shortened by modulo ) hash keys and ko retake coordinates ( this is important : position is determined by it's hash key and position of potential ko ). Moreover it compares input {\tt alpha} and {\tt beta} values of both stored position and the actual position ( in the process of tree search ) and takes into account saved position accuracy to decide whether saved output {\tt alpha} and {\tt beta} values might be provided for actual position. 
+
+\footnotesize\begin{verbatim}//certain status provides more general condition to apply transposition table cutoff
+if ( saved_.accuracy == gsa_certain ) { 
+  if (!((( saved_.node_type == nt_max ) && (( new_.beta <= saved_.beta ) 
+      || ( saved_.new_alfa < saved_.beta )))  || 
+        (( saved_.node_type == nt_min ) && (( saved_.alfa <= new_.alfa ) 
+      || ( saved_.alfa < saved_.new_beta ))))) 
+    return false;
+} 
+else // more resolute conditions, because group status is not certain 
+  if (!(( new_.beta <= saved_.beta) && ( saved_.alfa <= new_.alfa))) 
+    return false;
+\end{verbatim}
+\normalsize
+ \end{itemize}

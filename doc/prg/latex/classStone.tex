@@ -1,0 +1,27 @@
+\section{Stone Class Reference}
+\label{classStone}\index{Stone@{Stone}}
+
+
+Class used for transformation from sgf to board representation.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Stone\_\-color} {\bf stone\_\-color}\label{classStone_a48ca4a6040ca594266b7f805a0e1ce3f}
+
+\begin{DoxyCompactList}\small\item\em Color of stone ( might be as well sc\_\-none for empty coordinates ). \item\end{DoxyCompactList}\item 
+{\bf Sgf\_\-mark} {\bf sgf\_\-mark}\label{classStone_ade9aabca1789b9ac51d74dc830e4dcd9}
+
+\begin{DoxyCompactList}\small\item\em Added sgf mark to the coordinate ( stone ), carrying special meaning ( stone is safe, coordinate is playable, ... ). \item\end{DoxyCompactList}\item 
+{\bf Coordinates} {\bf coordinates}\label{classStone_aa2fed69003caa634b4a9058cd9f9a040}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Coordinates}{p.}{classCoordinates} of the stone. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used for transformation from sgf to board representation. This class carries information about a coordinate and potential stone placed at it. It is used when \doxyref{Board\_\-manager}{p.}{classBoard__manager} is initialized from \doxyref{Temp\_\-board\_\-manager}{p.}{classTemp__board__manager} in \doxyref{Board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager()}{p.}{classBoard__manager_ae562aad79b4a42d0d04bbaf68e8bfe2b} function. 

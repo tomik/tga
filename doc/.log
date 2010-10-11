@@ -1,0 +1,30 @@
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2006.3.28)  11 MAY 2006 14:17
+entering extended mode
+**./src/tga_usr_doc.tex
+(/usr/share/texmf/tex/latex/tools/.tex
+! Interruption.
+<to be read again> 
+                   \begingroup 
+l.1 
+    %%
+? ^^[[3~
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+H for help, X to quit.
+? z
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+H for help, X to quit.
+? x
+ 
+Here is how much of TeX's memory you used:
+ 6 strings out of 95370
+ 128 string characters out of 1188185
+ 47266 words of memory out of 1000001
+ 3157 multiletter control sequences out of 10000+50000
+ 3640 words of font info for 14 fonts, out of 500000 for 1000
+ 198 hyphenation exceptions out of 1000
+ 3i,0n,1p,31b,6s stack positions out of 1500i,500n,5000p,200000b,5000s
+No pages of output.

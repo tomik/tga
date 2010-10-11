@@ -1,0 +1,218 @@
+\contentsline {chapter}{\numberline {1}TGA Main Page}{1}
+\contentsline {section}{\numberline {1.1}About}{1}
+\contentsline {section}{\numberline {1.2}Documentation hiearchy}{1}
+\contentsline {chapter}{\numberline {2}TGA Class Documentation}{3}
+\contentsline {section}{\numberline {2.1}Block Class Reference}{3}
+\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{4}
+\contentsline {section}{\numberline {2.2}Board\_\discretionary {-}{}{}manager Class Reference}{5}
+\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{7}
+\contentsline {subsection}{\numberline {2.2.2}Member Function Documentation}{7}
+\contentsline {subsubsection}{\numberline {2.2.2.1}\setlength {\rightskip }{0pt plus 5cm}void capture\_\discretionary {-}{}{}block ({\bf Block} $\ast $ {\em block\_\discretionary {-}{}{}})}{7}
+\contentsline {subsubsection}{\numberline {2.2.2.2}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}atari ({\bf Stone\_\discretionary {-}{}{}color}, {\bf Coordinates})}{8}
+\contentsline {subsubsection}{\numberline {2.2.2.3}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}capture ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, bool $\ast $ {\em connects\_\discretionary {-}{}{}}, int $\ast $ {\em stones\_\discretionary {-}{}{}num\_\discretionary {-}{}{}pt} = {\tt NULL})}{8}
+\contentsline {subsubsection}{\numberline {2.2.2.4}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}connection ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, bool {\em large\_\discretionary {-}{}{}blocks\_\discretionary {-}{}{}})}{8}
+\contentsline {subsubsection}{\numberline {2.2.2.5}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}coordinates\_\discretionary {-}{}{}adjacency ({\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}1}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}2})}{8}
+\contentsline {subsubsection}{\numberline {2.2.2.6}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}save\_\discretionary {-}{}{}connection ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}})}{9}
+\contentsline {subsubsection}{\numberline {2.2.2.7}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}self\_\discretionary {-}{}{}atari ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, int $\ast $ {\em stones\_\discretionary {-}{}{}in\_\discretionary {-}{}{}atari\_\discretionary {-}{}{}num\_\discretionary {-}{}{}})}{9}
+\contentsline {subsubsection}{\numberline {2.2.2.8}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}take\_\discretionary {-}{}{}liberty ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, int {\em liberty\_\discretionary {-}{}{}num\_\discretionary {-}{}{}}, {\bf Block} $\ast $$\ast $ {\em out\_\discretionary {-}{}{}block\_\discretionary {-}{}{}pt} = {\tt NULL})}{9}
+\contentsline {subsubsection}{\numberline {2.2.2.9}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}take\_\discretionary {-}{}{}liberty\_\discretionary {-}{}{}of\_\discretionary {-}{}{}safe\_\discretionary {-}{}{}attacker ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}})}{10}
+\contentsline {subsubsection}{\numberline {2.2.2.10}\setlength {\rightskip }{0pt plus 5cm}pair$<$ {\bf Coordinates}, bool $>$ check\_\discretionary {-}{}{}takes\_\discretionary {-}{}{}ko ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}})}{10}
+\contentsline {subsubsection}{\numberline {2.2.2.11}\setlength {\rightskip }{0pt plus 5cm}bool check\_\discretionary {-}{}{}unsafe\_\discretionary {-}{}{}neighbour ({\bf Block} $\ast $ {\em act\_\discretionary {-}{}{}block\_\discretionary {-}{}{}})}{10}
+\contentsline {subsubsection}{\numberline {2.2.2.12}\setlength {\rightskip }{0pt plus 5cm}{\bf Block} $\ast $ create\_\discretionary {-}{}{}new\_\discretionary {-}{}{}block ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}})}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.13}\setlength {\rightskip }{0pt plus 5cm}void fill\_\discretionary {-}{}{}point\_\discretionary {-}{}{}board ()}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.14}\setlength {\rightskip }{0pt plus 5cm}void init ()}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.15}\setlength {\rightskip }{0pt plus 5cm}void init\_\discretionary {-}{}{}from\_\discretionary {-}{}{}temp\_\discretionary {-}{}{}board\_\discretionary {-}{}{}manager ({\bf Temp\_\discretionary {-}{}{}board\_\discretionary {-}{}{}manager} {\em temp\_\discretionary {-}{}{}board\_\discretionary {-}{}{}manager})}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.16}\setlength {\rightskip }{0pt plus 5cm}void merge\_\discretionary {-}{}{}blocks ({\bf Block} $\ast $ {\em block1\_\discretionary {-}{}{}pt\_\discretionary {-}{}{}}, {\bf Block} $\ast $ {\em block2\_\discretionary {-}{}{}pt\_\discretionary {-}{}{}})}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.17}\setlength {\rightskip }{0pt plus 5cm}bool play\_\discretionary {-}{}{}a\_\discretionary {-}{}{}stone ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}})}{12}
+\contentsline {subsubsection}{\numberline {2.2.2.18}\setlength {\rightskip }{0pt plus 5cm}void remove\_\discretionary {-}{}{}block ({\bf Block} $\ast $ {\em block\_\discretionary {-}{}{}})}{12}
+\contentsline {subsubsection}{\numberline {2.2.2.19}\setlength {\rightskip }{0pt plus 5cm}void unplay\_\discretionary {-}{}{}last\_\discretionary {-}{}{}stone ()}{12}
+\contentsline {section}{\numberline {2.3}Coordinates Class Reference}{13}
+\contentsline {subsection}{\numberline {2.3.1}Detailed Description}{13}
+\contentsline {subsection}{\numberline {2.3.2}Constructor \& Destructor Documentation}{13}
+\contentsline {subsubsection}{\numberline {2.3.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Coordinates} (string {\em sgf\_\discretionary {-}{}{}coordinates\_\discretionary {-}{}{}})}{13}
+\contentsline {section}{\numberline {2.4}Cross\_\discretionary {-}{}{}point Struct Reference}{14}
+\contentsline {subsection}{\numberline {2.4.1}Detailed Description}{14}
+\contentsline {section}{\numberline {2.5}Dyn\_\discretionary {-}{}{}heur\_\discretionary {-}{}{}item Struct Reference}{15}
+\contentsline {subsection}{\numberline {2.5.1}Detailed Description}{15}
+\contentsline {section}{\numberline {2.6}Eye\_\discretionary {-}{}{}manager Class Reference}{16}
+\contentsline {subsection}{\numberline {2.6.1}Detailed Description}{16}
+\contentsline {subsection}{\numberline {2.6.2}Member Function Documentation}{16}
+\contentsline {subsubsection}{\numberline {2.6.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Eye\_\discretionary {-}{}{}status} get\_\discretionary {-}{}{}eye\_\discretionary {-}{}{}status ({\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, {\bf Point\_\discretionary {-}{}{}board} \& {\em point\_\discretionary {-}{}{}board\_\discretionary {-}{}{}}, bool {\em check\_\discretionary {-}{}{}diagonal\_\discretionary {-}{}{}eye})}{16}
+\contentsline {subsubsection}{\numberline {2.6.2.2}\setlength {\rightskip }{0pt plus 5cm}{\bf Group\_\discretionary {-}{}{}status} get\_\discretionary {-}{}{}group\_\discretionary {-}{}{}status ({\bf Point\_\discretionary {-}{}{}board} \& {\em point\_\discretionary {-}{}{}board\_\discretionary {-}{}{}}, Pot\_\discretionary {-}{}{}eyes\_\discretionary {-}{}{}map $\ast $ {\em pot\_\discretionary {-}{}{}eye\_\discretionary {-}{}{}map\_\discretionary {-}{}{}pt\_\discretionary {-}{}{}})}{16}
+\contentsline {section}{\numberline {2.7}Hash\_\discretionary {-}{}{}board\_\discretionary {-}{}{}manager Class Reference}{18}
+\contentsline {subsection}{\numberline {2.7.1}Detailed Description}{18}
+\contentsline {subsection}{\numberline {2.7.2}Member Function Documentation}{18}
+\contentsline {subsubsection}{\numberline {2.7.2.1}\setlength {\rightskip }{0pt plus 5cm}void init\_\discretionary {-}{}{}hash\_\discretionary {-}{}{}board ()}{18}
+\contentsline {subsubsection}{\numberline {2.7.2.2}\setlength {\rightskip }{0pt plus 5cm}void xor\_\discretionary {-}{}{}with\_\discretionary {-}{}{}position\_\discretionary {-}{}{}hash ({\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, {\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}})}{19}
+\contentsline {section}{\numberline {2.8}Hash\_\discretionary {-}{}{}repset\_\discretionary {-}{}{}manager Class Reference}{20}
+\contentsline {subsection}{\numberline {2.8.1}Detailed Description}{20}
+\contentsline {subsection}{\numberline {2.8.2}Member Function Documentation}{20}
+\contentsline {subsubsection}{\numberline {2.8.2.1}\setlength {\rightskip }{0pt plus 5cm}void remove\_\discretionary {-}{}{}item (Hash\_\discretionary {-}{}{}key {\em hash\_\discretionary {-}{}{}key\_\discretionary {-}{}{}})\hspace {0.3cm}{\tt [inline]}}{20}
+\contentsline {subsubsection}{\numberline {2.8.2.2}\setlength {\rightskip }{0pt plus 5cm}bool store\_\discretionary {-}{}{}item (Hash\_\discretionary {-}{}{}key {\em hash\_\discretionary {-}{}{}key\_\discretionary {-}{}{}})\hspace {0.3cm}{\tt [inline]}}{20}
+\contentsline {section}{\numberline {2.9}Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item Class Reference}{22}
+\contentsline {subsection}{\numberline {2.9.1}Detailed Description}{23}
+\contentsline {subsection}{\numberline {2.9.2}Friends And Related Function Documentation}{23}
+\contentsline {subsubsection}{\numberline {2.9.2.1}\setlength {\rightskip }{0pt plus 5cm}bool corresponds ({\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em A}, {\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em B})\hspace {0.3cm}{\tt [friend]}}{23}
+\contentsline {section}{\numberline {2.10}Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}manager Class Reference}{24}
+\contentsline {subsection}{\numberline {2.10.1}Detailed Description}{25}
+\contentsline {subsection}{\numberline {2.10.2}Member Function Documentation}{25}
+\contentsline {subsubsection}{\numberline {2.10.2.1}\setlength {\rightskip }{0pt plus 5cm}pair$<$ {\bf Group\_\discretionary {-}{}{}status}, {\bf Group\_\discretionary {-}{}{}status} $>$ get\_\discretionary {-}{}{}item\_\discretionary {-}{}{}status ({\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} {\em item}, bool \& {\em same\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}limit}, {\bf Group\_\discretionary {-}{}{}status\_\discretionary {-}{}{}accuracy} \& {\em accuracy\_\discretionary {-}{}{}})}{25}
+\contentsline {subsubsection}{\numberline {2.10.2.2}\setlength {\rightskip }{0pt plus 5cm}Hash\_\discretionary {-}{}{}key get\_\discretionary {-}{}{}normalized\_\discretionary {-}{}{}hash\_\discretionary {-}{}{}key (Hash\_\discretionary {-}{}{}key {\em hash\_\discretionary {-}{}{}key\_\discretionary {-}{}{}}, {\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}to\_\discretionary {-}{}{}move\_\discretionary {-}{}{}})}{25}
+\contentsline {subsubsection}{\numberline {2.10.2.3}\setlength {\rightskip }{0pt plus 5cm}void hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}activate ()}{26}
+\contentsline {subsubsection}{\numberline {2.10.2.4}\setlength {\rightskip }{0pt plus 5cm}void print\_\discretionary {-}{}{}info ()}{26}
+\contentsline {subsubsection}{\numberline {2.10.2.5}\setlength {\rightskip }{0pt plus 5cm}void store\_\discretionary {-}{}{}item ({\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} {\em item})}{26}
+\contentsline {section}{\numberline {2.11}Ko\_\discretionary {-}{}{}manager Class Reference}{27}
+\contentsline {subsection}{\numberline {2.11.1}Detailed Description}{27}
+\contentsline {section}{\numberline {2.12}Neighbors Class Reference}{28}
+\contentsline {subsection}{\numberline {2.12.1}Detailed Description}{28}
+\contentsline {section}{\numberline {2.13}Param\_\discretionary {-}{}{}record Struct Reference}{29}
+\contentsline {subsection}{\numberline {2.13.1}Detailed Description}{29}
+\contentsline {section}{\numberline {2.14}Params\_\discretionary {-}{}{}manager Class Reference}{30}
+\contentsline {subsection}{\numberline {2.14.1}Detailed Description}{31}
+\contentsline {subsection}{\numberline {2.14.2}Constructor \& Destructor Documentation}{32}
+\contentsline {subsubsection}{\numberline {2.14.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Params\_\discretionary {-}{}{}manager} ()}{32}
+\contentsline {subsection}{\numberline {2.14.3}Member Function Documentation}{32}
+\contentsline {subsubsection}{\numberline {2.14.3.1}\setlength {\rightskip }{0pt plus 5cm}bool set\_\discretionary {-}{}{}variable (string {\em token}, string {\em value})}{32}
+\contentsline {section}{\numberline {2.15}Playable\_\discretionary {-}{}{}data Class Reference}{33}
+\contentsline {subsection}{\numberline {2.15.1}Detailed Description}{33}
+\contentsline {section}{\numberline {2.16}Ref\_\discretionary {-}{}{}board Class Reference}{34}
+\contentsline {subsection}{\numberline {2.16.1}Detailed Description}{34}
+\contentsline {subsection}{\numberline {2.16.2}Constructor \& Destructor Documentation}{34}
+\contentsline {subsubsection}{\numberline {2.16.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Ref\_\discretionary {-}{}{}board} ()}{34}
+\contentsline {section}{\numberline {2.17}Search\_\discretionary {-}{}{}result Struct Reference}{35}
+\contentsline {subsection}{\numberline {2.17.1}Detailed Description}{35}
+\contentsline {section}{\numberline {2.18}Sgf\_\discretionary {-}{}{}parser Class Reference}{36}
+\contentsline {subsection}{\numberline {2.18.1}Detailed Description}{37}
+\contentsline {subsection}{\numberline {2.18.2}Constructor \& Destructor Documentation}{37}
+\contentsline {subsubsection}{\numberline {2.18.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Sgf\_\discretionary {-}{}{}parser} ()}{37}
+\contentsline {subsection}{\numberline {2.18.3}Member Function Documentation}{37}
+\contentsline {subsubsection}{\numberline {2.18.3.1}\setlength {\rightskip }{0pt plus 5cm}bool parse\_\discretionary {-}{}{}sgf (string {\em filename\_\discretionary {-}{}{}})}{37}
+\contentsline {subsubsection}{\numberline {2.18.3.2}\setlength {\rightskip }{0pt plus 5cm}bool resolve (char {\em act\_\discretionary {-}{}{}char}, string {\em act\_\discretionary {-}{}{}text})}{37}
+\contentsline {section}{\numberline {2.19}Sgf\_\discretionary {-}{}{}printer Class Reference}{39}
+\contentsline {subsection}{\numberline {2.19.1}Detailed Description}{39}
+\contentsline {subsection}{\numberline {2.19.2}Member Function Documentation}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.1}\setlength {\rightskip }{0pt plus 5cm}string coordinates\_\discretionary {-}{}{}to\_\discretionary {-}{}{}string ({\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}})}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.2}\setlength {\rightskip }{0pt plus 5cm}void print\_\discretionary {-}{}{}comment (bool {\em blockable})}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.3}\setlength {\rightskip }{0pt plus 5cm}void print\_\discretionary {-}{}{}initial\_\discretionary {-}{}{}position ({\bf Point\_\discretionary {-}{}{}board} \& {\em point\_\discretionary {-}{}{}board})}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.4}\setlength {\rightskip }{0pt plus 5cm}void print\_\discretionary {-}{}{}sgf\_\discretionary {-}{}{}header ({\bf Stone\_\discretionary {-}{}{}color} {\em stone\_\discretionary {-}{}{}color\_\discretionary {-}{}{}to\_\discretionary {-}{}{}move\_\discretionary {-}{}{}})}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.5}\setlength {\rightskip }{0pt plus 5cm}void print\_\discretionary {-}{}{}to\_\discretionary {-}{}{}file (string {\em str})}{40}
+\contentsline {subsubsection}{\numberline {2.19.2.6}\setlength {\rightskip }{0pt plus 5cm}void set\_\discretionary {-}{}{}output (string {\em file\_\discretionary {-}{}{}name})\hspace {0.3cm}{\tt [inline]}}{41}
+\contentsline {section}{\numberline {2.20}State\_\discretionary {-}{}{}function\_\discretionary {-}{}{}record Class Reference}{42}
+\contentsline {subsection}{\numberline {2.20.1}Detailed Description}{42}
+\contentsline {subsection}{\numberline {2.20.2}Member Function Documentation}{42}
+\contentsline {subsubsection}{\numberline {2.20.2.1}\setlength {\rightskip }{0pt plus 5cm}bool operator== ({\bf State\_\discretionary {-}{}{}function\_\discretionary {-}{}{}record} {\em A})\hspace {0.3cm}{\tt [inline]}}{42}
+\contentsline {section}{\numberline {2.21}Stone Class Reference}{43}
+\contentsline {subsection}{\numberline {2.21.1}Detailed Description}{43}
+\contentsline {section}{\numberline {2.22}T\_\discretionary {-}{}{}searcher Class Reference}{44}
+\contentsline {subsection}{\numberline {2.22.1}Detailed Description}{44}
+\contentsline {subsection}{\numberline {2.22.2}Member Function Documentation}{45}
+\contentsline {subsubsection}{\numberline {2.22.2.1}\setlength {\rightskip }{0pt plus 5cm}void add\_\discretionary {-}{}{}tree\_\discretionary {-}{}{}size\_\discretionary {-}{}{}to\_\discretionary {-}{}{}dyn\_\discretionary {-}{}{}heur (int {\em level\_\discretionary {-}{}{}}, {\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, int {\em tree\_\discretionary {-}{}{}size\_\discretionary {-}{}{}})}{45}
+\contentsline {subsubsection}{\numberline {2.22.2.2}\setlength {\rightskip }{0pt plus 5cm}{\bf Search\_\discretionary {-}{}{}result} search ({\bf Node\_\discretionary {-}{}{}type} {\em node\_\discretionary {-}{}{}type\_\discretionary {-}{}{}}, int {\em level}, {\bf Group\_\discretionary {-}{}{}status} {\em alfa}, {\bf Group\_\discretionary {-}{}{}status} {\em beta}, bool {\em last\_\discretionary {-}{}{}move\_\discretionary {-}{}{}pass}, bool {\em last\_\discretionary {-}{}{}move\_\discretionary {-}{}{}ko})}{45}
+\contentsline {subsubsection}{\numberline {2.22.2.3}\setlength {\rightskip }{0pt plus 5cm}{\bf Search\_\discretionary {-}{}{}result} search\_\discretionary {-}{}{}son ({\bf Coordinates} {\em coordinates\_\discretionary {-}{}{}}, {\bf Node\_\discretionary {-}{}{}type} {\em node\_\discretionary {-}{}{}type\_\discretionary {-}{}{}}, int {\em level\_\discretionary {-}{}{}}, {\bf Group\_\discretionary {-}{}{}status} {\em alfa}, {\bf Group\_\discretionary {-}{}{}status} {\em beta}, bool {\em ko\_\discretionary {-}{}{}for\_\discretionary {-}{}{}life})}{45}
+\contentsline {section}{\numberline {2.23}Temp\_\discretionary {-}{}{}board\_\discretionary {-}{}{}manager Class Reference}{47}
+\contentsline {subsection}{\numberline {2.23.1}Detailed Description}{47}
+\contentsline {section}{\numberline {2.24}Unplay\_\discretionary {-}{}{}manager Struct Reference}{48}
+\contentsline {subsection}{\numberline {2.24.1}Detailed Description}{49}
+\contentsline {subsection}{\numberline {2.24.2}Constructor \& Destructor Documentation}{49}
+\contentsline {subsubsection}{\numberline {2.24.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Unplay\_\discretionary {-}{}{}manager} ()\hspace {0.3cm}{\tt [inline]}}{49}
+\contentsline {section}{\numberline {2.25}Unplay\_\discretionary {-}{}{}node Struct Reference}{50}
+\contentsline {subsection}{\numberline {2.25.1}Detailed Description}{50}
+\contentsline {chapter}{\numberline {3}TGA File Documentation}{51}
+\contentsline {section}{\numberline {3.1}/home/tomik/Projects/TGA/src/board.cc File Reference}{51}
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{51}
+\contentsline {subsection}{\numberline {3.1.2}Function Documentation}{51}
+\contentsline {subsubsection}{\numberline {3.1.2.1}\setlength {\rightskip }{0pt plus 5cm}Hash\_\discretionary {-}{}{}key get\_\discretionary {-}{}{}random\_\discretionary {-}{}{}Hash\_\discretionary {-}{}{}key ()}{51}
+\contentsline {subsubsection}{\numberline {3.1.2.2}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ ({\bf Coordinates} {\em A}, {\bf Coordinates} {\em B})}{52}
+\contentsline {subsubsection}{\numberline {3.1.2.3}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ (const {\bf Playable\_\discretionary {-}{}{}data} \& {\em A}, const {\bf Playable\_\discretionary {-}{}{}data} \& {\em B})}{52}
+\contentsline {section}{\numberline {3.2}/home/tomik/Projects/TGA/src/board.h File Reference}{53}
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{54}
+\contentsline {subsection}{\numberline {3.2.2}Enumeration Type Documentation}{55}
+\contentsline {subsubsection}{\numberline {3.2.2.1}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Playing\_\discretionary {-}{}{}priority}}{55}
+\contentsline {subsubsection}{\numberline {3.2.2.2}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Point\_\discretionary {-}{}{}status}}{55}
+\contentsline {subsubsection}{\numberline {3.2.2.3}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Sgf\_\discretionary {-}{}{}mark}}{55}
+\contentsline {subsubsection}{\numberline {3.2.2.4}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Stone\_\discretionary {-}{}{}color}}{55}
+\contentsline {subsection}{\numberline {3.2.3}Function Documentation}{55}
+\contentsline {subsubsection}{\numberline {3.2.3.1}\setlength {\rightskip }{0pt plus 5cm}Hash\_\discretionary {-}{}{}key get\_\discretionary {-}{}{}random\_\discretionary {-}{}{}Hash\_\discretionary {-}{}{}key ()}{55}
+\contentsline {subsubsection}{\numberline {3.2.3.2}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ ({\bf Coordinates} {\em A}, {\bf Coordinates} {\em B})}{56}
+\contentsline {subsubsection}{\numberline {3.2.3.3}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ (const {\bf Playable\_\discretionary {-}{}{}data} \& {\em A}, const {\bf Playable\_\discretionary {-}{}{}data} \& {\em B})}{56}
+\contentsline {section}{\numberline {3.3}/home/tomik/Projects/TGA/src/eyes.cc File Reference}{57}
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{57}
+\contentsline {subsection}{\numberline {3.3.2}Function Documentation}{57}
+\contentsline {subsubsection}{\numberline {3.3.2.1}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ ({\bf Group\_\discretionary {-}{}{}status} {\em B}, {\bf Group\_\discretionary {-}{}{}status} {\em A})}{57}
+\contentsline {section}{\numberline {3.4}/home/tomik/Projects/TGA/src/eyes.h File Reference}{58}
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{58}
+\contentsline {subsection}{\numberline {3.4.2}Enumeration Type Documentation}{58}
+\contentsline {subsubsection}{\numberline {3.4.2.1}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Eye\_\discretionary {-}{}{}status}}{58}
+\contentsline {subsubsection}{\numberline {3.4.2.2}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Group\_\discretionary {-}{}{}status}}{59}
+\contentsline {subsection}{\numberline {3.4.3}Function Documentation}{59}
+\contentsline {subsubsection}{\numberline {3.4.3.1}\setlength {\rightskip }{0pt plus 5cm}bool operator$<$ ({\bf Group\_\discretionary {-}{}{}status} {\em B}, {\bf Group\_\discretionary {-}{}{}status} {\em A})}{59}
+\contentsline {section}{\numberline {3.5}/home/tomik/Projects/TGA/src/main.cc File Reference}{60}
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{60}
+\contentsline {subsection}{\numberline {3.5.2}Function Documentation}{60}
+\contentsline {subsubsection}{\numberline {3.5.2.1}\setlength {\rightskip }{0pt plus 5cm}{\bf Group\_\discretionary {-}{}{}status} analyze\_\discretionary {-}{}{}single\_\discretionary {-}{}{}position (string {\em pos\_\discretionary {-}{}{}name}, {\bf Stone\_\discretionary {-}{}{}color} {\em color\_\discretionary {-}{}{}to\_\discretionary {-}{}{}move}, double $\ast $ {\em act\_\discretionary {-}{}{}time}, string {\em save\_\discretionary {-}{}{}filename})}{60}
+\contentsline {subsubsection}{\numberline {3.5.2.2}\setlength {\rightskip }{0pt plus 5cm}string get\_\discretionary {-}{}{}out\_\discretionary {-}{}{}fn\_\discretionary {-}{}{}base (string {\em filename})}{61}
+\contentsline {subsubsection}{\numberline {3.5.2.3}\setlength {\rightskip }{0pt plus 5cm}void handle\_\discretionary {-}{}{}single\_\discretionary {-}{}{}problem (string {\em filename}, bool {\em sgf\_\discretionary {-}{}{}output}, int $\ast $ {\em total\_\discretionary {-}{}{}nodes\_\discretionary {-}{}{}pt}, double $\ast $ {\em total\_\discretionary {-}{}{}time\_\discretionary {-}{}{}pt})}{61}
+\contentsline {subsubsection}{\numberline {3.5.2.4}\setlength {\rightskip }{0pt plus 5cm}int main (int {\em argc}, char $\ast $ {\em argv}[$\,$])}{61}
+\contentsline {section}{\numberline {3.6}/home/tomik/Projects/TGA/src/main.h File Reference}{62}
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{62}
+\contentsline {section}{\numberline {3.7}/home/tomik/Projects/TGA/src/p\_\discretionary {-}{}{}manager.cc File Reference}{63}
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{63}
+\contentsline {section}{\numberline {3.8}/home/tomik/Projects/TGA/src/p\_\discretionary {-}{}{}manager.h File Reference}{64}
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{64}
+\contentsline {subsection}{\numberline {3.8.2}Enumeration Type Documentation}{64}
+\contentsline {subsubsection}{\numberline {3.8.2.1}\setlength {\rightskip }{0pt plus 5cm}anonymous enum}{64}
+\contentsline {subsubsection}{\numberline {3.8.2.2}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Param\_\discretionary {-}{}{}type}}{64}
+\contentsline {section}{\numberline {3.9}/home/tomik/Projects/TGA/src/sgf\_\discretionary {-}{}{}read.cc File Reference}{65}
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{65}
+\contentsline {section}{\numberline {3.10}/home/tomik/Projects/TGA/src/sgf\_\discretionary {-}{}{}read.h File Reference}{66}
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{66}
+\contentsline {subsection}{\numberline {3.10.2}Enumeration Type Documentation}{66}
+\contentsline {subsubsection}{\numberline {3.10.2.1}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Parser\_\discretionary {-}{}{}state}}{66}
+\contentsline {section}{\numberline {3.11}/home/tomik/Projects/TGA/src/t\_\discretionary {-}{}{}search.cc File Reference}{68}
+\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{68}
+\contentsline {subsection}{\numberline {3.11.2}Function Documentation}{68}
+\contentsline {subsubsection}{\numberline {3.11.2.1}\setlength {\rightskip }{0pt plus 5cm}bool corresponds ({\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em saved\_\discretionary {-}{}{}}, {\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em new\_\discretionary {-}{}{}})}{68}
+\contentsline {section}{\numberline {3.12}/home/tomik/Projects/TGA/src/t\_\discretionary {-}{}{}search.h File Reference}{69}
+\contentsline {subsection}{\numberline {3.12.1}Detailed Description}{70}
+\contentsline {subsection}{\numberline {3.12.2}Enumeration Type Documentation}{70}
+\contentsline {subsubsection}{\numberline {3.12.2.1}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Group\_\discretionary {-}{}{}status\_\discretionary {-}{}{}accuracy}}{70}
+\contentsline {subsubsection}{\numberline {3.12.2.2}\setlength {\rightskip }{0pt plus 5cm}enum {\bf Node\_\discretionary {-}{}{}type}}{70}
+\contentsline {subsection}{\numberline {3.12.3}Function Documentation}{70}
+\contentsline {subsubsection}{\numberline {3.12.3.1}\setlength {\rightskip }{0pt plus 5cm}bool corresponds ({\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em saved\_\discretionary {-}{}{}}, {\bf Hash\_\discretionary {-}{}{}table\_\discretionary {-}{}{}item} \& {\em new\_\discretionary {-}{}{}})}{70}
+\contentsline {chapter}{\numberline {4}TGA Page Documentation}{71}
+\contentsline {section}{\numberline {4.1}Handling Parameters}{71}
+\contentsline {section}{\numberline {4.2}Tree search}{73}
+\contentsline {subsection}{\numberline {4.2.1}Tree search implementation description}{73}
+\contentsline {subsection}{\numberline {4.2.2}Transposition tables implementation}{77}
+\contentsline {subsection}{\numberline {4.2.3}Tree search implementation description}{78}
+\contentsline {subsection}{\numberline {4.2.4}Transposition tables implementation}{82}
+\contentsline {section}{\numberline {4.3}Static eye recognition}{84}
+\contentsline {subsection}{\numberline {4.3.1}Recognizing status of the group}{84}
+\contentsline {subsection}{\numberline {4.3.2}Recognizing status of the potential eye}{84}
+\contentsline {subsection}{\numberline {4.3.3}Recognizing status of the group}{85}
+\contentsline {subsection}{\numberline {4.3.4}Recognizing status of the potential eye}{86}
+\contentsline {section}{\numberline {4.4}Starting search}{87}
+\contentsline {subsection}{\numberline {4.4.1}After the start}{87}
+\contentsline {subsection}{\numberline {4.4.2}Handling a single problem}{87}
+\contentsline {subsection}{\numberline {4.4.3}Analysing single position}{87}
+\contentsline {subsection}{\numberline {4.4.4}After the start}{88}
+\contentsline {subsection}{\numberline {4.4.5}Handling a single problem}{88}
+\contentsline {subsection}{\numberline {4.4.6}Analysing single position}{89}
+\contentsline {section}{\numberline {4.5}Sgf parsing}{90}
+\contentsline {subsection}{\numberline {4.5.1}Sgf format}{90}
+\contentsline {subsection}{\numberline {4.5.2}Parsing automata}{90}
+\contentsline {subsection}{\numberline {4.5.3}Parsing proccess}{91}
+\contentsline {subsection}{\numberline {4.5.4}Sgf format}{92}
+\contentsline {subsection}{\numberline {4.5.5}Parsing automata}{92}
+\contentsline {subsection}{\numberline {4.5.6}Parsing proccess}{93}
+\contentsline {section}{\numberline {4.6}Position representation}{95}
+\contentsline {subsection}{\numberline {4.6.1}How is position represented}{95}
+\contentsline {subsection}{\numberline {4.6.2}Position initialization}{95}
+\contentsline {subsection}{\numberline {4.6.3}Playing a move}{96}
+\contentsline {subsection}{\numberline {4.6.4}Unplaying moves}{98}
+\contentsline {subsection}{\numberline {4.6.5}Static heuristics methods}{99}
+\contentsline {subsection}{\numberline {4.6.6}How is position represented}{100}
+\contentsline {subsection}{\numberline {4.6.7}Position initialization}{100}
+\contentsline {subsection}{\numberline {4.6.8}Playing a move}{101}
+\contentsline {subsection}{\numberline {4.6.9}Unplaying moves}{102}
+\contentsline {subsection}{\numberline {4.6.10}Static heuristics methods}{103}

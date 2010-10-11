@@ -1,0 +1,30 @@
+\section{Ko\_\-manager Class Reference}
+\label{classKo__manager}\index{Ko\_\-manager@{Ko\_\-manager}}
+
+
+Class handling ko.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Coordinates} {\bf ko\_\-coordinates}\label{classKo__manager_ae32f019b5ade53df52249a2386398e7e}
+
+\begin{DoxyCompactList}\small\item\em coordinates of stone that took the ko \item\end{DoxyCompactList}\item 
+{\bf Coordinates} {\bf retake\_\-coordinates}\label{classKo__manager_a8d78faa19677a54dc6e979002aa6860a}
+
+\begin{DoxyCompactList}\small\item\em where must play opponent to retake the ko,when ko\_\-manager is not active, retake coordinates are \doxyref{Coordinates}{p.}{classCoordinates}(-\/1,-\/1), this is demanaded by t\_\-search \item\end{DoxyCompactList}\item 
+{\bf Stone\_\-color} {\bf stone\_\-color}\label{classKo__manager_a48ca4a6040ca594266b7f805a0e1ce3f}
+
+\begin{DoxyCompactList}\small\item\em color of stone that took the ko \item\end{DoxyCompactList}\item 
+bool {\bf active}\label{classKo__manager_a03c996f9fcf0e10baeb3e700be0c409a}
+
+\begin{DoxyCompactList}\small\item\em if true then some ko was taken in actual turn \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class handling ko. This class handles appearences of ko. Algorithm is capable to store information only of one ko in every turn ( double ko's and another pecularities are handled during a tree search, see \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} 

@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{kozelek:bt}
+Tomas Kozelek.
+\newblock Life and death solver in go.
+\newblock Bachelor's thesis, 2006.
+
+\bibitem{web:senseis_library}
+International server dedicated to the game of go.
+\newblock http://senseis.xmp.net/.
+
+\bibitem{web:sgf}
+Official specification of sgf format.
+\newblock www.red-bean.com/sgf.
+
+\end{thebibliography}

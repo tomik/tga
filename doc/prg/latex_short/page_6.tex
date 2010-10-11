@@ -1,0 +1,162 @@
+\section{Position representation}\label{page_6}
+Module handling position representation is implemented in {\tt board.h} and {\tt board.cc} and it is a largest one in the whole program. Tree search module requires an abstract Go board where move might be played ( and unplayed ) according to the valid rules of go. This module provides such an abstraction. It fullfills following functions :\begin{itemize}
+\item Position initialization from the results of sgf parsing.\item Playing a move on given coordinates together with all neccessary actions.\item Unplaying the last played move.\item Providing methods supporting static heuristics.\item Managing position hash keys.\end{itemize}
+
+
+The whole functionality the module offers is managed by class {\tt Board\_\-manager}. However, there are many classes fulfilling specialized tasks ( e.g. {\tt Ko\_\-manager}, {\tt Unplay\_\-manager}, ... ) but all of these are included in {\tt Board\_\-manager}, {\tt board\_\-manager} is the only instance of this class defined in {\tt main.h}.\subsection{How is position represented}\label{page_6_page_6__sec_1}
+Position is understood as a set of block of stones ( block is a set of connected stones of the same color and in program is represented by instance of class {\tt Block} ). Go board is abstracted by a two dimensional array {\tt Board\_\-manager::board} where each item of this array is a pointer to the block occupying actual coordinates ( represented by class {\tt Coordinates} ) or to {\tt NULL} if there is no stone. Along with this \char`\"{}block oriented\char`\"{} representation simple two dimensional array where every item represents actual coordinate ( possible values for single coordinate are listed in {\tt Point\_\-status} enum ) is held in {\tt Board\_\-manager::point\_\-board} for purposes of {\tt Eye\_\-manager}. For tree search purposes it is neccessary to keep a list of coordinates where it is possible to play in actual turn ( {\tt Board\_\-manager::playable\_\-map} ) and list of potential eyes in actual turn ( {\tt Board\_\-manager::pot\_\-eyes\_\-map} ).\subsection{Position initialization}\label{page_6_page_6__sec_2}
+After a successfull sgf parsing process all information neccessary for the position initialization ( position of stones and position of marks ) are stored in {\tt Sgf\_\-parser::temp\_\-board\_\-manager}. The position initialization is done by function {\tt Board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager()}. It is neccessary to create blocks ( and pointers to them in {\tt Board\_\-manager::board} ) according to the position structure. This is done by simply playing every stone on the board ( see below ) as if they were played in the game. 
+
+\footnotesize\begin{verbatim}for ( Stone_vector::iterator it = temp_board_manager.stone_vector.begin(); 
+      it != temp_board_manager.stone_vector.end(); it++) //cycle through stored data
+  // if item is a stone it is played out 
+  if ( ( (*it).get_stone_color() == sc_black) || ( (*it).get_stone_color() == sc_white))  
+      play_a_stone( (*it).get_stone_color() , (*it).get_coordinates() ); // playing
+\end{verbatim}
+\normalsize
+
+
+Afterwards sgf marks are handled:\begin{itemize}
+\item Some attacker's blocks are stated safe ( {\tt Block::safe} ) if it's stones doesn't have a \char`\"{}playable mark\char`\"{} ( {\tt sm\_\-playable} ).\item According to \char`\"{}playable mark\char`\"{} ( {\tt sm\_\-playable} ), appropriate coordinates are added to the {\tt Board\_\-manager::playable\_\-map} ( empty points marked ) and {\tt Board\_\-manager::pot\_\-eyes\_\-map} ( all marked - even unsafe attacker's stones are potential eyes). Moreover attacker's stones marked with \char`\"{}playable mark\char`\"{} are stated unsafe.\item Coordinates on the \char`\"{}edge\char`\"{} of the problem ( marked with {\tt sm\_\-at\_\-playable} ) are added to the map of playable moves with priorities {\tt pp\_\-none} for defender ( he cannot play there ) and {\tt pp\_\-low} for attacker ( attacker's playing priority here is low ).\end{itemize}
+
+
+Finally, {\tt Board\_\-manager::Point\_\-board} is initialized by calling {\tt Board\_\-manager::fill\_\-point\_\-board()}.
+
+Besides some trivial variables initialization in {\tt Board\_\-manager::init} it is also neccessary to initialize mechanism for producing Zobrist hashing keys. This is done by {\tt Hash\_\-board\_\-manager::init\_\-hash\_\-board}. In this function for every possible position on the Go board an it's every possible state ( containing black or white stone - empty points are not taken into account when hashing ) a long random number is generated. Unsigned long long type ( 64 bit ) is used for these numbers. These random numbers ( organized {\tt in} Hash\_\-board\_\-manager::hash\_\-board ) provide base for generating Zobrist hash keys for every position on the Go board and thus make engine in transposition tables and repetitions checks work ( see {\bf Tree search}{\rm (p.\,\pageref{page_3})} ). This initialization function is run from {\tt main.cc} for every position to be solved.\subsection{Playing a move}\label{page_6_page_6__sec_3}
+This is the most complicated operation in the whole position representation. It is done by function {\tt Board\_\-manager::play\_\-a\_\-stone} ( this function is \char`\"{}a heart\char`\"{} of the whole module ) supported by other {\tt Board\_\-manager} functions. The general process can be described in three basic steps ( in function they are not strictly sequential, rather they interfere ):\begin{itemize}
+\item creating {\tt Unplay\_\-manager} record for future stones unplaying\item adding the played stone into the block structure and updating it ( adjusting liberties, merging blocks, some block might get captured, ... )\item updating other data structures ( e.g. {\tt Board\_\-manager::point\_\-board} )\end{itemize}
+
+
+If move is a pass move, only shortened record is saved for unplaying purposes and function returns {\tt true} ( playing a move was successfull ). Some trivial checks are performed afterwards it was found move is not a pass ( e.g. there is no stone on desired coordinates, it is not violating ko rule ). A complete record for unplaying is created and filled with the actual infromation.
+
+
+
+\footnotesize\begin{verbatim}Unplay_node * act_node = new Unplay_node(); // creating new node of dynamic list 
+act_node->next = unplay_node_handle; // adding a node to the beginning of list
+unplay_node_handle = act_node;
+//node is filled with unplaying information
+unplay_node_handle->unplay_manager.stone_to_unplay = coordinates_;  
+unplay_node_handle->unplay_manager.number_stones_de = number_stones_de;
+... // saving other datastructures: playable_man, pot_eyes_map, ko_manager, position_hash
+\end{verbatim}
+\normalsize
+
+
+If the move is a ko taking move ( checked by function {\tt Board\_\-manager::takes\_\-ko} ), {\tt Board\_\-manager::ko\_\-manager} is activated and filled with actual ko information ( where it takes place, which are retake coordinates, which player took the ko ). Now it comes time to add a stone into the block structure. First, new empty block is created and actual stone is added into it together with updating position hash key. 
+
+\footnotesize\begin{verbatim}Block * act_block_ = board_manager.create_new_block( stone_color_); // creates empty block
+act_block_->add_stone ( coordinates_ );  // 
+board[coordinates_.get_co_row()] // sets a pointer from a board to the block
+    [coordinates_.get_co_column()].set_present_block_pt( act_block_); 
+hash_board_manager.xor_with_position_hash( coordinates_, stone_color_); // update hash key 
+\end{verbatim}
+\normalsize
+
+
+Now, more complicated part comes. At first cycle through the new block's neighbouring coordinates is performed and liberties are added to the block as well as neighbour blocks of stones are saved for unplaying purposes ( see {\bf Unplaying moves}{\rm (p.\,\pageref{page_6_page_6__sec_4})} ). Afterwards another cycle managing block structure updating is performed. It goes through new block ( actual ) neighbours again and merges actual block with neighbouring friendly blocks ( by calling {\tt Board\_\-manager::merge\_\-blocks} ) into a single block of stones. This cycle also removes liberty from enemy neigbouring blocks and possibly performs function capturing this enemy block ( {\tt Board\_\-manager::capture\_\-block} ) 
+
+\footnotesize\begin{verbatim}for ( int i = 0; i < 4 ; i++ ) {
+  ...
+  // getting pointer to adjacent block 
+  adjacent_block_ =  board[adjacent_coordinates_[i].get_co_row()]
+                      [adjacent_coordinates_[i].get_co_column()].get_present_block_pt(); 
+
+  adjacent_block_->remove_liberty( coordinates_ ); // played stone removed block's liberty
+  if( adjacent_block_->stone_color == stone_color_) { //adjacent block is friendly one
+    merge_blocks(  act_block_  , adjacent_block_ ); // merging adjacent and actual 
+  }
+  else { // adjacent block is an enemy one 
+    if ( adjacent_block_->is_captured() ) { //last liberty was removed => capturing block
+      capture_block( adjacent_block_ );
+  }
+\end{verbatim}
+\normalsize
+
+
+Capturing a block ( {\tt Board\_\-manager::capture\_\-block} ) is connected with updating the list of potential coordinates to play ( {\tt Board\_\-manager::playable\_\-map} ) and the list of potential eyes ( {\tt Board\_\-manager::pot\_\-eyes\_\-map} - coordinates under captured stones become potential eyes ). Liberties are added to the neigbouring ( opponent's ) blocks and the position hash key is updated as well ( stones of the captured block are xored out ). At the end the block is removed by function {\tt Board\_\-manager::remove\_\-block} ( updates pointers from {\tt Board\_\-manager::board} and items in {\tt Board\_\-manager::point\_\-board} and destroys the block ). It is neccessary to take appropriate actions when \char`\"{}under the stones\char`\"{} treatment is switched off ( {\tt -nus} parameter ). In that case when a defender block of at least 3 stones is captured ( expressed by variable {\tt possible\_\-under\_\-the\_\-stones} ), coordinates under the captured stones are not added to the {\tt Board\_\-manager::playable\_\-map} nor {\tt Board\_\-manager::pot\_\-eyes\_\-map}. Thus, the algorithm doesn't try to play under them. When no \char`\"{}under the stones\char`\"{} analysis is demanded, unsafe attacker's stones that captured this defender's block are excluded from the list of potential eyes ( they cannot be captured thus are not potential eyes ). Backbone of capturing function is programmed as follows:
+
+
+
+\footnotesize\begin{verbatim}for ( Coordinates_vector::iterator it = block_->stone_vector.begin(); 
+      it < block_->stone_vector.end() ; it++ )  { //cycle through captured stones
+
+  // if playing under the stones is not forbidden, data structures are actualized
+  if (( ! possible_under_the_stones ) || ( ! params_manager.get_no_under_the_stones())) {
+    playable_map.insert ( make_pair ((*it) , Playable_data())); //playing under the stones
+    pot_eyes_map.insert ( make_pair ((*it) , 0 ));  
+  }
+  hash_board_manager.xor_with_position_hash((*it), block_->stone_color); //hash key update
+  ... // adding liberties to adjacent blocks 
+}
+remove_block( block_); // destroying the block
+\end{verbatim}
+\normalsize
+
+
+Finally in the process of playing a stone, {\tt Board\_\-manager::point\_\-board} and the list of potential coordinates to play ( {\tt Board\_\-manager::playable\_\-map} ) are updated according to the played stone. In the end it must be checked whether a played stone was not a suicide. If it was a suicide, stone is immediately unplayed ( thus keeping consistence of playing function ) and function returns {\tt false} marking that move was illegal. 
+
+\footnotesize\begin{verbatim}if ( act_block_->is_captured() ) { 
+  unplay_last_stone(); // stone must be prevented to commit a suicide
+  return false;  // stone was not played 
+}
+\end{verbatim}
+\normalsize
+\subsection{Unplaying moves}\label{page_6_page_6__sec_4}
+A single instance of {\tt Unplay\_\-manager} is capable of storing all information neccessary for an unplay of a single move. These instances are organized into a dynamic list in order to properly unplay all moves along the path to the actual position. Dynamic list thus consists of instances of {\tt Unplay\_\-node} ( containig instance of {\tt Unplay\_\-manager} and pointer to next node ). Actually this dynamic list is backward organized ( new nodes are added to the beginning) thus nodes related to last moves are in the beginnning and those related to moves played earlier are in the end. Pointer {\tt Board\_\-manager::Unplay\_\-node\_\-handle} marks the beginning of this dynamic list. As shown above a new record ( instance of {\tt Unplay\_\-node} ) is added to the dynamic structure in function {\tt Board\_\-manager::play\_\-a\_\-stone}. Process of unplaying last played move ( another move cannot be unplayed ) is covered by function {\tt Board\_\-manager::unplay\_\-last\_\-stone}.
+
+Unplaying pass moves is handled at first. There are created special ( almost empty ) unplaying records for pass moves containing only information that pass was played and copy of {\tt Board\_\-manager::ko\_\-manager} (this is neccessary because after pass it is possible to retake some ko which was forbidden before). If move is not pass, at first some data structures ( {\tt playable\_\-map} , {\tt ko\_\-manager}, {\tt number\_\-stones\_\-de}, {\tt pot\_\-eyes\_\-map}, {\tt position\_\-hash}) are just copied from the unplay record to the data structures in {\tt Board\_\-manager}. 
+
+\footnotesize\begin{verbatim}playable_map = unplay_node_handle->unplay_manager.playable_map; 
+ko_manager = unplay_node_handle -> unplay_manager.ko_manager;
+... // copying other data structures
+\end{verbatim}
+\normalsize
+
+
+Now the block structure has to be restored. In the process of playing actual stone ( the one to unplay ) algorithm stored copies of blocks neighbouring to coordinate on which stone was played ( see {\bf Playing a move}{\rm (p.\,\pageref{page_6_page_6__sec_3})} ). Actual block and block's neigbouring to coordinate on which stone was played are simply removed ( using function {\tt Board\_\-manager::remove\_\-block} ). Now position on the board is updated by adding stored blocks into the block structure. This is done by the cycle through all stones in every of these blocks ( maximally four neighbouring blocks ) and setting pointers from adequate coordinates in {\tt Board\_\-manager::board} to the actual block, moreover {\tt Board\_\-manager::point\_\-board} is updated. 
+
+\footnotesize\begin{verbatim}for ( int i =0 ; i < FOUR ; i++ ) {
+  at_block_ =  unplay_node_handle->unplay_manager.neigbour_blocks[i];
+  ... 
+  for ( Coordinates_vector::iterator it = act_block_->stone_vector.begin(); 
+        it < act_block_ ->stone_vector.end() ; it++ ) { //cycle through
+     // setting a pointer from Board_manager::board  
+    board[(*it).get_co_row()][(*it).get_co_column()].set_present_block_pt( act_block_ );
+    
+    // updating Board_manager::point_board according to actual stone( color,safe/unsafe )
+    if ( act_block_->stone_color == sc_white )  
+      point_board[(*it).get_co_row()][(*it).get_co_column()] = ps_de; // defender's stone
+    else { // handling variants for ps_at and ps_uns_at 
+      if ( act_block_-> safe ) 
+        ...
+    }
+\end{verbatim}
+\normalsize
+
+
+Last obstacle is that some of neighbouring blocks might got captured by playing an actual stone ( in {\tt Board\_\-manager::play\_\-a\_\-stone} ). In that case all stones of this block are cycled through and liberties representing these stones ( block was captured, therefore it provided liberties for adjacent blocks ) must be removed from all adjacent blocks. Finally handler to actual stone to unplay ( {\tt Board\_\-manager::unplay\_\-node\_\-handle} ) is forwarded to the next item in the dynamic list ( thus list gets ready for the next unplay ) and actual {\tt Unplay\_\-node} is destroyed.\subsection{Static heuristics methods}\label{page_6_page_6__sec_5}
+{\tt Board\_\-manager} contains set of methods supporting static heuristics neccessary for efficient tree search. They are quite similar and clearly benefit from chosen \char`\"{}block oriented\char`\"{} position representation. As an example I provide detailed description of {\tt Board\_\-manager::check\_\-take\_\-liberty}. This function is used to check whether played move captures, ataris or simply takes away liberty of opponent's unsafe block. These different actions are distinguished by demanded number of opponent's block's liberties : 1 for capture , 2 for atari , 0 stands for more than 2 and represents simply taking away the liberty. At first it is checked whether input {\tt Coordinates} are valid ( not equal to {\tt Coordinates} (-1,-1 ) ). Then in the cycle neighbouring coordinates of coordinate in check are retrieved and so are the blocks of stones covering them. After neccessary trivial checks ( negihbouring coordinates are on the board, neighbouring block is present ) a simple test whether neighbouring block matches the conditions is done It matches the conditions if it is an unsafe opponent's block with an appropriate number of liberties.
+
+
+
+\footnotesize\begin{verbatim}for ( int i = 0; i < FOUR ; i++ ) {
+  // obtaining neighbouring coordinates 
+  adjacent_coordinates_ = get_adjacent_coordinates ( coordinates_ , Direction ( i ) ); 
+  if ( Coordinates ( -1, -1 ) == adjacent_coordinates_ ) // out of the board
+    continue;
+  adjacent_block_ = board[adjacent_coordinates_.get_co_row()] // getting neighbour block
+                         [adjacent_coordinates_.get_co_column()].get_present_block_pt();
+
+  // if all conditions of taking the liberty away are fulfilled ...
+  if ( adjacent_block_ != NULL && adjacent_block_-> stone_color != stone_color_ && 
+      ! adjacent_block_->safe &&    
+      ( adjacent_block_->liberty_count == liberty_num_ || liberty_num_ == 0 ) )  { 
+        ... // here function returns pointer to block whose liberty is taken 
+        return true; // test was successfull, move takes away liberty_num_ liberties
+  }
+}
+\end{verbatim}
+\normalsize
+
+
+All static heuristic methods are declared within {\tt Board\_\-manager} and begin with a keyword \char`\"{}check\char`\"{}. 

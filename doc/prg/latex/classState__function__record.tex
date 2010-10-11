@@ -1,0 +1,42 @@
+\section{State\_\-function\_\-record Class Reference}
+\label{classState__function__record}\index{State\_\-function\_\-record@{State\_\-function\_\-record}}
+
+
+This class represents one record in parsing automata ( \doxyref{Sgf\_\-parser}{p.}{classSgf__parser} ) state function ( \doxyref{Sgf\_\-parser::state\_\-function}{p.}{classSgf__parser_a1e15c93b65fdf5166ceb67c42f3d70c8} ).  
+
+
+
+
+{\ttfamily \#include $<$sgf\_\-read.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf operator==} ({\bf State\_\-function\_\-record} A)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Parser\_\-state} {\bf old\_\-state}\label{classState__function__record_a7db313b9899a56bb6785490aa4fd5d06}
+
+\begin{DoxyCompactList}\small\item\em This is the state parsing automata is actually in. \item\end{DoxyCompactList}\item 
+char {\bf symbol}\label{classState__function__record_af7565614b2ea8e3f98b39303ae09ebca}
+
+\begin{DoxyCompactList}\small\item\em Actual symbol -\/ represents an edge along which automata goes to the new\_\-state. \item\end{DoxyCompactList}\item 
+{\bf Parser\_\-state} {\bf new\_\-state}\label{classState__function__record_a1de7aef5d56bb7a42a5dbe6051d2cb16}
+
+\begin{DoxyCompactList}\small\item\em New state of automata after the transition. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents one record in parsing automata ( \doxyref{Sgf\_\-parser}{p.}{classSgf__parser} ) state function ( \doxyref{Sgf\_\-parser::state\_\-function}{p.}{classSgf__parser_a1e15c93b65fdf5166ceb67c42f3d70c8} ). This class simulates autamata's state function -\/ two given \char`\"{}input\char`\"{} arguments : \doxyref{old\_\-state}{p.}{classState__function__record_a7db313b9899a56bb6785490aa4fd5d06} and \doxyref{symbol}{p.}{classState__function__record_af7565614b2ea8e3f98b39303ae09ebca} results into a \doxyref{new\_\-state}{p.}{classState__function__record_a1de7aef5d56bb7a42a5dbe6051d2cb16}. 
+
+\subsection{Member Function Documentation}
+\index{State\_\-function\_\-record@{State\_\-function\_\-record}!operator==@{operator==}}
+\index{operator==@{operator==}!State_function_record@{State\_\-function\_\-record}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf State\_\-function\_\-record}}]{ A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classState__function__record_a474a2103ca356d765490cb5cfc49c732}
+This operator== is neccessary for finding an appropriate record in Sgf\_\-parser::state\_\-function\_\-vector. 

@@ -1,0 +1,30 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/eyes.cc File Reference}
+\label{eyes_8cc}\index{/home/tomik/src/c++/tga-\/1.0/src/eyes.cc@{/home/tomik/src/c++/tga-\/1.0/src/eyes.cc}}
+
+
+Contains implementation of methods related to statical eye recognition( page\_\-4 ).  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf operator$<$} ({\bf Group\_\-status} B, {\bf Group\_\-status} A)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains implementation of methods related to statical eye recognition( page\_\-4 ). In this file methods performing eye recognition are implemented. Eye recognition is generally pretty simple and is a good 
+
+\subsection{Function Documentation}
+\index{eyes.cc@{eyes.cc}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!eyes.cc@{eyes.cc}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\_\-status}}]{ B, }
+\item[{{\bf Group\_\-status}}]{ A}
+\end{DoxyParamCaption}
+)}\label{eyes_8cc_af628156ccefd39892f74475f0e0d71be}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em A}]Status of the first group. \item[\mbox{\tt[in]} {\em B}]Status of the second group. return True if first status $<$ second status otherwise returns false.\end{DoxyParams}
+Definition of operator$<$ : gs\_\-dead $<$ gs\_\-unknown $<$ gs\_\-ko $<$ gs\_\-alive This operator is neccessary for comparing group statuses in minimax algorithm in \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} However operator is defined for gs\_\-unknown as well it should not be used for gs\_\-unknown ( that is a special status needing individual solution ) 

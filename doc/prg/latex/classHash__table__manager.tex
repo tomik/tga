@@ -1,0 +1,140 @@
+\section{Hash\_\-table\_\-manager Class Reference}
+\label{classHash__table__manager}\index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}}
+
+
+Manages transposition tables.  
+
+
+
+
+{\ttfamily \#include $<$t\_\-search.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\_\-table\_\-manager} ()\label{classHash__table__manager_a3d3f62def2e20c69e5118b8fb4a38b79}
+
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+void {\bf hash\_\-table\_\-activate} ()
+\item 
+Hash\_\-key {\bf get\_\-normalized\_\-hash\_\-key} (Hash\_\-key, {\bf Stone\_\-color})
+\begin{DoxyCompactList}\small\item\em Normalizes hash\_\-key according to color. \item\end{DoxyCompactList}\item 
+void {\bf store\_\-item} ({\bf Hash\_\-table\_\-item})
+\begin{DoxyCompactList}\small\item\em Stores item into \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item\end{DoxyCompactList}\item 
+pair$<$ {\bf Group\_\-status}, {\bf Group\_\-status} $>$ {\bf get\_\-item\_\-status} ({\bf Hash\_\-table\_\-item}, bool \&, {\bf Group\_\-status\_\-accuracy} \&)
+\begin{DoxyCompactList}\small\item\em Retrieves item's status from \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-info} ()
+\begin{DoxyCompactList}\small\item\em Prints short info. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\_\-table\_\-item} $\ast$$\ast$ {\bf hash\_\-table}\label{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}
+
+\begin{DoxyCompactList}\small\item\em Transposition table itself. \item\end{DoxyCompactList}\item 
+int {\bf hash\_\-table\_\-size}\label{classHash__table__manager_a73a51be9198fd5bb77a463b36c7237f7}
+
+\begin{DoxyCompactList}\small\item\em Size of the table ( in number of positions for primary hash ). \item\end{DoxyCompactList}\item 
+int {\bf hash\_\-table\_\-size\_\-log}\label{classHash__table__manager_ad87826f5ce489c459ff5d4c1c289e6b9}
+
+\begin{DoxyCompactList}\small\item\em logarithm of \doxyref{hash\_\-table\_\-size}{p.}{classHash__table__manager_a73a51be9198fd5bb77a463b36c7237f7} \item\end{DoxyCompactList}\item 
+int {\bf hash\_\-key\_\-length}\label{classHash__table__manager_ade2d85c56921b4bb7cccb2fd284c5a49}
+
+\begin{DoxyCompactList}\small\item\em Lenght of the hash key in bits ( usually 64 ). \item\end{DoxyCompactList}\item 
+int {\bf shift\_\-num}\label{classHash__table__manager_a128566e009295d0a43d725f70aad78fa}
+
+\begin{DoxyCompactList}\small\item\em when hashing, hash key is shifted to the right by shift num to get better ,,random performance" ( higher bits are more random ) \item\end{DoxyCompactList}\item 
+int {\bf items\_\-num}\label{classHash__table__manager_a7b714879e2f348853e9b6c2edcbf9423}
+
+\begin{DoxyCompactList}\small\item\em Number of actually stored items. \item\end{DoxyCompactList}\item 
+int {\bf collision\_\-num}\label{classHash__table__manager_aa0b75f4e39e178bde27f72cdc6254307}
+
+\begin{DoxyCompactList}\small\item\em Number of collisions/. \item\end{DoxyCompactList}\item 
+int {\bf longest\_\-row}\label{classHash__table__manager_afbe2eca225540d4735fd4f90093d3602}
+
+\begin{DoxyCompactList}\small\item\em Longest row of items at some particular position in \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item\end{DoxyCompactList}\item 
+Hash\_\-key {\bf at\_\-to\_\-move\_\-normalisation}\label{classHash__table__manager_a2945bb4dd45dd4c70249f2c56dbbd709}
+
+\begin{DoxyCompactList}\small\item\em Random hash key used to normalize position ( xor ) when is attacker to move. \item\end{DoxyCompactList}\item 
+Hash\_\-key {\bf de\_\-to\_\-move\_\-normalisation}\label{classHash__table__manager_a5370af68175e363e38794246a776396e}
+
+\begin{DoxyCompactList}\small\item\em Random hash key used to normalize position ( xor ) when is defender to move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages transposition tables. This class contains transposition tables ( \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}) and miscellanous methods / properties to operate these tables :
+\begin{DoxyItemize}
+\item create and init transposition tables
+\item inserting new \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} into tables
+\item retrieving existing item ( according to \doxyref{corresponds()}{p.}{t__search_8cc_a015971f4ebc5510a339c2c6011885439} function ) 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}!get\_\-item\_\-status@{get\_\-item\_\-status}}
+\index{get\_\-item\_\-status@{get\_\-item\_\-status}!Hash_table_manager@{Hash\_\-table\_\-manager}}
+\subsubsection[{get\_\-item\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf Group\_\-status}, {\bf Group\_\-status} $>$ get\_\-item\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\_\-table\_\-item}}]{ item, }
+\item[{bool \&}]{ same\_\-depth\_\-limit, }
+\item[{{\bf Group\_\-status\_\-accuracy} \&}]{ accuracy\_\-}
+\end{DoxyParamCaption}
+)}\label{classHash__table__manager_a4f556ef65a79a2d1a8c92aa6515e8ad1}
+
+
+Retrieves item's status from \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em item}]\doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which is about to be found in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item[\mbox{\tt[out]} {\em same\_\-depth\_\-limit}]returns true if a stored position was stored in same iteration ( with same depth limit ) like incoming position \item[\mbox{\tt[out]} {\em accuracy\_\-}]returns Group\_\-status\_\-accuracy of stored position \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns pair of coordinates representing new alfa and new beta.
+\end{DoxyReturn}
+Method takes hash key from given item ( normalizis it ) and then if there exists item with the same hash\_\-key ( normalized ) in the \doxyref{Hash\_\-table\_\-manager}{p.}{classHash__table__manager} ( which is tested by funciton \doxyref{corresponds}{p.}{t__search_8h_a7997f0a499b44ec90ae84c280779fe9d} similar to operator==) it returns its stored group status. \index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}!get\_\-normalized\_\-hash\_\-key@{get\_\-normalized\_\-hash\_\-key}}
+\index{get\_\-normalized\_\-hash\_\-key@{get\_\-normalized\_\-hash\_\-key}!Hash_table_manager@{Hash\_\-table\_\-manager}}
+\subsubsection[{get\_\-normalized\_\-hash\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}Hash\_\-key get\_\-normalized\_\-hash\_\-key (
+\begin{DoxyParamCaption}
+\item[{Hash\_\-key}]{ hash\_\-key\_\-, }
+\item[{{\bf Stone\_\-color}}]{ stone\_\-color\_\-to\_\-move\_\-}
+\end{DoxyParamCaption}
+)}\label{classHash__table__manager_ad01cc004281b4d2b38cf251b6b0bde36}
+
+
+Normalizes hash\_\-key according to color. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em hash\_\-key\_\-}]Hash key of the actual position. \item[\mbox{\tt[in]} {\em stone\_\-color\_\-to\_\-move\_\-}]Which player is to move. Activates ( and initializes ) hash\_\-table which works as transposition tables ( saves position ). \end{DoxyParams}
+\index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}!hash\_\-table\_\-activate@{hash\_\-table\_\-activate}}
+\index{hash\_\-table\_\-activate@{hash\_\-table\_\-activate}!Hash_table_manager@{Hash\_\-table\_\-manager}}
+\subsubsection[{hash\_\-table\_\-activate}]{\setlength{\rightskip}{0pt plus 5cm}void hash\_\-table\_\-activate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHash__table__manager_abb202d1baceb238e89676d880a76e032}
+'brief Activates table
+
+Activates ( and initializes ) hash\_\-table which works as transposition tables ( saves position ). \index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}!print\_\-info@{print\_\-info}}
+\index{print\_\-info@{print\_\-info}!Hash_table_manager@{Hash\_\-table\_\-manager}}
+\subsubsection[{print\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHash__table__manager_a1243268c621c2049a41956ccfc934fd5}
+
+
+Prints short info. 
+
+Method prints simple info about \doxyref{Hash\_\-table\_\-manager}{p.}{classHash__table__manager}. \index{Hash\_\-table\_\-manager@{Hash\_\-table\_\-manager}!store\_\-item@{store\_\-item}}
+\index{store\_\-item@{store\_\-item}!Hash_table_manager@{Hash\_\-table\_\-manager}}
+\subsubsection[{store\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}void store\_\-item (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\_\-table\_\-item}}]{ item}
+\end{DoxyParamCaption}
+)}\label{classHash__table__manager_a97b4f087e20ebd4096daab7dc60ad223}
+
+
+Stores item into \doxyref{hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em item}]\doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which is about to be stored.\end{DoxyParams}
+Method takes hash key from given item ( normalizis it ) and then finds adequate position in the hash table, if the position is full it goes along the dynamic list in the position and stores actual item in the end. 

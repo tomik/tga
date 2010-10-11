@@ -1,0 +1,30 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.cc File Reference}
+\label{t__search_8cc}\index{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.cc@{/home/tomik/src/c++/tga-\/1.0/src/t\_\-search.cc}}
+
+
+Contains implementation of methods related to tree searching ( page\_\-3 ).  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf corresponds} ({\bf Hash\_\-table\_\-item} \&saved\_\-, {\bf Hash\_\-table\_\-item} \&new\_\-)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains implementation of methods related to tree searching ( page\_\-3 ). In this file important methods performing tree searching ( or related to tree searching ) are implemented. Tree searching itself ( \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} ) is done with standart minimax algorithm. 
+
+\subsection{Function Documentation}
+\index{t\_\-search.cc@{t\_\-search.cc}!corresponds@{corresponds}}
+\index{corresponds@{corresponds}!t_search.cc@{t\_\-search.cc}}
+\subsubsection[{corresponds}]{\setlength{\rightskip}{0pt plus 5cm}bool corresponds (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ saved\_\-, }
+\item[{{\bf Hash\_\-table\_\-item} \&}]{ new\_\-}
+\end{DoxyParamCaption}
+)}\label{t__search_8cc_a015971f4ebc5510a339c2c6011885439}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em saved\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which was saved in the \doxyref{Hash\_\-table\_\-manager::hash\_\-table}{p.}{classHash__table__manager_a7e6ebd5662a7496149125ab6439940d2}. \item[\mbox{\tt[in]} {\em new\_\-}]Reference to \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} which corressponds to actual position.\end{DoxyParams}
+Method tests if it is possible to use stored information ( Group\_\-status ) of saved\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item} for actual position represented by new\_\- \doxyref{Hash\_\-table\_\-item}{p.}{classHash__table__item}. It's similar to operator==. 

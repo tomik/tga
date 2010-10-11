@@ -1,0 +1,62 @@
+\section{Eye\_\-manager Class Reference}
+\label{classEye__manager}\index{Eye\_\-manager@{Eye\_\-manager}}
+
+
+Handles searching for eyes of the defender's group.  
+
+
+
+
+{\ttfamily \#include $<$eyes.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Eye\_\-status} {\bf get\_\-eye\_\-status} ({\bf Coordinates} coordinates, Point\_\-board \&point\_\-board, bool check\_\-diagonal\_\-eye)
+\begin{DoxyCompactList}\small\item\em Checks \doxyref{Eye\_\-status}{p.}{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1} of given potential eye. \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf get\_\-group\_\-status} (Point\_\-board \&, Pot\_\-eyes\_\-map $\ast$)
+\begin{DoxyCompactList}\small\item\em Basic function staticaly resolving status of the defenders group. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Coordinates\_\-set {\bf full\_\-eyes\_\-set}\label{classEye__manager_ac717c22ba1c0153bf1c62124aebdaef9}
+
+\begin{DoxyCompactList}\small\item\em When \doxyref{get\_\-group\_\-status()}{p.}{classEye__manager_a8431244a4235c2e99b97bf8076796b75} function founds out some full eyes it is put in this set and defender is prevented to fill it =$>$ effective forward pruning ( without information loss ). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles searching for eyes of the defender's group. This class provides functions for simple statical eye evaluation. 
+
+\subsection{Member Function Documentation}
+\index{Eye\_\-manager@{Eye\_\-manager}!get\_\-eye\_\-status@{get\_\-eye\_\-status}}
+\index{get\_\-eye\_\-status@{get\_\-eye\_\-status}!Eye_manager@{Eye\_\-manager}}
+\subsubsection[{get\_\-eye\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Eye\_\-status} get\_\-eye\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{Point\_\-board \&}]{ point\_\-board\_\-, }
+\item[{bool}]{ check\_\-diagonal\_\-eye}
+\end{DoxyParamCaption}
+)}\label{classEye__manager_a7709794c5c67dadaafab4106d3e17836}
+
+
+Checks \doxyref{Eye\_\-status}{p.}{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1} of given potential eye. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em coordinates\_\-}]Potential eye coordinates. \item[\mbox{\tt[in]} {\em pount\_\-board\_\-}]reference to \doxyref{Board\_\-manager::point\_\-board}{p.}{classBoard__manager_af83ab0f504e080debf985226cdbf65d7}, this is neccessary for deciding an \doxyref{Eye\_\-status}{p.}{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1} of potential eye. \item[\mbox{\tt[in]} {\em check\_\-diagonal\_\-eye}]This boolean switch is used for recognition of \char`\"{}diagonaly related eyes\char`\"{}.\end{DoxyParams}
+This function resolves \doxyref{Eye\_\-status}{p.}{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1} of potential eye at given coordinates\_\-. \index{Eye\_\-manager@{Eye\_\-manager}!get\_\-group\_\-status@{get\_\-group\_\-status}}
+\index{get\_\-group\_\-status@{get\_\-group\_\-status}!Eye_manager@{Eye\_\-manager}}
+\subsubsection[{get\_\-group\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\_\-status} get\_\-group\_\-status (
+\begin{DoxyParamCaption}
+\item[{Point\_\-board \&}]{ point\_\-board\_\-, }
+\item[{Pot\_\-eyes\_\-map $\ast$}]{ pot\_\-eye\_\-map\_\-pt\_\-}
+\end{DoxyParamCaption}
+)}\label{classEye__manager_a8431244a4235c2e99b97bf8076796b75}
+
+
+Basic function staticaly resolving status of the defenders group. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em point\_\-board\_\-}]Reference to \doxyref{Board\_\-manager::point\_\-board}{p.}{classBoard__manager_af83ab0f504e080debf985226cdbf65d7} this is neccessary for deciding an \doxyref{Eye\_\-status}{p.}{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1} of potential eye. \item[\mbox{\tt[in]} {\em pot\_\-eye\_\-map\_\-pt}]Pointer to \doxyref{Board\_\-manager::pot\_\-eyes\_\-map}{p.}{classBoard__manager_a718b13dab644b28a5e5f3e944c56fd63}, this is a list of potential eyes which are further searched in \doxyref{Eye\_\-manager::get\_\-eye\_\-status}{p.}{classEye__manager_a7709794c5c67dadaafab4106d3e17836}. Function might delete items from this map ( therefore pointer is used ) : when a false eye is found it is deleted.\end{DoxyParams}
+This functions applies \doxyref{Eye\_\-manager::get\_\-eye\_\-status}{p.}{classEye__manager_a7709794c5c67dadaafab4106d3e17836} on every item from (pot\_\-eye\_\-map\_\-pt$\ast$) and from retrieved information decides whether the group status is alive/dead or unknownd. When two full eyes are found checking their connectivity is included by calling function \doxyref{Board\_\-manager::check\_\-eyes\_\-connection}{p.}{classBoard__manager_a566d7fff2e8bb60f6d52183848033b7b} 

@@ -1,0 +1,30 @@
+\section{Unplay\_\-node Struct Reference}
+\label{structUnplay__node}\index{Unplay\_\-node@{Unplay\_\-node}}
+
+
+Dynamic structure for unplaying moves.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Unplay\_\-node} $\ast$ {\bf next}\label{structUnplay__node_a44aad308dec5ebfd1fc87272fddf5326}
+
+\begin{DoxyCompactList}\small\item\em pointer to next in the list \item\end{DoxyCompactList}\item 
+{\bf Unplay\_\-manager} {\bf unplay\_\-manager}\label{structUnplay__node_a760a7fb22e589a0bd2b3e180e129a67c}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Unplay\_\-manager}{p.}{structUnplay__manager} for actual move. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Board\_\-manager}\label{structUnplay__node_a9bb99230809a55ed083cd93a76a6141e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Dynamic structure for unplaying moves. This class creates a dynamic structure of Unplay\_\-manager's where each \doxyref{Unplay\_\-manager}{p.}{structUnplay__manager} represents one move to be unplayed. When there is played new move, new item of \doxyref{Unplay\_\-node}{p.}{structUnplay__node} is created appropriate \doxyref{Unplay\_\-manager}{p.}{structUnplay__manager} is filled with actual information and it is stored in the end of the list. 

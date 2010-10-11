@@ -1,0 +1,131 @@
+\section{Params\_\-manager Class Reference}
+\label{classParams__manager}\index{Params\_\-manager@{Params\_\-manager}}
+
+
+Handling parametres operations.  
+
+
+
+
+{\ttfamily \#include $<$p\_\-manager.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Params\_\-manager} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Params\_\-manager}{p.}{classParams__manager} constructor. \item\end{DoxyCompactList}\item 
+bool {\bf set\_\-variable} (string token, string value)
+\begin{DoxyCompactList}\small\item\em Setting variables. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-short\_\-help} ()\label{classParams__manager_ab7ed4bd63dd275ee823a348d751ce92c}
+
+\begin{DoxyCompactList}\small\item\em Prints help. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Param\_\-record} {\bf param\_\-table} [MAX\_\-PARAMS]\label{classParams__manager_a8d39acef6dd722cc19265a3a19851300}
+
+\begin{DoxyCompactList}\small\item\em Table with \doxyref{Param\_\-record}{p.}{structParam__record} records, this is filled in the constructor and then it is used for matching parametres. \item\end{DoxyCompactList}\item 
+int {\bf param\_\-table\_\-size}\label{classParams__manager_a564730202f48cc1e70369dfbd5cf2e1f}
+
+\begin{DoxyCompactList}\small\item\em Size of the param\_\-table. \item\end{DoxyCompactList}\item 
+string {\bf fn\_\-pos\_\-in}\label{classParams__manager_a9ca75da31ab77c3258a83aa2e0e61355}
+
+\begin{DoxyCompactList}\small\item\em input position filename \item\end{DoxyCompactList}\item 
+string {\bf fn\_\-sgf\_\-list\_\-in}\label{classParams__manager_a3dfc2a2d04fea8c1f350694b79a0bac7}
+
+\begin{DoxyCompactList}\small\item\em list of sgf pos. to compile -\/ only compile\_\-mode \item\end{DoxyCompactList}\item 
+string {\bf fn\_\-comp\_\-db\_\-in}\label{classParams__manager_afbadb5c9d11e1f936321f1492a8a3447}
+
+\begin{DoxyCompactList}\small\item\em compiled database in \item\end{DoxyCompactList}\item 
+string {\bf fn\_\-comp\_\-db\_\-out}\label{classParams__manager_a52cfe4c748ebeba8bc6e9eef315415c2}
+
+\begin{DoxyCompactList}\small\item\em compiled database out -\/ only compile\_\-mode \item\end{DoxyCompactList}\item 
+bool {\bf compile\_\-mode}\label{classParams__manager_ad33483ff9fa27f283159a8b90cfe718f}
+
+\begin{DoxyCompactList}\small\item\em Only compiling database of sgf positions. \item\end{DoxyCompactList}\item 
+bool {\bf pattern\_\-match\_\-mode}\label{classParams__manager_ac0cc796626416b79ef154b4b377bc754}
+
+\begin{DoxyCompactList}\small\item\em Will he use pattern matcher or not. \item\end{DoxyCompactList}\item 
+bool {\bf ab\_\-pruning}\label{classParams__manager_a97411c2cde7ed99a109f1f9c70d59d21}
+
+\begin{DoxyCompactList}\small\item\em alafa beta pruning \item\end{DoxyCompactList}\item 
+bool {\bf multiple\_\-pos\_\-mode}\label{classParams__manager_a72855b70420397c32c9ee0e7b4ceb891}
+
+\begin{DoxyCompactList}\small\item\em input file is list of positions \item\end{DoxyCompactList}\item 
+bool {\bf sgf\_\-testing\_\-output}\label{classParams__manager_add830c23f3dc987b704516b165c497a2}
+
+\begin{DoxyCompactList}\small\item\em Long sgf output. \item\end{DoxyCompactList}\item 
+bool {\bf attacker\_\-moves\_\-first}\label{classParams__manager_a119c366a8f25dd4ab418b52dc469fe37}
+
+\begin{DoxyCompactList}\small\item\em ,,Black to kill" \item\end{DoxyCompactList}\item 
+bool {\bf defender\_\-moves\_\-first}\label{classParams__manager_a7547df025e6d09e5ae4c0aaf9a9d19dd}
+
+\begin{DoxyCompactList}\small\item\em ,,White to live" \item\end{DoxyCompactList}\item 
+bool {\bf ko\_\-handling}\label{classParams__manager_ae1a7efd1644321bebaf5baad569255a2}
+
+\begin{DoxyCompactList}\small\item\em if switched off analyzer might return unaccurate desicion \item\end{DoxyCompactList}\item 
+bool {\bf pruned\_\-sgf\_\-output}\label{classParams__manager_a5645481123204b911d486685e4ef5353}
+
+\begin{DoxyCompactList}\small\item\em Only ,,interesting" variations are outputed. \item\end{DoxyCompactList}\item 
+bool {\bf short\_\-help}\label{classParams__manager_a48663eb27d10cbe3d0198bd74e37b2ba}
+
+\begin{DoxyCompactList}\small\item\em If switched short help pops up. \item\end{DoxyCompactList}\item 
+bool {\bf testing\_\-area}\label{classParams__manager_a65d58d68ae79c824c0878417e3c55aea}
+
+\begin{DoxyCompactList}\small\item\em switches program line in \doxyref{main.cc}{p.}{main_8cc} to testing area \item\end{DoxyCompactList}\item 
+bool {\bf transposition\_\-tables}\label{classParams__manager_a1eba77cb0fd666f64a2374c8854aa45e}
+
+\begin{DoxyCompactList}\small\item\em uses transposition tables \item\end{DoxyCompactList}\item 
+bool {\bf save\_\-tt}\label{classParams__manager_aca82c76bd2bb330abf1d543f6fe9a573}
+
+\begin{DoxyCompactList}\small\item\em saves transposition after first search ( usually attacker's move ) \item\end{DoxyCompactList}\item 
+bool {\bf iddfs}\label{classParams__manager_a6f16d950d2680902c7f446c0da400d63}
+
+\begin{DoxyCompactList}\small\item\em activates iterative deepening depth first search; \item\end{DoxyCompactList}\item 
+bool {\bf dyn\_\-heur}\label{classParams__manager_a81a4cbabb170e8436a9e50cf394ee654}
+
+\begin{DoxyCompactList}\small\item\em Using dynamic heuristics. \item\end{DoxyCompactList}\item 
+bool {\bf stat\_\-heur}\label{classParams__manager_a128dd78acbf4bed4b0c536dc3252777b}
+
+\begin{DoxyCompactList}\small\item\em Using statical heuristic. \item\end{DoxyCompactList}\item 
+int {\bf sgf\_\-output\_\-depth}\label{classParams__manager_a98a24802831e98dcb778348c1eb96eed}
+
+\begin{DoxyCompactList}\small\item\em How deep is sgf output. \item\end{DoxyCompactList}\item 
+bool {\bf under\_\-the\_\-stones}\label{classParams__manager_aa4f0bceb91d0a355deaaabc888c8d2e7}
+
+\begin{DoxyCompactList}\small\item\em Is playing under the stones ( defender's ) allowed ? \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handling parametres operations. \doxyref{Params\_\-manager}{p.}{classParams__manager} handles setting appropriate variables according to set parametres on command line. Besides array param\_\-table which stores linking information between parametr and corresponding variable, this class contains all variables set by parametres + functions to operate them -\/ get\_\-.. , set\_\-... 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Params\_\-manager@{Params\_\-manager}!Params\_\-manager@{Params\_\-manager}}
+\index{Params\_\-manager@{Params\_\-manager}!Params_manager@{Params\_\-manager}}
+\subsubsection[{Params\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Params\_\-manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classParams__manager_a573d3c20f78e7fdcf4b7dad4a40bc02e}
+
+
+\doxyref{Params\_\-manager}{p.}{classParams__manager} constructor. 
+
+Table of corresponding parametres and variables is filled in this constructor. 
+
+\subsection{Member Function Documentation}
+\index{Params\_\-manager@{Params\_\-manager}!set\_\-variable@{set\_\-variable}}
+\index{set\_\-variable@{set\_\-variable}!Params_manager@{Params\_\-manager}}
+\subsubsection[{set\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}bool set\_\-variable (
+\begin{DoxyParamCaption}
+\item[{string}]{ token, }
+\item[{string}]{ value}
+\end{DoxyParamCaption}
+)}\label{classParams__manager_a54e03fb33c5d7f1c4937656347228a30}
+
+
+Setting variables. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em token}]String token which represents a parametr ( e.g. -\/i , -\/tt , ... ) \item[\mbox{\tt[in]} {\em value}]String value of given parameter ( since most of the tokens are connected with boolean values {\ttfamily true} / {\ttfamily false} this field is empty ) Method looks up in \doxyref{Params\_\-manager::param\_\-table}{p.}{classParams__manager_a8d39acef6dd722cc19265a3a19851300} given token and sets corresponding variable ( from the record in table ) on given value ( or on {\ttfamily true} if token is of boolean type ). \end{DoxyParams}

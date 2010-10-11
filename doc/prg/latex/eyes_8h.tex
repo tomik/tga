@@ -1,0 +1,101 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/eyes.h File Reference}
+\label{eyes_8h}\index{/home/tomik/src/c++/tga-\/1.0/src/eyes.h@{/home/tomik/src/c++/tga-\/1.0/src/eyes.h}}
+
+
+Header file for \doxyref{eyes.cc}{p.}{eyes_8cc}.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Eye\_\-manager}
+\begin{DoxyCompactList}\small\item\em Handles searching for eyes of the defender's group. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Group\_\-status} \{ {\bf gs\_\-dead}, 
+{\bf gs\_\-unknown}, 
+{\bf gs\_\-ko}, 
+{\bf gs\_\-alive}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum of possible group statuses. \item\end{DoxyCompactList}\item 
+enum {\bf Eye\_\-status} \{ {\bf es\_\-full\_\-eye}, 
+{\bf es\_\-false\_\-eye}, 
+{\bf es\_\-produces\_\-no\_\-eye}, 
+{\bf es\_\-unknown}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum of possible eye statuses. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf operator$<$} ({\bf Group\_\-status}, {\bf Group\_\-status})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Eye\_\-manager} {\bf eye\_\-manager}\label{eyes_8h_ac2c590c992f82a1c15d11b42576c12f4}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{Eye\_\-manager}{p.}{classEye__manager}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for \doxyref{eyes.cc}{p.}{eyes_8cc}. In this file class \doxyref{Eye\_\-manager}{p.}{classEye__manager} and other data structures related to recognizing eyes of the group are declared. 
+
+\subsection{Enumeration Type Documentation}
+\index{eyes.h@{eyes.h}!Eye\_\-status@{Eye\_\-status}}
+\index{Eye\_\-status@{Eye\_\-status}!eyes.h@{eyes.h}}
+\subsubsection[{Eye\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Eye\_\-status}}\label{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1}
+
+
+Enum of possible eye statuses. 
+
+Values from this enum are returne by function \doxyref{Eye\_\-manager::get\_\-eye\_\-status()}{p.}{classEye__manager_a7709794c5c67dadaafab4106d3e17836} and according to them it is decided whether the status of the group is alive/dead or unknown ( \doxyref{Eye\_\-manager::get\_\-group\_\-status()}{p.}{classEye__manager_a8431244a4235c2e99b97bf8076796b75}). \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{es\_\-full\_\-eye@{es\_\-full\_\-eye}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!es\_\-full\_\-eye@{es\_\-full\_\-eye}}\item[{\em 
+es\_\-full\_\-eye\label{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1a778754c1f06311c519fd5c7bbe4cb1b7}
+}]This is completed eye. \index{es\_\-false\_\-eye@{es\_\-false\_\-eye}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!es\_\-false\_\-eye@{es\_\-false\_\-eye}}\item[{\em 
+es\_\-false\_\-eye\label{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1a79cb8e7d09d9a916f2463c001e68db18}
+}]This might not be an eye in future. \index{es\_\-produces\_\-no\_\-eye@{es\_\-produces\_\-no\_\-eye}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!es\_\-produces\_\-no\_\-eye@{es\_\-produces\_\-no\_\-eye}}\item[{\em 
+es\_\-produces\_\-no\_\-eye\label{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1a3618df18884b0e62dff379dfb3765232}
+}]This might not be marked as a false eye ( and excluded for future search ) , but virtually produces no eye ( e.g. empty point adjacent to uns\_\-at stone cannot produce an eye right now ). \index{es\_\-unknown@{es\_\-unknown}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!es\_\-unknown@{es\_\-unknown}}\item[{\em 
+es\_\-unknown\label{eyes_8h_a8a9fc6d24d07e9bdb4ae8e4e38443cd1a5412fa0dc1d946dc5b6d30560b5eeea0}
+}]Yet unknown. \end{description}
+\end{Desc}
+
+\index{eyes.h@{eyes.h}!Group\_\-status@{Group\_\-status}}
+\index{Group\_\-status@{Group\_\-status}!eyes.h@{eyes.h}}
+\subsubsection[{Group\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Group\_\-status}}\label{eyes_8h_a5327eb73213174c0adcf1243ae587f53}
+
+
+Enum of possible group statuses. 
+
+Group statuses in enum are ordered from the worst to the best ( from defender's point of view ) and there is also very simple operator$<$ defined upon this enum. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{gs\_\-dead@{gs\_\-dead}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!gs\_\-dead@{gs\_\-dead}}\item[{\em 
+gs\_\-dead\label{eyes_8h_a5327eb73213174c0adcf1243ae587f53ad70d065cc3691da18e090f985ffd40c5}
+}]Group is unconditionally dead. \index{gs\_\-unknown@{gs\_\-unknown}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!gs\_\-unknown@{gs\_\-unknown}}\item[{\em 
+gs\_\-unknown\label{eyes_8h_a5327eb73213174c0adcf1243ae587f53acd476ea1eb38038090646fe245db9e06}
+}]Status of the group is yet unknown. \index{gs\_\-ko@{gs\_\-ko}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!gs\_\-ko@{gs\_\-ko}}\item[{\em 
+gs\_\-ko\label{eyes_8h_a5327eb73213174c0adcf1243ae587f53a96483e7a1abfc68901daaf9c874ba199}
+}]Group is alive/dead in ko. \index{gs\_\-alive@{gs\_\-alive}!eyes.h@{eyes.h}}\index{eyes.h@{eyes.h}!gs\_\-alive@{gs\_\-alive}}\item[{\em 
+gs\_\-alive\label{eyes_8h_a5327eb73213174c0adcf1243ae587f53a31f372ca4a8034001fa335112c8810ab}
+}]Group is unconditionally alive. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{eyes.h@{eyes.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!eyes.h@{eyes.h}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Group\_\-status}}]{ B, }
+\item[{{\bf Group\_\-status}}]{ A}
+\end{DoxyParamCaption}
+)}\label{eyes_8h_a18c552030220b51584c07c83daa50437}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em A}]Status of the first group. \item[\mbox{\tt[in]} {\em B}]Status of the second group. return True if first status $<$ second status otherwise returns false.\end{DoxyParams}
+Definition of operator$<$ : gs\_\-dead $<$ gs\_\-unknown $<$ gs\_\-ko $<$ gs\_\-alive This operator is neccessary for comparing group statuses in minimax algorithm in \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} However operator is defined for gs\_\-unknown as well it should not be used for gs\_\-unknown ( that is a special status needing individual solution ) 

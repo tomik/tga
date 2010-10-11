@@ -1,0 +1,108 @@
+\section{T\_\-searcher Class Reference}
+\label{classT__searcher}\index{T\_\-searcher@{T\_\-searcher}}
+
+
+Class managing tree search.  
+
+
+
+
+{\ttfamily \#include $<$t\_\-search.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Search\_\-result} {\bf search} ({\bf Node\_\-type}, int, {\bf Group\_\-status}, {\bf Group\_\-status}, bool, bool)
+\begin{DoxyCompactList}\small\item\em This method performs tree search. \item\end{DoxyCompactList}\item 
+void {\bf add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur} (int, {\bf Coordinates}, int)
+\begin{DoxyCompactList}\small\item\em Setting values in dynamic heuristic ( tree size ). \item\end{DoxyCompactList}\item 
+{\bf Search\_\-result} {\bf search\_\-son} ({\bf Coordinates}, {\bf Node\_\-type}, int, {\bf Group\_\-status}, {\bf Group\_\-status}, bool)
+\begin{DoxyCompactList}\small\item\em Searches son of actual node and returns found Group\_\-status. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf nodes\_\-num}\label{classT__searcher_ab202f9de0ef2834bc1035d64e1527c79}
+
+\begin{DoxyCompactList}\small\item\em Number of visited nodes during the actual iteration of tree search. \item\end{DoxyCompactList}\item 
+int {\bf total\_\-nodes\_\-num}\label{classT__searcher_a598ba6ebd8a5eb747abb4f7fcbc10d6b}
+
+\begin{DoxyCompactList}\small\item\em Numver of visited nodes during actual problem ( all iterations ). \item\end{DoxyCompactList}\item 
+bool {\bf ab\_\-pruning}\label{classT__searcher_a97411c2cde7ed99a109f1f9c70d59d21}
+
+\begin{DoxyCompactList}\small\item\em indicatis if the alfa beta pruning is activated \item\end{DoxyCompactList}\item 
+{\bf Group\_\-status} {\bf uninteresting\_\-status}\label{classT__searcher_ae1dd311c9e1551cffd5df7911a58c5fc}
+
+\begin{DoxyCompactList}\small\item\em when {\ttfamily -\/ps} option is used, than certain status that might be pruned \item\end{DoxyCompactList}\item 
+int {\bf max\_\-depth}\label{classT__searcher_ac1c5908eb40cf50e444c52cac89b6856}
+
+\begin{DoxyCompactList}\small\item\em how deep will he go \item\end{DoxyCompactList}\item 
+Dyn\_\-heur\_\-map {\bf dyn\_\-heur} [MAX\_\-DYN\_\-HEUR\_\-DEPTH]\label{classT__searcher_a258a259a55b86c8eb74c7558f2adbee2}
+
+\begin{DoxyCompactList}\small\item\em Data structure for managing dynamic heuristics. \item\end{DoxyCompactList}\item 
+pair$<$ {\bf Coordinates}, int $>$ {\bf dyn\_\-heur\_\-max} [MAX\_\-DYN\_\-HEUR\_\-DEPTH]\label{classT__searcher_a79c2a9a860b450312a23cb43844f4156}
+
+\begin{DoxyCompactList}\small\item\em Data structure for saving maxnimal ( best ) values of dynamic heuristic on each level. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class managing tree search. \doxyref{T\_\-searcher}{p.}{classT__searcher} is class which manages searching the tree of possible positions, using standart minimax algorithm together with pruning techniques and heuristics. The most remarkable is it's recursive function \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b}. 
+
+\subsection{Member Function Documentation}
+\index{T\_\-searcher@{T\_\-searcher}!add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur@{add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur}}
+\index{add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur@{add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur}!T_searcher@{T\_\-searcher}}
+\subsubsection[{add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur}]{\setlength{\rightskip}{0pt plus 5cm}void add\_\-tree\_\-size\_\-to\_\-dyn\_\-heur (
+\begin{DoxyParamCaption}
+\item[{int}]{ level\_\-, }
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{int}]{ tree\_\-size\_\-}
+\end{DoxyParamCaption}
+)}\label{classT__searcher_abe16b5ac00e2af7039ce8e6affa747c2}
+
+
+Setting values in dynamic heuristic ( tree size ). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em level\_\-}]Actual level in the subtree. \item[\mbox{\tt[in]} {\em coordinates\_\-}]\doxyref{Coordinates}{p.}{classCoordinates} of the move whose subtree size is going to be stored. \item[\mbox{\tt[in]} {\em tree\_\-size\_\-}]Stored tree\_\-size.\end{DoxyParams}
+This function creates information for using tree size heuristic. It fills information about how big subtrees where under different moves in different levels of searched tree so far. \index{T\_\-searcher@{T\_\-searcher}!search@{search}}
+\index{search@{search}!T_searcher@{T\_\-searcher}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Search\_\-result} search (
+\begin{DoxyParamCaption}
+\item[{{\bf Node\_\-type}}]{ node\_\-type\_\-, }
+\item[{int}]{ level, }
+\item[{{\bf Group\_\-status}}]{ alfa, }
+\item[{{\bf Group\_\-status}}]{ beta, }
+\item[{bool}]{ last\_\-move\_\-pass, }
+\item[{bool}]{ last\_\-move\_\-ko}
+\end{DoxyParamCaption}
+)}\label{classT__searcher_a7b6292921da225e103b00cb938e4cf5b}
+
+
+This method performs tree search. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em node\_\-type\_\-}]Tells whether actual node is of type {\ttfamily nt\_\-min} ( defender ) or {\ttfamily nt\_\-max} ( attacker ). \item[\mbox{\tt[in]} {\em level}]Actual node's depth in the tree. \item[\mbox{\tt[in]} {\em alfa}]Value of alfa attribute neccessary for alfa-\/beta pruning. \item[\mbox{\tt[in]} {\em beta}]Value of beta attribute neccessary for alfa-\/beta pruning. \item[\mbox{\tt[in]} {\em last\_\-move\_\-pass}]Informs whether the preceeding move was pass. \item[\mbox{\tt[in]} {\em last\_\-move\_\-ko}]Informs whether the preceeding move took ko for life.\end{DoxyParams}
+This method ( together with Tsearcher::search\_\-son ) provides full functionality for tree search. It implements basic minimax algorithm together with alfa beta pruning, also calls neccessary heuristics and forward pruning techniques, it also cooperates with \doxyref{Sgf\_\-printer}{p.}{classSgf__printer} in creating proper sgf output file. \index{T\_\-searcher@{T\_\-searcher}!search\_\-son@{search\_\-son}}
+\index{search\_\-son@{search\_\-son}!T_searcher@{T\_\-searcher}}
+\subsubsection[{search\_\-son}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Search\_\-result} search\_\-son (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinates}}]{ coordinates\_\-, }
+\item[{{\bf Node\_\-type}}]{ node\_\-type\_\-, }
+\item[{int}]{ level\_\-, }
+\item[{{\bf Group\_\-status}}]{ alfa, }
+\item[{{\bf Group\_\-status}}]{ beta, }
+\item[{bool}]{ ko\_\-for\_\-life}
+\end{DoxyParamCaption}
+)}\label{classT__searcher_ae8fc0410c397ce65fe62ab2dcac96160}
+
+
+Searches son of actual node and returns found Group\_\-status. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em node\_\-type\_\-}]Tells whether actual node is of type {\ttfamily nt\_\-min} ( defender ) or {\ttfamily nt\_\-max} ( attacker ). \item[\mbox{\tt[in]} {\em coordinates\_\-}]Which move is to be tried. \item[\mbox{\tt[in]} {\em level}]Actual node's depth in the tree. \item[\mbox{\tt[in]} {\em alfa}]Value of alfa attribute neccessary for alfa-\/beta pruning. \item[\mbox{\tt[in]} {\em beta}]Value of beta attribute neccessary for alfa-\/beta pruning. \item[\mbox{\tt[in]} {\em ko\_\-for\_\-life}]If set to {\ttfamily true} then move was taking a ko and is a possible ko for life \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns result of the search in the son.
+\end{DoxyReturn}
+This method's main purpose is to call \doxyref{T\_\-searcher::search}{p.}{classT__searcher_a7b6292921da225e103b00cb938e4cf5b} method ( with given parametres). Thus these two methods are in undirect recursion relationship. Other tasks done within this function are : repetition cutoff, adequate sgf printing, ... 

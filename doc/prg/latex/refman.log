@@ -1,0 +1,1382 @@
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2006.3.28)  30 MAY 2006 22:38
+entering extended mode
+**refman.tex
+(./refman.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, catalan, croatian, czech, danish, dutch, finnish, greek, iceland
+ic, irish, italian, latin, magyar, norsk, norsk, portuges, romanian, russian, s
+lovak, slovene, spanish, swedish, turkish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk10.clo
+File: bk10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/misc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 1999/03/03 v1.2f A4 based page layout
+))
+(/usr/share/texmf/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\headwidth=\dimen103
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf/tex/latex/tools/multicol.sty
+Package: multicol 2000/07/10 v1.5z multicolumn formatting (FMi)
+\c@tracingmulticols=\count88
+\mult@box=\box26
+\multicol@leftmargin=\dimen106
+\c@unbalance=\count89
+\c@collectmore=\count90
+\doublecol@number=\count91
+\multicoltolerance=\count92
+\multicolpretolerance=\count93
+\full@width=\dimen107
+\page@free=\dimen108
+\premulticols=\dimen109
+\postmulticols=\dimen110
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count94
+\c@finalcolumnbadness=\count95
+\last@try=\dimen111
+\multicolovershoot=\dimen112
+\multicolundershoot=\dimen113
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+(/usr/share/texmf/tex/latex/misc/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count96
+\float@exts=\toks15
+\float@box=\box52
+\@float@everytoks=\toks16
+\@floatcapt=\box53
+)
+(/usr/share/texmf/tex/latex/base/textcomp.sty
+Package: textcomp 2001/06/05 v1.94 Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(/usr/share/texmf/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) (./doxygen.sty
+Package: doxygen 
+
+(/usr/share/texmf/tex/latex/tools/calc.sty
+Package: calc 1998/07/07 v4.1b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen114
+\calc@Bdimen=\dimen115
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 59.
+LaTeX Info: Redefining \addtolength on input line 60.
+\calc@denominator=\count99
+)
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
+\col@sep=\dimen116
+\extrarowheight=\dimen117
+\NC@list=\toks17
+\extratabsurround=\skip47
+\backup@length=\skip48
+)
+\tmplength=\skip49
+)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+))
+\@indexfile=\write3
+\openout3 = `refman.idx'.
+
+
+Writing index file refman.idx
+(./refman.aux (./classBoard__manager.aux) (./classCoordinates.aux)
+(./structCross__point.aux) (./structDyn__heur__item.aux)
+(./classEye__manager.aux) (./classHash__board__manager.aux)
+(./classHash__repset__manager.aux) (./classHash__table__item.aux)
+(./classHash__table__manager.aux) (./classKo__manager.aux)
+(./classNeighbors.aux) (./structParam__record.aux) (./classParams__manager.aux)
+(./classPlayable__data.aux) (./classRef__board.aux) (./structSearch__result.aux
+) (./classSgf__parser.aux) (./classSgf__printer.aux)
+(./classState__function__record.aux) (./classStone.aux) (./classT__searcher.aux
+) (./classTemp__board__manager.aux) (./structUnplay__manager.aux)
+(./structUnplay__node.aux) (./board_8h.aux) (./eyes_8cc.aux) (./eyes_8h.aux)
+(./main_8cc.aux) (./main_8h.aux) (./p__manager_8cc.aux) (./p__manager_8h.aux)
+(./sgf__read_8cc.aux) (./sgf__read_8h.aux) (./t__search_8cc.aux)
+(./t__search_8h.aux) (./page_3.aux
+
+LaTeX Warning: Label `page_3_page_3__sec_1' multiply defined.
+
+
+LaTeX Warning: Label `page_3_page__1_section_2' multiply defined.
+
+) (./page_4.aux
+
+LaTeX Warning: Label `page_4_page_4__sec_1' multiply defined.
+
+
+LaTeX Warning: Label `page_4_page_4__sec_2' multiply defined.
+
+) (./page_2.aux
+
+LaTeX Warning: Label `page_2_page_2__sec_1' multiply defined.
+
+
+LaTeX Warning: Label `page_2_page_2__sec_2' multiply defined.
+
+
+LaTeX Warning: Label `page_2_page_2__sec_3' multiply defined.
+
+) (./page_5.aux
+
+LaTeX Warning: Label `page_5_page_5__sec_1' multiply defined.
+
+
+LaTeX Warning: Label `page_5_page_5__sec_2' multiply defined.
+
+
+LaTeX Warning: Label `page_5_page_5__resolving_new_state' multiply defined.
+
+
+LaTeX Warning: Label `page_5_page_5__sec_3' multiply defined.
+
+) (./page_6.aux
+
+LaTeX Warning: Label `page_6_page_6__sec_1' multiply defined.
+
+
+LaTeX Warning: Label `page_6_page_6__sec_2' multiply defined.
+
+
+LaTeX Warning: Label `page_6_page_6__sec_3' multiply defined.
+
+
+LaTeX Warning: Label `page_6_page_6__sec_4' multiply defined.
+
+
+LaTeX Warning: Label `page_6_page_6__sec_5' multiply defined.
+
+))
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
+ (/usr/share/texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 14.
+ [1
+
+
+] [2
+
+] (./refman.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [1
+
+])
+\tf@toc=\write4
+\openout4 = `refman.toc'.
+
+
+[2]
+Chapter 1.
+(./index.tex
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 10.
+ (/usr/share/texmf/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) [1
+
+
+] [2
+
+]
+Chapter 2.
+(./classBlock.tex [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 46.
+) [4]
+\openout2 = `classBoard__manager.aux'.
+
+ (./classBoard__manager.tex [5
+
+]
+Underfull \hbox (badness 2181) in paragraph at lines 67--68
+[]\T1/cmr/m/n/10 bool \T1/cmr/bx/n/10 check_-connection \T1/cmr/m/n/10 (\T1/cmr
+/bx/n/10 Stone_-color \T1/cmr/m/n/10 stone_-color_-, \T1/cmr/bx/n/10 Co-or-di-n
+ates \T1/cmr/m/n/10 coordinates_-
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+
+ []
+
+
+Underfull \hbox (badness 4303) in paragraph at lines 287--289
+[]\T1/cmr/m/n/10 Initializing func-tion, that is called in \T1/cmr/bx/n/10 Boar
+d_-manager::init_-from_-temp_-board_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--314
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+
+ []
+
+) [12]
+\openout2 = `classCoordinates.aux'.
+
+ (./classCoordinates.tex
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+
+ []
+
+) [13
+
+
+]
+\openout2 = `structCross__point.aux'.
+
+ (./structCross__point.tex) [14
+
+
+]
+\openout2 = `structDyn__heur__item.aux'.
+
+ (./structDyn__heur__item.tex) [15
+
+
+]
+\openout2 = `classEye__manager.aux'.
+
+
+(./classEye__manager.tex
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+
+ []
+
+[16
+
+
+]
+Underfull \hbox (badness 1292) in paragraph at lines 53--53
+[]\T1/cmr/m/n/10 Pointer to \T1/cmr/bx/n/10 Board_-manager::pot_-eyes_-map\T1/c
+mr/m/n/10 (p.6[]), this is a
+ []
+
+) [17]
+\openout2 = `classHash__board__manager.aux'.
+
+ (./classHash__board__manager.tex [18
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
+
+ []
+
+) [19]
+\openout2 = `classHash__repset__manager.aux'.
+
+ (./classHash__repset__manager.tex
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+
+ []
+
+) [20
+
+
+] [21]
+\openout2 = `classHash__table__item.aux'.
+
+ (./classHash__table__item.tex
+Underfull \hbox (badness 1270) in paragraph at lines 14--15
+\T1/cmr/m/n/10 alfa_-, \T1/cmr/bx/n/10 Group_-status \T1/cmr/m/n/10 beta_-, \T1
+/cmr/bx/n/10 Group_-status_-accuracy \T1/cmr/m/n/10 accuracy_-=gsa_-unknown,
+ []
+
+[22
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 76--76
+[]\T1/cmr/m/n/10 Reference to Hash_-table_-item which was saved in the \T1/cmr/
+bx/n/10 Hash_-table_-
+ []
+
+) [23]
+\openout2 = `classHash__table__manager.aux'.
+
+ (./classHash__table__manager.tex [24
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+
+ []
+
+) [26]
+\openout2 = `classKo__manager.aux'.
+
+ (./classKo__manager.tex) [27
+
+
+]
+\openout2 = `classNeighbors.aux'.
+
+ (./classNeighbors.tex) [28
+
+
+]
+\openout2 = `structParam__record.aux'.
+
+
+(./structParam__record.tex) [29
+
+
+]
+\openout2 = `classParams__manager.aux'.
+
+ (./classParams__manager.tex [30
+
+
+] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
+
+ []
+
+) [32]
+\openout2 = `classPlayable__data.aux'.
+
+ (./classPlayable__data.tex) [33
+
+
+]
+\openout2 = `classRef__board.aux'.
+
+ (./classRef__board.tex) [34
+
+
+]
+\openout2 = `structSearch__result.aux'.
+
+
+(./structSearch__result.tex) [35
+
+
+]
+\openout2 = `classSgf__parser.aux'.
+
+ (./classSgf__parser.tex [36
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+\T1/cmr/m/n/10 This func-tion co-or-di-nates trans-fer of sgf file into pos_-db
+_-record us-ing \T1/cmr/bx/n/10 Sgf_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--107
+
+ []
+
+) [37] [38]
+\openout2 = `classSgf__printer.aux'.
+
+ (./classSgf__printer.tex [39
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
+
+ []
+
+) [41]
+\openout2 = `classState__function__record.aux'.
+
+ (./classState__function__record.tex) [42
+
+
+]
+\openout2 = `classStone.aux'.
+
+ (./classStone.tex) [43
+
+
+]
+\openout2 = `classT__searcher.aux'.
+
+
+(./classT__searcher.tex
+Underfull \hbox (badness 6526) in paragraph at lines 15--16
+[]\T1/cmr/bx/n/10 Search_-result search_-son \T1/cmr/m/n/10 (\T1/cmr/bx/n/10 Co
+-or-di-nates\T1/cmr/m/n/10 , \T1/cmr/bx/n/10 Node_-type\T1/cmr/m/n/10 , int, \T
+1/cmr/bx/n/10 Group_-status\T1/cmr/m/n/10 ,
+ []
+
+[44
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+
+ []
+
+) [45] [46]
+\openout2 = `classTemp__board__manager.aux'.
+
+ (./classTemp__board__manager.tex) [47
+
+
+]
+\openout2 = `structUnplay__manager.aux'.
+
+ (./structUnplay__manager.tex [48
+
+
+]) [49]
+\openout2 = `structUnplay__node.aux'.
+
+ (./structUnplay__node.tex
+Underfull \hbox (badness 3646) in paragraph at lines 28--29
+[]\T1/cmr/m/n/10 This class cre-ates a dy-namic struc-ture of Unplay_-manager's
+ where each \T1/cmr/bx/n/10 Unplay_-
+ []
+
+) [50
+
+
+]
+Chapter 3.
+(./board_8cc.tex
+Underfull \hbox (badness 1565) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/14.4 /home/tomik/Projects/TGA/src/board.cc File Ref-er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+
+ []
+
+[51
+
+
+]) [52]
+\openout2 = `board_8h.aux'.
+
+ (./board_8h.tex
+Underfull \hbox (badness 4291) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/14.4 /home/tomik/Projects/TGA/src/board.h File Ref-er-
+ []
+
+[53
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
+
+ []
+
+[55]) [56]
+\openout2 = `eyes_8cc.aux'.
+
+ (./eyes_8cc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+
+ []
+
+) [57
+
+
+]
+\openout2 = `eyes_8h.aux'.
+
+ (./eyes_8h.tex
+Underfull \hbox (badness 1275) in paragraph at lines 19--24
+[]\T1/cmr/m/n/10 enum \T1/cmr/bx/n/10 Eye_-status \T1/cmr/m/n/10 { \T1/cmr/bx/n
+/10 es_-full_-eye\T1/cmr/m/n/10 , \T1/cmr/bx/n/10 es_-false_-eye\T1/cmr/m/n/10 
+, \T1/cmr/bx/n/10 es_-produces_-no_-eye\T1/cmr/m/n/10 , \T1/cmr/bx/n/10 es_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+
+ []
+
+[58
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+
+ []
+
+) [59]
+\openout2 = `main_8cc.aux'.
+
+ (./main_8cc.tex
+Underfull \hbox (badness 4805) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/14.4 /home/tomik/Projects/TGA/src/main.cc File Ref-er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+
+ []
+
+[60
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+
+ []
+
+) [61]
+\openout2 = `main_8h.aux'.
+
+ (./main_8h.tex) [62
+
+
+]
+\openout2 = `p__manager_8cc.aux'.
+
+ (./p__manager_8cc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/14.4 /home/tomik/Projects/TGA/src/p_-manager.cc File
+ []
+
+) [63
+
+
+]
+\openout2 = `p__manager_8h.aux'.
+
+ (./p__manager_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/14.4 /home/tomik/Projects/TGA/src/p_-manager.h File
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+
+ []
+
+) [64
+
+
+]
+\openout2 = `sgf__read_8cc.aux'.
+
+ (./sgf__read_8cc.tex) [65
+
+
+]
+\openout2 = `sgf__read_8h.aux'.
+
+ (./sgf__read_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+
+ []
+
+[66
+
+
+]) [67]
+\openout2 = `t__search_8cc.aux'.
+
+ (./t__search_8cc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+
+ []
+
+) [68
+
+
+]
+\openout2 = `t__search_8h.aux'.
+
+ (./t__search_8h.tex [69
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+
+ []
+
+) [70]
+Chapter 4.
+(./page_1.tex [71
+
+
+]) [72]
+\openout2 = `page_3.aux'.
+
+ (./page_3.tex [73
+
+] [74] [75] [76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+[]\T1/cmr/m/n/10 Retrieving in-for-ma-tion from the ta-ble ( \T1/cmr/bx/n/10 Ha
+sh_-table_-manager::get_-item_-
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 214--215
+\T1/cmr/bx/n/10 status\T1/cmr/m/n/10 (p.25[]) ) As in the pre-vi-ous method po-
+si-tion's hash key is nor-mal-ized and
+ []
+
+[78]
+Overfull \hbox (76.79132pt too wide) in paragraph at lines 290--290
+[]    \T1/cmtt/m/n/8 last_item.second.increase_act_heuristic_pp( 5 ); // attack
+ers selfatari on less than two stons is mediocry demoted[] 
+ []
+
+
+Overfull \hbox (25.80377pt too wide) in paragraph at lines 290--290
+[]    \T1/cmtt/m/n/8 last_item.second.set_act_main_pp ( pp_none ); // no search
+ when atari on more than 2 defender's stones[] 
+ []
+
+
+Overfull \hbox (38.55066pt too wide) in paragraph at lines 290--290
+[]  \T1/cmtt/m/n/8 if ( (node_type_ == nt_max ) && ( board_manager.check_captur
+e( stone_color_to_move_ , last_item.first ) ) )[] 
+ []
+
+
+Overfull \hbox (8.80792pt too wide) in paragraph at lines 290--290
+[]  \T1/cmtt/m/n/8 last_item.second.increase_act_heuristic_pp( -5 ); // the les
+ser the number the more is move promoted[] 
+ []
+
+[79]
+Overfull \hbox (43.06107pt too wide) in paragraph at lines 305--305
+ []        \T1/cmtt/m/n/8 if ( act_status_ != gs_alive  && legal_moves_num <= 4
+ ) //neccessary condition to play pass[] 
+ []
+
+
+Overfull \hbox (169.77475pt too wide) in paragraph at lines 340--340
+ []                \T1/cmtt/m/n/8 && after_pass_group_status != gs_unknown  // 
+if gs_unknown -> no determined status was gained after pass -> unc. alive[] 
+ []
+
+[80]
+Overfull \hbox (165.52579pt too wide) in paragraph at lines 340--340
+ []                \T1/cmtt/m/n/8 && after_pass_group_status <= gs_ko    //when
+ white ignore black threat he might get at least ko, otherwise unc.alive[] 
+ []
+
+
+Overfull \hbox (59.79547pt too wide) in paragraph at lines 362--362
+[]      \T1/cmtt/m/n/8 if ( ( ! params_manager.get_no_ko_handling() ) && (play_
+ko_for_life && son_result.group_status == gs_ko )) {[] 
+ []
+
+
+Overfull \hbox (127.77887pt too wide) in paragraph at lines 362--362
+[]        \T1/cmtt/m/n/8 if ( last_move_ko ) { // last move started ko for life
+ of the group and defender found another one to survive => double ko[] 
+ []
+
+
+Overfull \hbox (127.77887pt too wide) in paragraph at lines 394--394
+[]      \T1/cmtt/m/n/8 if (  son_result_.group_status != gs_unknown && ( act_st
+atus_ <= son_result_.group_status  || act_status_ == gs_unknown )) { 
+ []
+
+
+Overfull \hbox (85.28925pt too wide) in paragraph at lines 394--394
+[]          \T1/cmtt/m/n/8 if ( act_accuracy_ != gsa_certain )  // this is to s
+ubstitute actual accuracy with better accuracy ( certain )[] 
+ []
+
+[81]
+Underfull \hbox (badness 4242) in paragraph at lines 400--400
+[]\T1/cmr/m/n/10 Keeping con-sis-tency of the po-si-tion. This is done by call-
+ing \T1/cmr/bx/n/10 Board_-
+ []
+
+
+Overfull \hbox (170.52994pt too wide) in paragraph at lines 405--405
+ []    \T1/cmtt/m/n/8 hash_table_manager.store_item ( Hash_table_item ( board_m
+anager.hash_board_manager.get_position_hash(), stone_color_to_move_, 
+ []
+
+
+Overfull \hbox (64.30588pt too wide) in paragraph at lines 405--405
+ []                                                      \T1/cmtt/m/n/8 board_m
+anager.ko_manager.get_retake_coordinates(),[] 
+ []
+
+
+Overfull \hbox (123.79135pt too wide) in paragraph at lines 405--405
+ []                                                      \T1/cmtt/m/n/8 in_alfa
+ , in_beta , act_accuracy_ , act_status,  act_status_ ));[] 
+ []
+
+[82]
+Overfull \hbox (4.55896pt too wide) in paragraph at lines 429--429
+[]    \T1/cmtt/m/n/8 act_item->next = new Hash_table_item ( item ); // placing 
+actual position to the end of the chain[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+[]\T1/cmr/m/n/10 Retrieving in-for-ma-tion from the ta-ble ( \T1/cmr/bx/n/10 Ha
+sh_-table_-manager::get_-item_-
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 434--435
+\T1/cmr/bx/n/10 status\T1/cmr/m/n/10 (p.25[]) ) As in the pre-vi-ous method po-
+si-tion's hash key is nor-mal-ized and
+ []
+
+
+Overfull \hbox (152.7789pt too wide) in paragraph at lines 444--444
+ []      \T1/cmtt/m/n/8 if ( saved_.accuracy == gsa_certain ) { //certain statu
+s provides more general condition to apply transposition table cutoff 
+ []
+
+
+Overfull \hbox (148.52994pt too wide) in paragraph at lines 444--444
+ []        \T1/cmtt/m/n/8 if ( ! ( ( ( saved_.node_type == nt_max ) && ( ( new_
+.beta <= saved_.beta ) || ( saved_.new_alfa < saved_.beta )  ) )  ||[] 
+ []
+
+
+Overfull \hbox (127.28513pt too wide) in paragraph at lines 444--444
+ []             \T1/cmtt/m/n/8 ( ( saved_.node_type == nt_min ) && ( ( saved_.a
+lfa <= new_.alfa ) || ( saved_.alfa < saved_.new_beta ) ) ) ) )[] 
+ []
+
+) [83]
+\openout2 = `page_4.aux'.
+
+ (./page_4.tex [84
+
+
+]
+Overfull \hbox (38.05692pt too wide) in paragraph at lines 39--39
+ []        \T1/cmtt/m/n/8 if ( board_manager.check_eyes_connection ( full_eyes_
+set ) ) // At least two eyes are connected[] 
+ []
+
+
+Overfull \hbox (195.26852pt too wide) in paragraph at lines 52--52
+ []      \T1/cmtt/m/n/8 if ( board_manager.check_coordinates_adjacency ( coordi
+nates_1 , coordinates_2 ) ) // checking whether two potential eyes are adjacent
+[] 
+ []
+
+[85]) [86]
+\openout2 = `page_2.aux'.
+
+ (./page_2.tex [87
+
+
+]
+Overfull \hbox (229.26022pt too wide) in paragraph at lines 75--75
+ []    \T1/cmtt/m/n/8 if ( params_manager.get_transposition_tables() && params_
+manager.get_save_tt() ) { // transposition tables and their persistency are swi
+tched on 
+ []
+
+
+Overfull \hbox (174.02371pt too wide) in paragraph at lines 75--75
+ []      \T1/cmtt/m/n/8 t_searcher.hash_table_manager.hash_table_activate();  /
+/ hash table and hash keys for board is initialized once for both searches[] 
+ []
+
+[88]
+Overfull \hbox (25.31003pt too wide) in paragraph at lines 101--101
+ []    \T1/cmtt/m/n/8 sgf_parser.parse_sgf( pos_name.c_str() ); // parses sgf i
+nput and saves it to temp_board_manager 
+ []
+
+
+Overfull \hbox (208.01541pt too wide) in paragraph at lines 101--101
+ []    \T1/cmtt/m/n/8 board_manager.init_from_temp_board_manager( sgf_parser.ge
+t_temp_board_manager() ); // correctly inits board_manager from temp_board_maan
+ger[] 
+ []
+
+
+Overfull \hbox (46.55484pt too wide) in paragraph at lines 115--115
+ []                           \T1/cmtt/m/n/8 result = t_searcher.search(nt_max,
+ 0 , gs_dead, gs_alive, false,false); break;[] 
+ []
+
+) [89]
+\openout2 = `page_5.aux'.
+
+ (./page_5.tex [90
+
+
+] [91]
+Overfull \hbox (161.77057pt too wide) in paragraph at lines 135--135
+[]    \T1/cmtt/m/n/8 for ( State_function_vector::iterator it = state_function.
+begin() ; it != state_function.end(); it++)  // search state function vector 
+ []
+
+
+Overfull \hbox (81.04028pt too wide) in paragraph at lines 135--135
+[]      \T1/cmtt/m/n/8 if ( State_function_record( actual_state, act_char , act
+ual_state ) // third parametr is unimportant - anything ![] 
+ []
+
+[92]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+[]\T1/cmr/m/n/10 Function \T1/cmr/bx/n/10 Sgf_-parser::resolve\T1/cmr/m/n/10 (p
+.37[]) man-ages au-tomata tran-si-tions and also \T1/cmr/bx/n/10 Sgf_-
+ []
+
+
+Overfull \hbox (89.53821pt too wide) in paragraph at lines 177--177
+[]        \T1/cmtt/m/n/8 case aw_next_token : // awaiting next token -> it mean
+s that old token and it's data ( act_text ) must be handled[] 
+ []
+
+) [93] [94]
+\openout2 = `page_6.aux'.
+
+ (./page_6.tex [95
+
+
+] [96] [97] [98] [99]
+Overfull \hbox (136.2768pt too wide) in paragraph at lines 175--175
+[]    \T1/cmtt/m/n/8 for ( Stone_vector::iterator it = temp_board_manager.stone
+_vector.begin() ; it != temp_board_manager.stone_vector.end() ; it++ ) 
+ []
+
+
+Overfull \hbox (132.02783pt too wide) in paragraph at lines 175--175
+[]      \T1/cmtt/m/n/8 if ( ( (*it).get_stone_color() == sc_black ) || ( (*it).
+get_stone_color() == sc_white ) )  // it is a stone => i ,, play it "[] 
+ []
+
+[100]
+Overfull \hbox (4.55896pt too wide) in paragraph at lines 200--200
+[]      \T1/cmtt/m/n/8 act_node->next = unplay_node_handle; // adding a node to
+ the beginning of existing dynamic list[] 
+ []
+
+
+Overfull \hbox (64.04443pt too wide) in paragraph at lines 200--200
+[]      \T1/cmtt/m/n/8 unplay_node_handle->unplay_manager.stone_to_unplay = coo
+rdinates_; // filling node with unplaying information[] 
+ []
+
+
+Overfull \hbox (8.80792pt too wide) in paragraph at lines 210--210
+[]       \T1/cmtt/m/n/8 Block * act_block_ = board_manager.create_new_block ( s
+tone_color_ ); // creates an empty block 
+ []
+
+
+Overfull \hbox (204.2602pt too wide) in paragraph at lines 210--210
+[]       \T1/cmtt/m/n/8 board[coordinates_.get_co_row()][coordinates_.get_co_co
+lumn()].set_present_block_pt( act_block_); // sets a pointer from a board to th
+e block[] 
+ []
+
+
+Overfull \hbox (38.55066pt too wide) in paragraph at lines 210--210
+[]       \T1/cmtt/m/n/8 hash_board_manager.xor_with_position_hash ( coordinates
+_, stone_color_); // updating position hash key[] 
+ []
+
+[101]
+Overfull \hbox (161.77057pt too wide) in paragraph at lines 231--231
+[]        \T1/cmtt/m/n/8 adjacent_block_ =  board[adjacent_coordinates_[i].get_
+co_row()][adjacent_coordinates_[i].get_co_column()].get_present_block_pt() ;[] 
+
+ []
+
+
+Overfull \hbox (187.26434pt too wide) in paragraph at lines 231--231
+[]          \T1/cmtt/m/n/8 merge_blocks(  act_block_  , adjacent_block_ ); // m
+erging adjacent and actual ( the one containing played stone ) into a single bl
+ock[] 
+ []
+
+
+Overfull \hbox (13.05688pt too wide) in paragraph at lines 231--231
+[]          \T1/cmtt/m/n/8 if ( adjacent_block_->is_captured() ) { // if last l
+iberty was removed block will be captured[] 
+ []
+
+
+Overfull \hbox (85.28925pt too wide) in paragraph at lines 248--248
+[]      \T1/cmtt/m/n/8 for ( Coordinates_vector::iterator it = block_->stone_ve
+ctor.begin() ; it < block_->stone_vector.end() ; it++ )  { 
+ []
+
+
+Overfull \hbox (136.2768pt too wide) in paragraph at lines 248--248
+[]        \T1/cmtt/m/n/8 if ( ( ! possible_under_the_stones ) || ( ! params_man
+ager.get_no_under_the_stones() ) ) {  // data structures actualization[] 
+ []
+
+
+Overfull \hbox (25.80377pt too wide) in paragraph at lines 248--248
+[]        \T1/cmtt/m/n/8 hash_board_manager.xor_with_position_hash ( (*it), blo
+ck_->stone_color); // hash key actualization[] 
+ []
+
+[102]
+Overfull \hbox (157.5216pt too wide) in paragraph at lines 292--292
+[]      \T1/cmtt/m/n/8 for ( Coordinates_vector::iterator it = act_block_ ->sto
+ne_vector.begin() ; it < act_block_ ->stone_vector.end() ; it++ ) { //cycle[] 
+ []
+
+
+Overfull \hbox (166.01953pt too wide) in paragraph at lines 292--292
+[]        \T1/cmtt/m/n/8 board[(*it).get_co_row()][(*it).get_co_column()].set_p
+resent_block_pt( act_block_ ); // setting a pointer from Board_manager::board[]
+ 
+ []
+
+
+Overfull \hbox (174.51746pt too wide) in paragraph at lines 292--292
+[]        \T1/cmtt/m/n/8 if  ( act_block_->stone_color == sc_white )  // updati
+ng Board_manager::point_board according to actual stone ( color , safe/unsafe )
+[] 
+ []
+
+[103]
+Overfull \hbox (76.79132pt too wide) in paragraph at lines 312--312
+[]      \T1/cmtt/m/n/8 adjacent_coordinates_ = get_adjacent_coordinates ( coord
+inates_ , Direction ( i ) ); // neighbouring coordinates[] 
+ []
+
+
+Overfull \hbox (208.50916pt too wide) in paragraph at lines 312--312
+[]      \T1/cmtt/m/n/8 adjacent_block_ = board[adjacent_coordinates_.get_co_row
+()][adjacent_coordinates_.get_co_column()].get_present_block_pt(); //neighbouri
+ng block[] 
+ []
+
+
+Overfull \hbox (55.54651pt too wide) in paragraph at lines 312--312
+[]      \T1/cmtt/m/n/8 if ( adjacent_block_ != NULL && adjacent_block_-> stone_
+color != stone_color_ && ! adjacent_block_->safe &&[] 
+ []
+
+) [104] (./refman.ind
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/board.cc,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/board.h,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/main.cc,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/p_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/p_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/sgf_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/sgf_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/t_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+[]\T1/cmr/m/n/10 /home/tomik/Projects/TGA/src/t_-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[]| \T1/cmr/m/n/10 check_-take_-liberty_-of_-safe_-attacker,
+ []
+
+[105
+
+
+] [106] [107] [108]) (./refman.aux (./classBoard__manager.aux)
+(./classCoordinates.aux) (./structCross__point.aux)
+(./structDyn__heur__item.aux) (./classEye__manager.aux)
+(./classHash__board__manager.aux) (./classHash__repset__manager.aux)
+(./classHash__table__item.aux) (./classHash__table__manager.aux)
+(./classKo__manager.aux) (./classNeighbors.aux) (./structParam__record.aux)
+(./classParams__manager.aux) (./classPlayable__data.aux) (./classRef__board.aux
+) (./structSearch__result.aux) (./classSgf__parser.aux)
+(./classSgf__printer.aux) (./classState__function__record.aux)
+(./classStone.aux) (./classT__searcher.aux) (./classTemp__board__manager.aux)
+(./structUnplay__manager.aux) (./structUnplay__node.aux) (./board_8h.aux)
+(./eyes_8cc.aux) (./eyes_8h.aux) (./main_8cc.aux) (./main_8h.aux)
+(./p__manager_8cc.aux) (./p__manager_8h.aux) (./sgf__read_8cc.aux)
+(./sgf__read_8h.aux) (./t__search_8cc.aux) (./t__search_8h.aux) (./page_3.aux)
+(./page_4.aux) (./page_2.aux) (./page_5.aux) (./page_6.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2282 strings out of 95370
+ 33859 string characters out of 1188185
+ 82605 words of memory out of 1000001
+ 5029 multiletter control sequences out of 10000+50000
+ 18928 words of font info for 40 fonts, out of 500000 for 1000
+ 198 hyphenation exceptions out of 1000
+ 30i,12n,43p,2126b,465s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on refman.dvi (112 pages, 279788 bytes).

@@ -1,0 +1,36 @@
+\section{Temp\_\-board\_\-manager Class Reference}
+\label{classTemp__board__manager}\index{Temp\_\-board\_\-manager@{Temp\_\-board\_\-manager}}
+
+
+Temporar board manager.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf print} ()\label{classTemp__board__manager_a388f572c62279f839ee138a9afbdeeb5}
+
+\begin{DoxyCompactList}\small\item\em Testing function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Stone\_\-vector {\bf stone\_\-vector}\label{classTemp__board__manager_a99b08e281920bdca8bc566387d406194}
+
+\begin{DoxyCompactList}\small\item\em Vector of positioned stones together with their sgf marks ( even stones of none color are allowed : for marks related to empty coordinates ). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Sgf\_\-parser}\label{classTemp__board__manager_a13a198cd67baadecf7b7935cf8390efc}
+
+\begin{DoxyCompactList}\small\item\em Sgf parser consists \doxyref{Temp\_\-board\_\-manager}{p.}{classTemp__board__manager} -\/$>$ friend. \item\end{DoxyCompactList}\item 
+class {\bf Board\_\-manager}\label{classTemp__board__manager_a9bb99230809a55ed083cd93a76a6141e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Temporar board manager. In this class are stored information gained during sgf parsing. Initial board position is then retrieved from this class throughout the function board\_\-manager::init\_\-from\_\-temp\_\-board\_\-manager(). 

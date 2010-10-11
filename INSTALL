@@ -1,0 +1,6 @@
+==========================
+Installation instructions
+==========================
+
+After copying and extracting archive tga.tar.gz to desired directory. Installation is done by a classical way of executing make and make install
+commands in the TGA directory. Program's executable file is TGA/tga.

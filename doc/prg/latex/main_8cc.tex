@@ -1,0 +1,96 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/main.cc File Reference}
+\label{main_8cc}\index{/home/tomik/src/c++/tga-\/1.0/src/main.cc@{/home/tomik/src/c++/tga-\/1.0/src/main.cc}}
+
+
+File related to search starting ( page\_\-2 ).  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Group\_\-status} {\bf analyze\_\-single\_\-position} (string, {\bf Stone\_\-color}, double $\ast$, string)
+\begin{DoxyCompactList}\small\item\em Analyzes single position stored in file with filename as first argument, when second argument stone color moves first. \item\end{DoxyCompactList}\item 
+void {\bf handle\_\-single\_\-problem} (string, bool, int $\ast$, double $\ast$)
+\begin{DoxyCompactList}\small\item\em Completely solves given problem. \item\end{DoxyCompactList}\item 
+void {\bf print\_\-group\_\-status} ({\bf Stone\_\-color}, {\bf Group\_\-status})\label{main_8cc_a199168639bb550d9b61b8111a611b2ce}
+
+\begin{DoxyCompactList}\small\item\em Prints output. \item\end{DoxyCompactList}\item 
+string {\bf get\_\-out\_\-fn\_\-base} (string)
+\begin{DoxyCompactList}\small\item\em Generates output filename from input string. \item\end{DoxyCompactList}\item 
+int {\bf main} (int argc, char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf g\_\-print\_\-info} = true\label{main_8cc_ac359921fcbf7652e7001cb2a15153bde}
+
+\begin{DoxyCompactList}\small\item\em global variable to recognize whether info on the problem was already printed \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File related to search starting ( page\_\-2 ). In this module, \doxyref{main()}{p.}{main_8cc_a0ddf1224851353fc92bfbff6f499fa97} function is implemented. It handles parsing program arguments and according to them coordinates other modules 
+
+\subsection{Function Documentation}
+\index{main.cc@{main.cc}!analyze\_\-single\_\-position@{analyze\_\-single\_\-position}}
+\index{analyze\_\-single\_\-position@{analyze\_\-single\_\-position}!main.cc@{main.cc}}
+\subsubsection[{analyze\_\-single\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\_\-status} analyze\_\-single\_\-position (
+\begin{DoxyParamCaption}
+\item[{string}]{ pos\_\-name, }
+\item[{{\bf Stone\_\-color}}]{ color\_\-to\_\-move, }
+\item[{double $\ast$}]{ act\_\-time, }
+\item[{string}]{ save\_\-filename}
+\end{DoxyParamCaption}
+)}\label{main_8cc_ab3f4780c45097405210a6909bfb3fa7c}
+
+
+Analyzes single position stored in file with filename as first argument, when second argument stone color moves first. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em pos\_\-name}]is a string containing name of position to solve. \item[\mbox{\tt[in]} {\em color\_\-to\_\-move}]is states player starting in the position. \item[\mbox{\tt[in]} {\em act\_\-time\_\-pt}]is pointer to actual amount of time spend. \item[\mbox{\tt[in]} {\em string\_\-filename}]is filename into which is output sgf saved ( in case of iddfs ) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns result of the search.
+\end{DoxyReturn}
+This function performs all neccessary operations for tree search in one position ( e.g. attacker moves first , defender moves first ). Neccessary initializations are done before searching is started. \index{main.cc@{main.cc}!get\_\-out\_\-fn\_\-base@{get\_\-out\_\-fn\_\-base}}
+\index{get\_\-out\_\-fn\_\-base@{get\_\-out\_\-fn\_\-base}!main.cc@{main.cc}}
+\subsubsection[{get\_\-out\_\-fn\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}string get\_\-out\_\-fn\_\-base (
+\begin{DoxyParamCaption}
+\item[{string}]{ filename}
+\end{DoxyParamCaption}
+)}\label{main_8cc_ad0f7da32c65f7d47676537df68b972f0}
+
+
+Generates output filename from input string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em filename}]Input problem filename to be transformed \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns transformed filename $\ast$ 
+\end{DoxyReturn}
+\index{main.cc@{main.cc}!handle\_\-single\_\-problem@{handle\_\-single\_\-problem}}
+\index{handle\_\-single\_\-problem@{handle\_\-single\_\-problem}!main.cc@{main.cc}}
+\subsubsection[{handle\_\-single\_\-problem}]{\setlength{\rightskip}{0pt plus 5cm}void handle\_\-single\_\-problem (
+\begin{DoxyParamCaption}
+\item[{string}]{ filename, }
+\item[{bool}]{ sgf\_\-output, }
+\item[{int $\ast$}]{ total\_\-nodes\_\-pt, }
+\item[{double $\ast$}]{ total\_\-time\_\-pt}
+\end{DoxyParamCaption}
+)}\label{main_8cc_a65a946a05c0de51cdcd12832de265887}
+
+
+Completely solves given problem. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em filename}]Is the name of file where the problem is saved. \item[\mbox{\tt[in]} {\em sgf\_\-output}]Tells whether to print sgf output or not ( for instance in multiple positions mode sgf output is not printed ) \item[\mbox{\tt[in]} {\em total\_\-nodes\_\-pt}]Pointer to actual number of totally searched nodes. \item[\mbox{\tt[in]} {\em total\_\-time\_\-pt}]Pointer to actual amount of total time spend.\end{DoxyParams}
+This function takes care of one single problem ( that means two positions : attacker moves first , defender moves first ). It also manages neccessary output. \index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{ argc, }
+\item[{char $\ast$}]{ argv[$\,$]}
+\end{DoxyParamCaption}
+)}\label{main_8cc_a0ddf1224851353fc92bfbff6f499fa97}
+Function main at first parses input arguments and according to them decides further actions. 

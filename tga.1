@@ -1,0 +1,72 @@
+.\" Copyright Tomas Kozelek, 2006
+.\"
+.\" Distributed under GPL.
+.\" 
+.\" to be processed with groff -man -Tascii []
+.TH TGA 1 2006-09 
+.SH NAME
+tga \- analyze "life and death" Go problems
+.SH SYNOPSIS
+.B tga
+[options] -i input_file
+.SH DESCRIPTION
+.B tga 
+takes Go problem of life and death type in sgf file format and outputs solution of this problem in the sgf format as well.
+.SH OPTIONS
+.TP
+.B \-nab, \-\-no_alpha_beta 
+deactivate alpha beta prunning
+.TP
+.B \-af , \-\-attacker_first         
+searches only for attacker to move
+.TP
+.B \-df , \-\-defender_first         
+searches only for defender to move
+.TP
+.B \-to , \-\-sgf_testing_output     
+sgf testing output
+.TP
+.B \-nkh, \-\-no_ko_handling         
+no ko handling - this might cause some problems to be solved incorectly ( testing )
+.TP
+.B \-ta , \-\-testing_area           
+main program line is switched to testing area ( testing )
+.TP
+.B \-ps , \-\-pruned_sgf             
+pruning sgf output
+.TP
+.B \-mp , \-\-multiple_pos_mode      
+multiple position mode ( after -i expects list of position to search )
+.TP
+.B \-ntt , \-\-no_t_tables           
+deactivate transposition tables 
+.TP
+.B \-nst , \-\-no_save_t_tables      
+deactivate saving transposition tables after first ( attacker's ) search 
+.TP
+.B \-id , \-\-iterative_deepening    
+activates iterative deepening depth first search
+.TP
+.B \-ndh, \-\-no_dynamic_heuristics  
+prevents using dynamic heuristics
+.TP
+.B \-nsh, \-\-no_static_heuristics   
+prevents using static heuristics
+.TP
+.B \-nus, \-\-no_under_the_stones    
+prevents potential under the stones analyzis - ! this might cause some problems to be solved incorectly ( testing )
+.TP
+.B \-od=\fINUMBER\fP , \-\-sgf_output_depth=\fINUMBER\fP
+NUMBER sets sgf output depth
+.TP
+.B  \-h  , \-\-help                   
+help ( it shows up when no option/ argument is given as well ) 
+.SH AUTHOR 
+Written by Tomas Kozelek
+.SH COPYRIGHT
+This program is licensed by GNU GPL and might be redistributed, modified,etc. according to this license agreements. Copyright (C) 2006 Tomas
+Kozelek.
+.SH "SEE ALSO"
+Further documentation is included in {tga's installation directory}/doc. 
+.\.SH BUGS
+.\<known bugs if any>

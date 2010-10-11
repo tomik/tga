@@ -1,0 +1,49 @@
+\section{Coordinates Class Reference}
+\label{classCoordinates}\index{Coordinates@{Coordinates}}
+
+
+Class representing a single coordinates.  
+
+
+
+
+{\ttfamily \#include $<$board.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Coordinates} (string)
+\begin{DoxyCompactList}\small\item\em constructor for transfer of string coordinates to coordinates \item\end{DoxyCompactList}\item 
+int {\bf transform\_\-to\_\-one\_\-dimension} ()\label{classCoordinates_af9de90ed2e229684273057f0374fbf5c}
+
+\begin{DoxyCompactList}\small\item\em Transforms two dimensional coordinates to one dimensional. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf co\_\-row}\label{classCoordinates_aa2cafcc3632a069cba9aa165d0c23b15}
+
+\begin{DoxyCompactList}\small\item\em Row coordinate. \item\end{DoxyCompactList}\item 
+int {\bf co\_\-column}\label{classCoordinates_a1d76dd7af2aff197f2cff43be7acdcc9}
+
+\begin{DoxyCompactList}\small\item\em Column coordinate. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a single coordinates. This class represents coordinates on a board. It is used throughout the whole program. [-\/1,-\/1] are special coordinates standing for pass ( when meaning a move ) or a position outsite bounds of the board. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Coordinates@{Coordinates}!Coordinates@{Coordinates}}
+\index{Coordinates@{Coordinates}!Coordinates@{Coordinates}}
+\subsubsection[{Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinates} (
+\begin{DoxyParamCaption}
+\item[{string}]{ sgf\_\-coordinates\_\-}
+\end{DoxyParamCaption}
+)}\label{classCoordinates_a6fd7ae37f7ff5edced2ca26d06e8a5f9}
+
+
+constructor for transfer of string coordinates to coordinates 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em sgf\_\-coordinates\_\-}]This is a string representation of coordinates\end{DoxyParams}
+This is a constructor creating instance of \doxyref{Coordinates}{p.}{classCoordinates} class from string representing coordinates parsed from sgf.In sgf coordinates are saved like xy where xy are of values a -\/ s, empty or tt means pass 

@@ -1,0 +1,61 @@
+\section{/home/tomik/src/c++/tga-\/1.0/src/sgf\_\-read.h File Reference}
+\label{sgf__read_8h}\index{/home/tomik/src/c++/tga-\/1.0/src/sgf\_\-read.h@{/home/tomik/src/c++/tga-\/1.0/src/sgf\_\-read.h}}
+
+
+Header file to \doxyref{sgf\_\-read.cc}{p.}{sgf__read_8cc}.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf State\_\-function\_\-record}
+\begin{DoxyCompactList}\small\item\em This class represents one record in parsing automata ( \doxyref{Sgf\_\-parser}{p.}{classSgf__parser} ) state function ( \doxyref{Sgf\_\-parser::state\_\-function}{p.}{classSgf__parser_a1e15c93b65fdf5166ceb67c42f3d70c8} ). \item\end{DoxyCompactList}\item 
+class {\bf Sgf\_\-parser}
+\begin{DoxyCompactList}\small\item\em This class conducts sgf input interpretation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Parser\_\-state} \{ \par
+{\bf aw\_\-beginning}, 
+{\bf aw\_\-token}, 
+{\bf aw\_\-next\_\-token}, 
+{\bf aw\_\-data}, 
+\par
+{\bf aw\_\-pattern\_\-data}
+ \}
+\begin{DoxyCompactList}\small\item\em Parser automata state enum. $\ast$ This enum represents possible states that a parsing automata might be in. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Sgf\_\-parser} {\bf sgf\_\-parser}\label{sgf__read_8h_a4b6c8fae1867411275dae3832b6dc1c6}
+
+\begin{DoxyCompactList}\small\item\em This is the only instance of \doxyref{Sgf\_\-parser}{p.}{classSgf__parser}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file to \doxyref{sgf\_\-read.cc}{p.}{sgf__read_8cc}. In this header file classes and data structures neccessary for proper input sgf file parsing are declared. 
+
+\subsection{Enumeration Type Documentation}
+\index{sgf\_\-read.h@{sgf\_\-read.h}!Parser\_\-state@{Parser\_\-state}}
+\index{Parser\_\-state@{Parser\_\-state}!sgf_read.h@{sgf\_\-read.h}}
+\subsubsection[{Parser\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Parser\_\-state}}\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35}
+
+
+Parser automata state enum. $\ast$ This enum represents possible states that a parsing automata might be in. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{aw\_\-beginning@{aw\_\-beginning}!sgf\_\-read.h@{sgf\_\-read.h}}\index{sgf\_\-read.h@{sgf\_\-read.h}!aw\_\-beginning@{aw\_\-beginning}}\item[{\em 
+aw\_\-beginning\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35ac6c482c18608c5e6aa50071ad4ede98e}
+}]waiting for \char`\"{}(\char`\"{} \index{aw\_\-token@{aw\_\-token}!sgf\_\-read.h@{sgf\_\-read.h}}\index{sgf\_\-read.h@{sgf\_\-read.h}!aw\_\-token@{aw\_\-token}}\item[{\em 
+aw\_\-token\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35a1b61bf13d9c0ebbfac092fc5044a5827}
+}]awaits token : for instance \char`\"{}W\char`\"{} \char`\"{}B\char`\"{} ... \index{aw\_\-next\_\-token@{aw\_\-next\_\-token}!sgf\_\-read.h@{sgf\_\-read.h}}\index{sgf\_\-read.h@{sgf\_\-read.h}!aw\_\-next\_\-token@{aw\_\-next\_\-token}}\item[{\em 
+aw\_\-next\_\-token\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35afbd4c160698d6b8b7fead7a6f69a1abf}
+}]one token accepted, awaits another \index{aw\_\-data@{aw\_\-data}!sgf\_\-read.h@{sgf\_\-read.h}}\index{sgf\_\-read.h@{sgf\_\-read.h}!aw\_\-data@{aw\_\-data}}\item[{\em 
+aw\_\-data\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35a88bad54885e8dda1084944c4640d7d3d}
+}]got token and symbol \char`\"{}[\char`\"{} \index{aw\_\-pattern\_\-data@{aw\_\-pattern\_\-data}!sgf\_\-read.h@{sgf\_\-read.h}}\index{sgf\_\-read.h@{sgf\_\-read.h}!aw\_\-pattern\_\-data@{aw\_\-pattern\_\-data}}\item[{\em 
+aw\_\-pattern\_\-data\label{sgf__read_8h_a56ef22cb8c7b804e532c32381b8a9c35a7368ebf9354884ea22df8fd399ad9b52}
+}]awaits ,,useful" data -\/ variations from position \end{description}
+\end{Desc}
+
